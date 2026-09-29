@@ -37,7 +37,6 @@ const P = [
   ['planta-maranta', 'Maranta', 'Hojas con nervaduras rojas, para interior.', 12900, 'plantas'],
   ['planta-philodendron', 'Philodendron', 'Fácil de cuidar, crece con luz indirecta.', 10900, 'plantas'],
   ['regalo-corazon', 'Caja corazón', 'Rosas, peluche, bombones y un vino.', 35000, 'regalos amor'],
-  ['orquidea', 'Orquídea Phalaenopsis', 'Orquídea en maceta, blanca y fucsia. Florece por meses.', 24900, 'plantas regalos'],
   ['regalo-peluche', 'Arreglo con peluche', 'Canasto de flores con peluche y corazón.', 29000, 'regalos cumpleanos'],
   ['ramo-rojo-dorado', 'Color intenso', 'Rosas naranjas, gerbera, anémona y col ornamental.', 30000, 'cumpleanos'],
 ].map(([id, n, d, p, c]) => ({ id, n, d, p, c: c.split(' ') }));
@@ -98,8 +97,9 @@ const seqFrames = [];
 const SEQ_N = 110;
 function preload(src) { return new Promise(res => { const i = new Image(); i.onload = i.onerror = () => res(i); i.src = src; }); }
 (async function boot() {
-  gsap.from('.loader__iso', { scale: .5, rotation: -25, opacity: 0, duration: 1.4, ease: 'expo.out' });
-  gsap.to('.loader__logo', { clipPath: 'inset(0 0% 0 0)', duration: 1.6, ease: 'expo.inOut', delay: .3 });
+  const word = $('.loader__word');
+  word.innerHTML = [...word.textContent].map(c => `<span>${c}</span>`).join('');
+  gsap.from('.loader__word span', { yPercent: 120, opacity: 0, stagger: .05, duration: 1, ease: 'expo.out' });
   const first = ['assets/video/taller.jpg', 'assets/video/desfile.jpg', 'assets/video/amarillas.jpg'];
   for (let i = 1; i <= SEQ_N; i++) first.push(`assets/seq/f${String(i).padStart(3, '0')}.webp`);
   let done = 0; const st = { v: 0 };
@@ -112,7 +112,7 @@ function preload(src) { return new Promise(res => { const i = new Image(); i.onl
 
 function intro() {
   const tl = gsap.timeline({ onComplete: () => { document.body.classList.remove('is-loading'); lenis && lenis.start(); ScrollTrigger.refresh(); } });
-  tl.to('.loader__iso, .loader__logo', { yPercent: -40, opacity: 0, stagger: .06, duration: .6, ease: 'expo.in' })
+  tl.to('.loader__word span', { yPercent: -120, opacity: 0, stagger: .03, duration: .6, ease: 'expo.in' })
     .to('#loader', { clipPath: 'inset(0 0 100% 0)', duration: 1.1, ease: 'expo.inOut' }, '-=.2')
     .set('#loader', { display: 'none' })
     .from('.hero__col', { yPercent: i => (i % 2 ? -30 : 30), scale: 1.2, duration: 1.6, ease: 'expo.out', stagger: .08 }, '-=.9')
