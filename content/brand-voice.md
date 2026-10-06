@@ -81,14 +81,14 @@ Los precios los aprobó Pablo (6 oct 2026). Las bajadas que terminan en "…para
 | Dirección | Esmeralda 198, Castro, Chiloé | 90+ posts; Google Maps |
 | Coordenadas | -42.4841263, -73.7634332 (Plus Code G68P+8J Castro) | [DATO Google Maps] |
 | WhatsApp | +56 9 6483 8490 · wa.me/56964838490 | [IG-523] y siguientes |
-| Horario | Lunes a sábado · 10:30 a 19:30 hrs | [IG-613], [IG-636], [PIEZA Día de la Novia]; Google Maps "cierra 7:30 PM". Antes de jun 2026 decía 10:00. **Confirmar con la clienta.** |
+| Horario | Lunes a sábado · 10:00 a 19:30 hrs | [IG-619] (22 jun 2026, el último post con horario general). Los de 10:30 ([IG-613], [IG-636]) son de un día puntual. Google Maps: cierra 19:30. **Confirmar con la clienta.** |
 | Despacho | "Despachos en Castro y alrededores" | [IG-646] |
 | Servicios | Ramos personalizados · Arreglos florales para toda ocasión · Regalos y detalles · Condolencias y coronas · Despachos en Castro y alrededores | [IG-646] |
 | Condolencias | coronas, canastos, cubreurnas, pedestales y arreglos florales de condolencias | [IG-633] |
 | Matrimonios | "arreglos florales para 4 matrimonios" en un fin de semana | [IG-566] |
 | Vivero | Almácigos Chiloé, Pidpid; la florería es punto de venta y entrega de sus plantas | [IG-523], [IG-535] |
 | Instagram | @florestaenchiloe · @almacigoschiloe · @natiiitm | perfil |
-| Bio IG | "Florería en Castro, Chiloé, 30 años entregando arte a tu domicilio." | [BIO] — no se usa: no cuadra con el primer post (2019) y no hay otra fuente. **Confirmar.** |
+| Bio IG | "Florería en Castro, Chiloé, 30 años entregando arte a tu domicilio." | [BIO] — se usa solo "Florería · Castro, Chiloé". Los "30 años" no se publican: no cuadran con el primer post (2019) y no hay otra fuente. **Confirmar.** |
 | Google | 5,0 ★ (6 reseñas) | [DATO Google Maps, 6 oct 2026] |
 
 ## Reseñas (Google Maps, literales)

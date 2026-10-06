@@ -1,9 +1,9 @@
 # Progreso
 
 estado: en curso
-fase_actual: 19
+fase_actual: 20
 inicio_ejecucion: 2026-10-06 11:00
-ultima_fase_completada: 18
+ultima_fase_completada: 19
 
 ## Bitácora
 - 2026-10-06 11:10 — Carpeta del PC ordenada según la skill (01_imagenes, 02_videos, 03_textos, 04_marca, 05_web, 06_herramientas, 99_archivo). Rama `dev` creada desde main@9e96ee1 (v2 tal cual). Plan creado.
@@ -14,3 +14,4 @@ ultima_fase_completada: 18
 - 13:30 — F06 guion content/copy.md (cada texto con fuente). F07: 37 imágenes WebP 800/1800 + LQIP, 4 videos MP4/WebM con presupuesto de peso. Momento memorable armado: once ramos alineados frente al mismo letrero (tools/align_facade.py, plantilla multiescala). Ramos de referencia recortados de las piezas del catálogo. F08 brand/art-direction.md.
 - 14:30 — F09–F16 sitio: src/index.html + tools/build.py → index.html; css/main.css; js/main.js; vendor (GSAP 3.15, Lenis 1.3, Swiper 14 diferido, Leaflet 1.9 diferido). Portada con el letrero como ventana al video, manifiesto con masas, Esmeralda 198 (sticky sin pin), oficio, del jardín, ramos (pedido → WhatsApp), debes saber, ocasiones, Natalia, invierno, reseñas de Google, visítanos (mapa), pie. Menú dialog con foco atrapado e inert; pedido como dialog.
 - 15:10 — F17 responsive 390/1280/1366/1440/1536/1920 sin desborde. F18 QA: CLS 0,0005–0,0011; pruebas automáticas 19/19 (idioma, menú, pedido, Escape, recordar pedido, movimiento reducido); Lighthouse local sin compresión: Perf 65 · A11y 100 · BP 100 · SEO 100. Corregido: contraste de rótulos sobre salvia, barra oculta tras agregar al pedido, recálculo de estilos de la precarga (4,1 s → 1,3 s), grabados rasterizados, video de portada parte al levantar la precarga.
+- 16:05 — F19 auditoría independiente (dos agentes). Voz y datos: textos de marca literales; corregido horario a 10:00–19:30 [IG-619], bajadas del catálogo con "…", tarjeta "desde $5.000" sin lo del 10 de mayo, rótulo "precios referenciales", meta description con frases de la marca, contraste de números y pies de foto, lang="es" en el contenido de marca y lang="en" en lo traducido, 5.0 en inglés, campo de dirección para despacho. Código: el menú ahora navega y deja el foco en la sección, la precarga se retira aunque main.js no cargue, en movimiento reducido móvil se ven los 11 ramos, el foco del pedido se queda en el mismo ramo, al cruzar 900 px se conserva la sección (no el píxel), Playfair precargada y esperada, líneas divididas conservan espacios, etiqueta Arrastrar sin congelarse, página inert durante la precarga, h2 en Natalia/Invierno/Reseñas. Verificado: CLS 0,000; 19/19 pruebas + 8 verificaciones; Lighthouse A11y 100 · BP 100 · SEO 100.

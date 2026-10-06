@@ -10,7 +10,7 @@ Correcciones mínimas: se quitan emoji y signos de apertura sobrantes; "¿BUSCAS
 | Texto | Fuente |
 |---|---|
 | (isotipo que se dibuja + porcentaje real de carga) | — |
-| Floresta | [IG-559] |
+| Floresta · Esmeralda 198 | [IG-559], [DATO] |
 
 ## 01 · Portada (bosque, círculo con video, como el letrero de la tienda)
 | Elemento | Texto ES | Fuente | EN (solo UI) |
@@ -65,20 +65,20 @@ Correcciones mínimas: se quitan emoji y signos de apertura sobrantes; "¿BUSCAS
 | Elemento | Texto | Fuente | EN |
 |---|---|---|---|
 | Rótulo | Ramos | [PIEZA catálogo] | Bouquets |
-| Titular script | Regala flores. Flores de verdad. | [IG-657] | — |
+| Titular script | Regala flores. Flores de verdad. | [IG-657] — corrección: el original es "Este 21 de septiembre, regala flores. Flores de verdad."; se quita la fecha vencida y se pone mayúscula inicial | — |
 | Bajada | De esas que tienen aroma, textura, movimiento y vida. | [IG-657] | — |
-| Producto | **Ramos Silvestres** · Diseños naturales, delicados y llenos de encanto · Pequeño $15.000 · Mediano $33.000 · Grande $49.000 · Nota: Cada ramo es único y se arma según la disponibilidad de flores, manteniendo siempre una composición armónica y especial. | [PIEZA Ramos Silvestres] | — |
-| Producto | **Rosas Rojas** · Un clásico lleno de significado · 5 Rosas $21.000 · 10 Rosas $39.000 · 20 Rosas $79.000 · Nota: Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño elegante, delicado y lleno de intención. | [PIEZA Rosas Rojas] | — |
-| Producto | **Ramos de Girasoles** · Un clásico luminoso… · 3 Girasoles $14.000 · 5 Girasoles $22.000 · 10 Girasoles $40.000 · Nota: Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño armonioso, cálido y lleno de vida. | [PIEZA Ramos de Girasoles] | — |
-| Producto | **Rosas y Girasoles** · Una combinación luminosa y especial · 5 Flores $21.000 · 10 Flores $39.000 · 20 Flores $79.000 · Nota: Cada ramo es preparado a mano, combinando colores y texturas para crear un arreglo armonioso, cálido y lleno de vida. | [PIEZA Rosas y Girasoles] | — |
-| Tarjeta | **También puedes venir directamente** · Podrás encontrar opciones desde $5.000 en adelante. · No necesitas reserva. | [PIEZA También puedes venir directamente] (sin "Este 10 de mayo…") | — |
+| Producto | **Ramos Silvestres** · Diseños naturales, delicados y llenos de encanto… (cortado en la coma; seguía "perfectos para sorprender a mamá") · Pequeño $15.000 · Mediano $33.000 · Grande $49.000 · Nota: Cada ramo es único y se arma según la disponibilidad de flores, manteniendo siempre una composición armónica y especial. | [PIEZA Ramos Silvestres] | — |
+| Producto | **Rosas Rojas** · Un clásico lleno de significado… (cortado en la coma) · 5 Rosas $21.000 · 10 Rosas $39.000 · 20 Rosas $79.000 · Nota: Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño elegante, delicado y lleno de intención. | [PIEZA Rosas Rojas] | — |
+| Producto | **Ramos de Girasoles** · Un clásico luminoso… (seguía "que le alegra el día a mamá") · 3 Girasoles $14.000 · 5 Girasoles $22.000 · 10 Girasoles $40.000 · Nota: Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño armonioso, cálido y lleno de vida. | [PIEZA Ramos de Girasoles] | — |
+| Producto | **Rosas y Girasoles** · Una combinación luminosa y especial… (cortado en la coma) · 5 Flores $21.000 · 10 Flores $39.000 · 20 Flores $79.000 · Nota: Cada ramo es preparado a mano, combinando colores y texturas para crear un arreglo armonioso, cálido y lleno de vida. | [PIEZA Rosas y Girasoles] | — |
+| Tarjeta | **También puedes venir directamente** · desde $5.000 · Podrás encontrar opciones desde $5.000 en adelante, con flores frescas y diseños pensados para emocionar, acompañar… · Esmeralda 198, Castro | [PIEZA También puedes venir directamente]. Se quitan "Este 10 de mayo…" y "No necesitas reserva" (eran de ese día). El "desde $5.000" lo aprobó Pablo. | — |
 | Pie de foto | * Ramo de referencia | [PIEZA catálogo] | * Reference bouquet |
 | Botón | Agregar | [UI] | Add |
 | Selector | Tamaño | [UI] | Size |
-| Nota precios | Precios del catálogo 2026. | [UI] + [PIEZA "Catálogo 2026"] | Prices from the 2026 catalogue. |
+| Nota precios | Precios referenciales del catálogo 2026 · confírmalos por WhatsApp | [UI] + [PIEZA "Catálogo 2026"]. Los precios son del catálogo de Día de la Madre 2026; Pablo los aprobó como referencia. **Confirmar vigencia con la clienta.** | Reference prices from the 2026 catalogue · confirm them on WhatsApp |
 
 ## 07 · Debes saber… (bosque; isotipo sobre mancha salvia)
-Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
+Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza. La pieza es de la tanda del Día de la Madre ("el stock será limitado", despacho PM hasta las 20:00); Pablo aprobó usarla. **Confirmar con la clienta que el horario de despacho sigue igual.**
 - RAMOS SILVESTRES — La composición de los ramos silvestres puede variar según disponibilidad de flores. Cada ramo es único, y todos tienen un encanto especial.
 - RESERVAS — Te recomendamos agendar con anticipación, ya que el stock será limitado. Los pedidos se confirman con el pago total mediante transferencia o pago presencial en tienda.
 - DESPACHO — Contamos con servicio de despacho con costo adicional, el cual dependerá de la distancia del lugar de entrega.
@@ -96,7 +96,6 @@ Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
 | Ítem | Despachos en Castro y alrededores | [IG-646] |
 | Detalle condolencias | Realizamos coronas, canastos, cubreurnas, pedestales y arreglos florales de condolencias. | [IG-633] |
 | Cita condolencias | "Una corona floral no es solo un gesto; es una forma de acompañar, honrar y expresar lo que muchas veces las palabras no alcanzan a decir." | [IG-633] |
-| Cita matrimonios | "Porque no hay dos matrimonios iguales… y las flores tampoco" | [IG-566] |
 | Cierre | con diseños únicos y alternativas pensadas para cada necesidad y presupuesto | [IG-631] |
 
 ## 09 · Natalia (foto a sangre)
@@ -117,7 +116,7 @@ Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
 ## 11 · Reseñas (crema)
 | Elemento | Texto | Fuente | EN |
 |---|---|---|---|
-| Rótulo | 5,0 en Google · 6 reseñas | [DATO Google Maps 6 oct 2026] | 5.0 on Google · 6 reviews |
+| Rótulo | 5,0 (EN: 5.0) · En Google · 6 reseñas | [DATO Google Maps 6 oct 2026] | 5.0 on Google · 6 reviews |
 | Reseña | "Fantásticas, empáticas y amorosas !!! Y las flores bellas !!!" — Tamara D., vía Google | [RESEÑA] | "via Google" |
 | Reseña | "Me encantó el lugar. Hermoso y bien decorado. Los mejores ramos de la ciudad de castro y además en un lugar cómodo y céntrico" — Ignacio M., vía Google | [RESEÑA] | — |
 
@@ -126,7 +125,7 @@ Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
 |---|---|---|---|
 | Titular script | ¿Buscas flores en Castro? Las encontraste. | [IG-646] | — |
 | Dirección | Esmeralda 198, Castro, Chiloé | [DATO] | — |
-| Horario | Lunes a sábado · 10:30 a 19:30 hrs | [IG-636], [IG-613] | Monday to Saturday · 10:30 to 19:30 |
+| Horario | Lunes a sábado · 10:00 a 19:30 hrs | [IG-619] (22 jun 2026, el último post con horario general; los de 10:30 son de un día puntual) · Google Maps: cierra 19:30 | Monday to Saturday · 10:00 to 19:30 |
 | WhatsApp | +56 9 6483 8490 | [DATO] | — |
 | Línea | Pide o cotiza tu ramo por WhatsApp | [IG-646] | — |
 | Botón | Cómo llegar | [UI] | Directions |
@@ -147,6 +146,7 @@ Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
 | Título | Tu pedido | Your order |
 | Vacío | Aún no agregas ramos. | You haven't added any bouquets yet. |
 | Campo | Retiro en tienda / Despacho | Pick-up in store / Delivery |
+| Campo | Dirección de despacho (solo si elige despacho) | Delivery address |
 | Campo | Fecha | Date |
 | Campo | Mensaje para la tarjeta (opcional) | Message for the card (optional) |
 | Nota | Los pedidos se confirman con el pago total mediante transferencia o pago presencial en tienda. | [PIEZA Debes saber…] (no se traduce) |
@@ -156,4 +156,7 @@ Literal de [PIEZA Debes saber…]. Rótulos en mayúsculas como en la pieza.
 Mensaje que se arma para WhatsApp (siempre en español, porque lo lee la florería): "Hola Floresta, quiero hacer un pedido: · 1 × Rosas Rojas (10 Rosas) $39.000 … Total referencial $… · Retiro en tienda / Despacho · Fecha · Mensaje para la tarjeta".
 
 ## Menú
-Ramos · Esmeralda 198 · Del jardín · Debes saber · Ocasiones · Visítanos — [UI]: Bouquets · Esmeralda 198 · From the garden · Good to know · Occasions · Visit us.
+Barra: Ramos · Esmeralda 198 · Del jardín · Ocasiones · Visítanos. Menú: además Natalia. — [UI]: Bouquets · Esmeralda 198 · From the garden · Occasions · Natalia · Visit us.
+
+## Meta description
+"Silvestre. Elegante. Es Floresta. Flores lindas, para momentos que importan. Ramos personalizados, arreglos florales para toda ocasión, condolencias y coronas. Esmeralda 198, Castro, Chiloé." — [IG-534] + [IG-646] + [DATO]. La versión EN es [UI].

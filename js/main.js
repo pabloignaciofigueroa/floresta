@@ -15,13 +15,26 @@
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* sin almacenamiento */ } }
   };
+  let introDone = false;
   const critical = window.__floresta || { done: Promise.resolve(), reached: Promise.resolve() };
   let finishIntro = () => { const l = $('.loader'); if (l) l.remove(); };
   const loaderSafety = setTimeout(() => finishIntro(), 9000);
 
   /* posición estable del scroll mientras la ventana cambia de tamaño */
   let stableY = window.scrollY, resizing = false, resizeT = 0, resizeFromY = null;
-  window.addEventListener('scroll', () => { if (!resizing) stableY = window.scrollY; }, { passive: true });
+  let anchor = null; /* sección visible y cuánto se había avanzado en ella */
+  const takeAnchor = () => {
+    const secs = [...document.querySelectorAll('main > section, .foot')];
+    const sec = secs.find(x => { const r = x.getBoundingClientRect(); return r.top <= 1 && r.bottom > 1; });
+    if (!sec) return null;
+    const r = sec.getBoundingClientRect();
+    return { sec, ratio: -r.top / Math.max(1, r.height) };
+  };
+  let anchorRaf = 0, restoring = false;
+  window.addEventListener('scroll', () => {
+    if (!resizing) stableY = window.scrollY;
+    if (!anchorRaf) anchorRaf = requestAnimationFrame(() => { anchorRaf = 0; if (!restoring) anchor = takeAnchor(); });
+  }, { passive: true });
   window.addEventListener('resize', () => {
     if (!resizing) { resizing = true; resizeFromY = stableY; }
     clearTimeout(resizeT);
@@ -33,6 +46,8 @@
     $$(`[data-${key}-en]`).forEach(el => {
       if (el.dataset[key + 'Es'] === undefined) el.dataset[key + 'Es'] = el.getAttribute(attr) || '';
       el.setAttribute(attr, root.dataset.lang === 'en' ? el.dataset[key + 'En'] : el.dataset[key + 'Es']);
+      /* dentro del contenido en español, lo traducido se marca como inglés */
+      if (el.closest('[lang="es"]') && key !== 'meta') { if (root.dataset.lang === 'en') el.setAttribute('lang', 'en'); else if (el.getAttribute('lang') === 'en') el.removeAttribute('lang'); }
     });
   };
   const setLang = (l) => {
@@ -44,6 +59,7 @@
     swapAttr('content', 'meta');
     document.dispatchEvent(new CustomEvent('floresta:lang'));
   };
+  $$('[data-l="en"]').forEach(el => el.setAttribute('lang', 'en'));
   setLang(store.get('floresta-lang') === 'en' ? 'en' : 'es');
   $('[data-lang-toggle]')?.addEventListener('click', () => setLang(root.dataset.lang === 'es' ? 'en' : 'es'));
 
@@ -51,7 +67,7 @@
   let lenis = null;
   const scrollToEl = (el) => {
     if (!el) return;
-    if (lenis) lenis.scrollTo(el, { duration: 1.5, easing: t => 1 - Math.pow(1 - t, 4) });
+    if (lenis) lenis.scrollTo(el, { duration: 1.5, force: true, easing: t => 1 - Math.pow(1 - t, 4) });
     else el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
   };
   const focusTarget = (t) => { if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1'); t.focus({ preventScroll: true }); };
@@ -82,7 +98,7 @@
   const menu = $('[data-menu]');
   const openBtn = $('[data-menu-open]');
   let menuOpen = false;
-  const toggleMenu = (open) => {
+  const toggleMenu = (open, then) => {
     if (open === menuOpen || !menu) return;
     menuOpen = open;
     openBtn.setAttribute('aria-expanded', String(open));
@@ -97,7 +113,7 @@
       } else menu.style.clipPath = 'none';
       $('[data-menu-close]').focus();
     } else {
-      const done = () => { menu.hidden = true; lenis && lenis.start(); openBtn.focus(); };
+      const done = () => { menu.hidden = true; lenis && introDone && lenis.start(); if (then) then(); else openBtn.focus(); };
       if (window.gsap && !reduced) gsap.to(menu, { clipPath: 'inset(100% 0 0% 0)', duration: .6, ease: 'power3.inOut', onComplete: done });
       else done();
     }
@@ -111,8 +127,7 @@
     a.addEventListener('click', (e) => {
       e.preventDefault();
       const t = $(a.getAttribute('href'));
-      toggleMenu(false);
-      setTimeout(() => { scrollToEl(t); focusTarget(t); }, reduced ? 0 : 450);
+      toggleMenu(false, () => { scrollToEl(t); focusTarget(t); });
     });
   });
 
@@ -146,10 +161,14 @@
       li.addEventListener('click', (e) => {
         const b = e.target.closest('[data-q]');
         if (!b) return;
-        it.qty += parseInt(b.dataset.q, 10);
-        if (it.qty <= 0) items.splice(idx, 1);
+        const q = b.dataset.q;
+        it.qty += parseInt(q, 10);
+        const gone = it.qty <= 0;
+        if (gone) items.splice(idx, 1);
         saveCart(); renderCart();
-        const again = $$('[data-cart-items] button')[0];
+        const rows = $$('[data-cart-items] .cart__item');
+        const row = rows[gone ? Math.min(idx, rows.length - 1) : idx];
+        const again = row && $(`[data-q="${gone ? '1' : q}"]`, row);
         if (again) again.focus(); else $('.cart__close').focus();
       });
       list.appendChild(li);
@@ -194,7 +213,7 @@
       }
       $('.cart__close', cart).focus();
     } else {
-      const done = () => { cart.hidden = true; lenis && lenis.start(); cartBtn.focus(); };
+      const done = () => { cart.hidden = true; lenis && introDone && lenis.start(); cartBtn.focus(); };
       if (window.gsap && !reduced) {
         gsap.to($('.cart__scrim', cart), { opacity: 0, duration: .35 });
         gsap.to(panel, { xPercent: 100, duration: .5, ease: 'power3.in', onComplete: done });
@@ -206,18 +225,20 @@
   $('[data-cart-form]')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = e.target;
-    const lines = ['Hola Floresta, quiero hacer un pedido:'];
+    const lines = [items.length ? 'Hola Floresta, quiero hacer un pedido:' : 'Hola Floresta, quiero cotizar un ramo.'];
     if (items.length) {
       items.forEach(i => lines.push(`· ${i.qty} × ${i.name} (${i.option}) ${clp(i.price * i.qty)}`));
       lines.push(`Total referencial: ${clp(items.reduce((a, i) => a + i.price * i.qty, 0))}`);
     }
     lines.push(`Entrega: ${f.modo.value}`);
+    if (f.modo.value === 'Despacho' && f.direccion.value.trim()) lines.push(`Dirección: ${f.direccion.value.trim()}`);
     if (f.fecha.value) { const [y, m, d] = f.fecha.value.split('-'); lines.push(`Fecha: ${d}-${m}-${y}`); }
     if (f.mensaje.value.trim()) lines.push(`Mensaje para la tarjeta: ${f.mensaje.value.trim()}`);
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
   });
   renderCart();
   document.addEventListener('floresta:lang', renderCart);
+  $$('[data-cart-form] input[name="modo"]').forEach(r => r.addEventListener('change', () => { $('[data-addr]').hidden = $('[data-cart-form]').modo.value !== 'Despacho'; }));
 
   document.addEventListener('keydown', (e) => {
     const box = menuOpen ? menu : cartOpen ? cart : null;
@@ -378,11 +399,11 @@
     let dx = 0, dy = 0, tx = 0, ty = 0, raf = 0, shown = false;
     const loop = () => { dx += (tx - dx) * .2; dy += (ty - dy) * .2; drag.style.translate = `${dx}px ${dy}px`; raf = requestAnimationFrame(loop); };
     $$('[data-drag-label]').forEach(zone => {
-      zone.addEventListener('pointerenter', (e) => { tx = dx = e.clientX; ty = dy = e.clientY; shown = true; cancelAnimationFrame(raf); loop(); gsap.to(drag, { scale: 1, opacity: 1, duration: .5, ease: 'expo.out' }); });
+      zone.addEventListener('pointerenter', (e) => { gsap.killTweensOf(drag); tx = dx = e.clientX; ty = dy = e.clientY; shown = true; cancelAnimationFrame(raf); loop(); gsap.to(drag, { scale: 1, opacity: 1, duration: .5, ease: 'expo.out' }); });
       zone.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; });
       zone.addEventListener('pointerdown', () => shown && gsap.to(drag, { scale: .82, duration: .3, ease: 'expo.out' }));
       zone.addEventListener('pointerup', () => shown && gsap.to(drag, { scale: 1, duration: .4, ease: 'expo.out' }));
-      zone.addEventListener('pointerleave', () => { shown = false; gsap.to(drag, { scale: 0, opacity: 0, duration: .4, ease: 'expo.out', onComplete: () => cancelAnimationFrame(raf) }); });
+      zone.addEventListener('pointerleave', () => { shown = false; gsap.to(drag, { scale: 0, opacity: 0, duration: .4, ease: 'expo.out', onComplete: () => { if (!shown) cancelAnimationFrame(raf); } }); });
       $$('button, a, label, input', zone).forEach(b => {
         b.addEventListener('pointerenter', () => gsap.to(drag, { scale: 0, opacity: 0, duration: .25 }));
         b.addEventListener('pointerleave', () => shown && gsap.to(drag, { scale: 1, opacity: 1, duration: .4, ease: 'expo.out' }));
@@ -421,6 +442,7 @@
     $('.loader')?.remove();
     clearTimeout(loaderSafety);
     root.classList.add('no-motion');
+    if (!reduced) { introPlayed = true; $('[data-hero-video]')?.play().catch(() => {}); }
     if (window.gsap && window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); navTheme(); }
     return;
   }
@@ -458,7 +480,7 @@
         if (top === null || Math.abs(y - top) > 6) { lines.push([]); top = y; }
         lines[lines.length - 1].push(tag(walk[+w.dataset.i]));
       });
-      t.innerHTML = lines.map(l => `<span class="line"><span>${l.join(' ')}</span></span>`).join('');
+      t.innerHTML = lines.map(l => `<span class="line"><span>${l.join(' ')} </span></span>`).join('');
     });
   };
   const revealTweens = [];
@@ -477,8 +499,9 @@
   /* ---------- precarga + entrada de la portada ---------- */
   const loader = $('.loader');
   const fontsReady = document.fonts
-    ? Promise.race([Promise.allSettled(['400 1em Allura', '400 1em Catamaran', '600 1em Catamaran', '700 1em Catamaran'].map(f => document.fonts.load(f))), new Promise(r => setTimeout(r, 2500))]).catch(() => {})
+    ? Promise.race([Promise.allSettled(['400 1em Allura', '400 1em Catamaran', '600 1em Catamaran', '700 1em Catamaran', '400 1em "Playfair Display"', 'italic 400 1em "Playfair Display"'].map(f => document.fonts.load(f))), new Promise(r => setTimeout(r, 2500))]).catch(() => {})
     : Promise.resolve();
+  if (loader) outside().forEach(el => { el.inert = true; });
   gsap.set('[data-hero-fade]', { opacity: 0, y: 14 });
   gsap.set('.hero__logo img', { yPercent: 104 });
   gsap.set('[data-hero-motto] span', { opacity: 0, y: 24, filter: 'blur(6px)' });
@@ -499,7 +522,6 @@
     (window.requestIdleCallback || ((fn) => setTimeout(fn, 300)))(() => { next(); next(); });
   };
 
-  let introDone = false;
   finishIntro = () => {
     if (introDone) return;
     introDone = true;
@@ -507,7 +529,7 @@
     buildReveals();
     const tl = gsap.timeline({ onComplete: () => { loader && loader.remove(); prefetchRest(); } });
     tl.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'power3.inOut' })
-      .call(() => { if (loader) loader.style.pointerEvents = 'none'; lenis && lenis.start(); introPlayed = true; $('[data-hero-video]')?.play().catch(() => {}); }, null, .9)
+      .call(() => { if (loader) loader.style.pointerEvents = 'none'; outside().forEach(el => { el.inert = menuOpen || cartOpen; }); lenis && !menuOpen && !cartOpen && lenis.start(); introPlayed = true; $('[data-hero-video]')?.play().catch(() => {}); }, null, .9)
       .to('[data-hero-sign]', { clipPath: 'circle(50% at 50% 50%)', duration: 1.6, ease: 'expo.out' }, '-=.45')
       .fromTo('.hero__video', { scale: 1.3 }, { scale: 1.04, duration: 2.2, ease: 'expo.out' }, '<')
       .to('.hero__logo img', { yPercent: 0, duration: 1.2, ease: 'expo.out' }, '<.1')
@@ -571,9 +593,11 @@
 
   /* ---------- conservar la posición al cruzar el quiebre móvil/escritorio ---------- */
   desktop.addEventListener('change', () => {
-    const y = resizeFromY !== null ? resizeFromY : stableY;
-    const go = () => { if (Math.abs(window.scrollY - y) < 40) return; if (lenis) lenis.scrollTo(y, { immediate: true, force: true }); else window.scrollTo(0, y); stableY = y; ScrollTrigger.update(); };
-    requestAnimationFrame(() => requestAnimationFrame(go)); setTimeout(go, 450); setTimeout(go, 1000);
+    const a = anchor;
+    const target = () => a ? a.sec.getBoundingClientRect().top + window.scrollY + a.ratio * a.sec.offsetHeight : (resizeFromY !== null ? resizeFromY : stableY);
+    const go = () => { const y = target(); if (Math.abs(window.scrollY - y) < 40) return; if (lenis) lenis.scrollTo(y, { immediate: true, force: true }); else window.scrollTo(0, y); stableY = y; ScrollTrigger.update(); };
+    restoring = true;
+    requestAnimationFrame(() => requestAnimationFrame(go)); setTimeout(go, 450); setTimeout(() => { go(); restoring = false; }, 1000);
   });
 
   /* ---------- navegación: se esconde al bajar, cambia de tono sobre fondos claros ---------- */

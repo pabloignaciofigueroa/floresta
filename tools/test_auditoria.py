@@ -1,0 +1,35 @@
+from playwright.sync_api import sync_playwright
+ok=lambda c,m:print('OK  ' if c else 'FALLA',m)
+with sync_playwright() as pw:
+    b=pw.chromium.launch(executable_path='/opt/pw-browsers/chromium')
+    pg=b.new_page(viewport={'width':1024,'height':800}); pg.goto('http://localhost:8765/index.html'); pg.wait_for_timeout(6500)
+    pg.click('[data-menu-open]'); pg.wait_for_timeout(900)
+    pg.focus('[data-menu-key="visitanos"]'); pg.keyboard.press('Enter'); pg.wait_for_timeout(2600)
+    y=pg.evaluate('scrollY'); top=pg.evaluate("document.querySelector('#visitanos').getBoundingClientRect().top")
+    ok(y>5000 and abs(top)<60, f'menú → Visítanos scroll {y} top {top}')
+    ok(pg.evaluate("document.activeElement.id")=='visitanos','foco en la sección')
+    # pedido: foco en el mismo botón
+    pg.evaluate("document.querySelector('[data-product=\"Rosas Rojas\"] [data-add]').click();document.querySelector('[data-product=\"Ramos Silvestres\"] [data-add]').click()")
+    pg.evaluate("document.querySelector('[data-cart-open]').click()"); pg.wait_for_timeout(800)
+    pg.focus('[data-cart-items] .cart__item:nth-child(2) [data-q="1"]'); pg.keyboard.press('Enter')
+    ok('Ramos Silvestres' in pg.evaluate("document.activeElement.getAttribute('aria-label')"), 'foco sigue en "Uno más" del mismo ramo: '+pg.evaluate("document.activeElement.getAttribute('aria-label')"))
+    pg.keyboard.press('Escape'); pg.wait_for_timeout(600)
+    pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
+    ok(pg.evaluate("document.querySelector('main').lang")=='es' and pg.evaluate("document.querySelector('[data-esm-frame] img').lang")=='en','EN: main es, alt traducido marcado en')
+    ok(pg.evaluate("document.querySelector('#oficio-t').textContent.includes('con una')"),'texto dividido conserva espacios: '+pg.evaluate("document.querySelector('#oficio-t').textContent"))
+    pg.click('[data-lang-toggle]')
+    # cruce de quiebre
+    pg.set_viewport_size({'width':1280,'height':800}); pg.wait_for_timeout(500)
+    pg.evaluate("window.scrollTo(0, document.querySelector('#debes-saber').offsetTop+100)"); pg.mouse.wheel(0,1); pg.wait_for_timeout(1500)
+    pg.set_viewport_size({'width':700,'height':800}); pg.wait_for_timeout(2200)
+    r=pg.evaluate("(()=>{const r=document.querySelector('#debes-saber').getBoundingClientRect();return [r.top,r.bottom]})()")
+    ok(r[0]<=10 and r[1]>0, f'tras cruzar 900px sigue en Debes saber {r}')
+    # js bloqueado
+    p2=b.new_page(viewport={'width':1280,'height':800}); p2.route('**/js/main.js', lambda r: r.abort())
+    p2.goto('http://localhost:8765/index.html'); p2.wait_for_timeout(12500)
+    ok(p2.evaluate("!document.querySelector('.loader')"),'sin main.js la precarga se retira')
+    # reducido móvil
+    c=b.new_context(viewport={'width':390,'height':844},reduced_motion='reduce'); p3=c.new_page(); p3.goto('http://localhost:8765/index.html'); p3.wait_for_timeout(1500)
+    vis=p3.evaluate("(()=>{const f=document.querySelector('[data-esm-frame]');const fr=f.getBoundingClientRect();return [...f.querySelectorAll('img')].filter(i=>{const r=i.getBoundingClientRect();return r.height>50 && r.bottom<=fr.bottom+1}).length})()")
+    ok(vis==11, f'reducido móvil: {vis}/11 ramos visibles')
+    b.close()

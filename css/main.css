@@ -249,11 +249,11 @@ html[data-lang="es"] .lang__en, html[data-lang="en"] .lang__es { opacity: .5; }
 .ramo__opts input:checked + span { font-weight: 700; background-size: 100% 1px; }
 .ramo__opts input:checked + span::before { content: ""; position: absolute; left: -16px; top: .5em; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 1px var(--hondo); }
 .ramo__opts input:focus-visible + span { outline: 2px solid var(--hondo); outline-offset: 3px; }
-.ramo__note { font-size: .86rem; line-height: 1.4; max-width: 34ch; opacity: .9; }
+.ramo__note { font-size: .88rem; line-height: 1.4; max-width: 34ch; }
 .ramo__add { margin-top: 4px; }
 .ramo__img { position: relative; width: calc(100% + 44px); margin-top: auto; flex: 1 1 0; min-height: 120px; overflow: clip; }
 .ramo__img img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; -webkit-mask: linear-gradient(transparent, #000 14%); mask: linear-gradient(transparent, #000 14%); }
-.ramo__img figcaption { position: absolute; right: 34px; bottom: 10px; font-size: .72rem; color: var(--hondo); opacity: .85; }
+.ramo__img figcaption { position: absolute; right: 34px; bottom: 10px; font-size: .76rem; font-weight: 600; color: var(--hondo); }
 .ramo--tienda { background: var(--bosque); color: var(--crema); border-color: var(--bosque); justify-content: flex-start; }
 .ramo--tienda .ramo__name { color: var(--salvia); white-space: normal; line-height: 1.1; }
 .ramo__big { font-size: clamp(2.4rem, 3.4vw, 3.4rem); color: var(--coral); margin: 10px 0; }
@@ -284,7 +284,7 @@ html[data-lang="es"] .lang__en, html[data-lang="en"] .lang__es { opacity: .5; }
 .ocas__title { font-size: var(--t-script-l); color: var(--bosque); max-width: 16ch; }
 .ocas__list { border-bottom: 1px solid rgba(50, 88, 60, .25); }
 .ocas__row { position: relative; display: grid; grid-template-columns: 3.4em minmax(0, 1fr) auto; align-items: baseline; gap: 10px 20px; padding: clamp(14px, 2.2vh, 22px) 0; border-top: 1px solid rgba(50, 88, 60, .25); cursor: default; }
-.ocas__n { color: var(--grabado) !important; font-variant-numeric: tabular-nums; }
+.ocas__n { color: var(--tinta) !important; font-variant-numeric: tabular-nums; }
 .ocas__name { font-size: clamp(1.5rem, 3vw, 2.9rem); color: var(--tinta); transition: transform var(--d-med) var(--ease), color var(--d-fast); }
 .ocas__row:hover .ocas__name { transform: translateX(14px); color: var(--bosque); }
 .ocas__detail { grid-column: 2 / 3; color: var(--hondo); font-size: .98rem; max-width: 56ch; }
@@ -456,6 +456,10 @@ html:not(.js) .esm__frame img { position: static; opacity: 1; }
   .visita__photo { left: 10px; bottom: -30px; width: 110px; }
   .visita__data > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .ramo { width: min(84vw, 380px) !important; }
+}
+@media (max-width: 899px) {
+  .no-motion .esm__frame, html:not(.js) .esm__frame { max-height: none; height: auto; width: 100%; justify-self: stretch; overflow: visible; }
+  .no-motion .esm__stage { grid-template-rows: auto; }
 }
 @media (max-width: 899px) and (max-height: 700px) {
   .hero__sign { width: min(60vw, 34svh); }

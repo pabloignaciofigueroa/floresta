@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Floresta · Florería en Castro, Chiloé</title>
-<meta name="description" content="Silvestre. Elegante. Es Floresta. Florería en Esmeralda 198, Castro, Chiloé. Ramos, arreglos florales, coronas y despachos en Castro y alrededores." data-meta-en="Silvestre. Elegante. Es Floresta. Flower shop at Esmeralda 198, Castro, Chiloé. Bouquets, floral arrangements, wreaths and delivery in Castro and nearby.">
+<meta name="description" content="Silvestre. Elegante. Es Floresta. Flores lindas, para momentos que importan. Ramos personalizados, arreglos florales para toda ocasión, condolencias y coronas. Esmeralda 198, Castro, Chiloé." data-meta-en="Silvestre. Elegante. Es Floresta. Flower shop at Esmeralda 198, Castro, Chiloé: bouquets, arrangements for every occasion, sympathy flowers and wreaths, delivery in Castro and nearby.">
 <meta name="theme-color" content="#406345">
 <meta property="og:title" content="Floresta · by Almácigos Chiloé">
 <meta property="og:description" content="Silvestre. Elegante. Es Floresta.">
@@ -20,11 +20,12 @@
 <link rel="preload" href="assets/fonts/catamaran-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/catamaran-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/catamaran-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css" media="print" onload="this.media='all'">
 <script>document.documentElement.classList.add('js');</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Florist","name":"Floresta by Almácigos Chiloé","image":"https://lafloresta.vercel.app/assets/og.jpg","telephone":"+56964838490","address":{"@type":"PostalAddress","streetAddress":"Esmeralda 198","addressLocality":"Castro","addressRegion":"Los Lagos","addressCountry":"CL"},"geo":{"@type":"GeoCoordinates","latitude":-42.4841263,"longitude":-73.7634332},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:30","closes":"19:30"}],"sameAs":["https://www.instagram.com/florestaenchiloe/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Florist","name":"Floresta by Almácigos Chiloé","image":"https://lafloresta.vercel.app/assets/og.jpg","telephone":"+56964838490","address":{"@type":"PostalAddress","streetAddress":"Esmeralda 198","addressLocality":"Castro","addressRegion":"Los Lagos","addressCountry":"CL"},"geo":{"@type":"GeoCoordinates","latitude":-42.4841263,"longitude":-73.7634332},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:30"}],"sameAs":["https://www.instagram.com/florestaenchiloe/"]}</script>
 </head>
 <body>
 
@@ -62,6 +63,8 @@
   }
   requestAnimationFrame(tick);
   setTimeout(finish, Math.max(0, MAX - performance.now()));
+  /* si el código de la página no llega, la precarga igual se retira */
+  setTimeout(function () { var l = document.querySelector('.loader'); if (l) l.remove(); }, 11000);
   if (!man || !window.fetch || matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return; }
   var dpr = Math.min(window.devicePixelRatio || 1, 2), mobile = innerWidth < 900, jobs = [];
   man.fonts.forEach(function (f) { jobs.push(f); });
@@ -125,7 +128,7 @@
   <p class="menu__foot t-label">Esmeralda 198 · Castro · +56 9 6483 8490</p>
 </div>
 
-<main id="top">
+<main id="top" lang="es">
 
 <!-- ============ 01 · PORTADA ============ -->
 <section class="hero field field--bosque" aria-label="Floresta">
@@ -262,7 +265,7 @@
       <article class="swiper-slide ramo" data-product="Ramos Silvestres" aria-labelledby="p-silv">
         <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-silv">Ramos Silvestres</h3>
-        <p class="ramo__sub">Diseños naturales, delicados y llenos de encanto</p>
+        <p class="ramo__sub">Diseños naturales, delicados y llenos de encanto…</p>
         <fieldset class="ramo__opts">
           <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
           <label><input type="radio" name="silv" value="Ramo Pequeño" data-price="15000" checked><span>Ramo Pequeño · $15.000</span></label>
@@ -277,7 +280,7 @@
       <article class="swiper-slide ramo" data-product="Rosas Rojas" aria-labelledby="p-rosas">
         <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-rosas">Rosas Rojas</h3>
-        <p class="ramo__sub">Un clásico lleno de significado</p>
+        <p class="ramo__sub">Un clásico lleno de significado…</p>
         <fieldset class="ramo__opts">
           <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
           <label><input type="radio" name="rosas" value="5 Rosas" data-price="21000" checked><span>5 Rosas · $21.000</span></label>
@@ -307,7 +310,7 @@
       <article class="swiper-slide ramo" data-product="Rosas y Girasoles" aria-labelledby="p-ryg">
         <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-ryg">Rosas y Girasoles</h3>
-        <p class="ramo__sub">Una combinación luminosa y especial</p>
+        <p class="ramo__sub">Una combinación luminosa y especial…</p>
         <fieldset class="ramo__opts">
           <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
           <label><input type="radio" name="ryg" value="5 Flores" data-price="21000" checked><span>5 Flores · $21.000</span></label>
@@ -321,7 +324,6 @@
 
       <article class="swiper-slide ramo ramo--tienda" aria-labelledby="p-tienda">
         <h3 class="script ramo__name" id="p-tienda">También puedes venir directamente</h3>
-        <p class="ramo__sub">No necesitas reserva</p>
         <p class="ramo__big serif">desde $5.000</p>
         <p class="ramo__note">Podrás encontrar opciones desde $5.000 en adelante, con flores frescas y diseños pensados para emocionar, acompañar…</p>
         <p class="ramo__note">Esmeralda 198, Castro</p>
@@ -336,7 +338,7 @@
       <button class="arrow arrow--next" type="button" data-ramos-next aria-label="Siguiente" data-aria-en="Next"><i aria-hidden="true"></i></button>
     </div>
   </div>
-  <p class="ramos__fine t-label"><span data-l="es">Precios del catálogo 2026</span><span data-l="en">Prices from the 2026 catalogue</span></p>
+  <p class="ramos__fine t-label"><span data-l="es">Precios referenciales del catálogo 2026 · confírmalos por WhatsApp</span><span data-l="en">Reference prices from the 2026 catalogue · confirm them on WhatsApp</span></p>
 </section>
 
 <!-- ============ 07 · DEBES SABER… ============ -->
@@ -396,7 +398,7 @@
 <section class="nati field field--bosque" id="natalia" aria-labelledby="nati-t">
   <figure class="nati__photo" data-clip><img class="" src="assets/img/natalia-1800.webp" srcset="assets/img/natalia-800.webp 800w, assets/img/natalia-1800.webp 1440w" sizes="(min-width: 900px) 50vw, 100vw" width="1440" height="1728" alt="Natalia Torres Manzo sonriendo con un ramo de lirios, rosas y flores amarillas" loading="lazy" decoding="async" style="background-image:url(data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBQCdASoUABgAPu1sq1EppaOiqAqpMB2JbACdMtvvVAHEMN1YG4kYEuu0KnWrzjV6zn+8lhQAAP6+ERFAH2/malJptwg4Y5LB5joLLJnf63Xw3RUjvis+vh3i4/pevxzYRYiH/rF/sluZlKT2iCyFx6f5OOmDlJEKfaA1Xk7sSbh2m5ST+WZzSdPGeEJ1QMcs10ypfgQ/wugqAbGJ/rie+fguG/aYVIhYi93iRhl5oU+I869ODwIVO/phLEvExGdehRYtXFNekdMdNK+O215kP2C/VJBgnbeol8SXlGCwwAAA)" data-parallax-in data-alt-en="Natalia Torres Manzo smiling with a bouquet of lilies, roses and yellow flowers"></figure>
   <div class="nati__text">
-    <p class="t-label" id="nati-t">Natalia Torres Manzo · <a class="u-link" href="https://www.instagram.com/natiiitm/" target="_blank" rel="noopener">@natiiitm</a></p>
+    <h2 class="t-label" id="nati-t">Natalia Torres Manzo · <a class="u-link" href="https://www.instagram.com/natiiitm/" target="_blank" rel="noopener">@natiiitm</a></h2>
     <blockquote class="nati__big"><p class="script" data-lines>“Mi destino siempre fueron las plantas y las flores!”</p></blockquote>
     <blockquote class="nati__q">
       <p class="serif" data-lines>“Ha sido, lejos, una de las decisiones más lindas y valientes que he tomado.”</p>
@@ -408,19 +410,20 @@
 </section>
 
 <!-- ============ 10 · INVIERNO ============ -->
-<section class="invierno" aria-label="Todos los días son primavera" data-aria-en="Every day is spring">
+<section class="invierno" aria-labelledby="inv-t">
   <div class="invierno__media" data-parallax-bg><img class="" src="assets/img/invierno-1800.webp" srcset="assets/img/invierno-800.webp 800w, assets/img/invierno-1800.webp 1440w" sizes="100vw" width="1440" height="1494" alt="Ramo de girasoles envuelto en papel kraft frente a la florería" loading="lazy" decoding="async" style="background-image:url(data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADwBQCdASoXABgAPu1oqU+ppiOiKA1RMB2JbAAjzPeVV+BpPmjgsh/2UWs1B+4AMJjPle/VyfVQAAD+FjdJJsP7BUbVrsOFh0byzvHVlYNURmrx3NRw2ESbGP4vYqGnu6llkHLjCxSF2/OXM4RNX/96ZamfMAffKSPuJJAVLbs2UIZpTYl852MRWM+BGC9eCYjAUt2i+ArNQOBEDWiEwwIeCghGSCni7lM4KPyZJ5Kx9QLjdq5Vr3bcRWtlLREkk9PcdtAVcZfszxQ2DQknVD+maSp1Oz8zjtXju3XBR9VCBXmPRXir+FERT56a+Bc4UrUAAA==)"  data-alt-en="Sunflower bouquet wrapped in kraft paper in front of the shop"></div>
   <div class="invierno__veil" aria-hidden="true"></div>
   <div class="invierno__text">
-    <p class="script invierno__quote" data-lines>Aunque estemos en pleno invierno en Chiloé, para nosotros todos los días son primavera.</p>
+    <h2 class="script invierno__quote" id="inv-t" data-lines>Aunque estemos en pleno invierno en Chiloé, para nosotros todos los días son primavera.</h2>
     <p class="lead" data-lines>Nosotros seguiremos poniendo un poquito de primavera en cada ramo que preparamos.</p>
   </div>
 </section>
 
 <!-- ============ 11 · RESEÑAS ============ -->
 <section class="resenas field field--crema" data-theme="light" aria-labelledby="res-t">
+  <h2 class="sr" id="res-t"><span data-l="es">Reseñas en Google</span><span data-l="en">Reviews on Google</span></h2>
   <div class="resenas__score">
-    <p class="serif resenas__num" id="res-t">5,0</p>
+    <p class="serif resenas__num"><span data-l="es">5,0</span><span data-l="en">5.0</span></p>
     <p class="resenas__stars" aria-hidden="true">★★★★★</p>
     <p class="t-label"><span data-l="es">En Google · 6 reseñas</span><span data-l="en">On Google · 6 reviews</span></p>
   </div>
@@ -442,7 +445,7 @@
     <h2 class="script visita__title" id="vis-t" data-lines>¿Buscas flores en Castro? Las encontraste.</h2>
     <dl class="visita__data">
       <div><dt class="t-label"><span data-l="es">Dirección</span><span data-l="en">Address</span></dt><dd>Esmeralda 198, Castro, Chiloé</dd></div>
-      <div><dt class="t-label"><span data-l="es">Horario</span><span data-l="en">Opening hours</span></dt><dd><span data-l="es">Lunes a sábado · 10:30 a 19:30 hrs</span><span data-l="en">Monday to Saturday · 10:30 to 19:30</span></dd></div>
+      <div><dt class="t-label"><span data-l="es">Horario</span><span data-l="en">Opening hours</span></dt><dd><span data-l="es">Lunes a sábado · 10:00 a 19:30 hrs</span><span data-l="en">Monday to Saturday · 10:00 to 19:30</span></dd></div>
       <div><dt class="t-label">WhatsApp</dt><dd><a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener">+56 9 6483 8490</a></dd></div>
     </dl>
     <p class="visita__line">Pide o cotiza tu ramo por WhatsApp</p>
@@ -461,7 +464,7 @@
 </main>
 
 <!-- ============ 13 · PIE ============ -->
-<footer class="foot field field--hondo">
+<footer class="foot field field--hondo" lang="es">
   <p class="script foot__motto" data-lines>Flores lindas, para momentos que importan.</p>
   <img class="foot__firma" src="brand/logo/firma-claro.svg" alt="Floresta by Almácigos Chiloé" width="4084" height="900">
   <div class="foot__cols">
@@ -474,7 +477,7 @@
 </footer>
 
 <!-- ============ PEDIDO (carrito → WhatsApp) ============ -->
-<div class="cart" id="cart" data-cart role="dialog" aria-modal="true" aria-labelledby="cart-t" hidden>
+<div class="cart" id="cart" data-cart lang="es" role="dialog" aria-modal="true" aria-labelledby="cart-t" hidden>
   <div class="cart__scrim" data-cart-close></div>
   <div class="cart__panel">
     <button class="cart__close t-label" type="button" data-cart-close><span data-l="es">Cerrar</span><span data-l="en">Close</span></button>
@@ -488,6 +491,7 @@
         <label><input type="radio" name="modo" value="Retiro en tienda" checked><span><span data-l="es">Retiro en tienda</span><span data-l="en">Pick-up in store</span></span></label>
         <label><input type="radio" name="modo" value="Despacho"><span><span data-l="es">Despacho</span><span data-l="en">Delivery</span></span></label>
       </fieldset>
+      <label class="field-in" data-addr hidden><span class="t-label"><span data-l="es">Dirección de despacho</span><span data-l="en">Delivery address</span></span><input type="text" name="direccion" autocomplete="street-address"></label>
       <label class="field-in"><span class="t-label"><span data-l="es">Fecha</span><span data-l="en">Date</span></span><input type="date" name="fecha"></label>
       <label class="field-in"><span class="t-label"><span data-l="es">Mensaje para la tarjeta (opcional)</span><span data-l="en">Message for the card (optional)</span></span><textarea name="mensaje" rows="2"></textarea></label>
       <p class="cart__fine">Los pedidos se confirman con el pago total mediante transferencia o pago presencial en tienda.</p>
