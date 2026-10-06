@@ -92,7 +92,7 @@ ISO = png_tint('dossier/png/isotipo.png', None, 400)
 ISO_INK = png_tint('dossier/png/isotipo.png', INK, 400)
 MARK = f'<img class="mk" src="{ISO}" alt="">'
 FIRMA = 'Silvestre. Elegante. Es Floresta.'
-URL = 'pabloignaciofigueroa.github.io/lafloresta'
+URL = 'florestachiloe.vercel.app'
 
 RECORRIDO = ['Precarga', 'Portada', 'Manifiesto', 'Ramos', 'Esmeralda 198', 'Comienza con una idea',
              'Ocasiones', 'Del jardín', 'Visítanos']

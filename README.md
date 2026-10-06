@@ -2,7 +2,7 @@
 
 Sitio de **Floresta**, florería en Esmeralda 198, Castro, Chiloé. Está hecho solo con el material que la marca ya publicó en @florestaenchiloe: sus fotos, sus videos, sus palabras, su logo vectorizado y el sistema de sus piezas gráficas. Se construyó con el método de 20 fases de la skill `web-regalo-cold-call`; la bitácora está en `_plan/`.
 
-**En línea:** https://lafloresta.vercel.app
+**En línea:** https://florestachiloe.vercel.app
 
 ## Cómo está armado
 | Carpeta | Qué hay |
