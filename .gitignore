@@ -1,2 +1,7 @@
 assets/raw/
 __pycache__/
+dossier/*.pdf
+dossier/*.html
+dossier/shots/
+dossier/pages/
+dossier/png/
