@@ -1,0 +1,642 @@
+{
+ "manif-1": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de girasoles, iris morados y flores blancas",
+  "lqip": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4ICYBAADQBwCdASoYABgAPu1mqk8ppaOiKA1RMB2JbACpI7DEwEB9oLsl3nxG55FNbmRvAxUXCbDhyDrS9aZuE+y+1LgryM5EEW0YgAD+0PhqmnY909nSh+qlUA0Voz3OD/qBwRlBVFbuANL8Y9JLyQMw/dgawnRblQA1Eu0IcwPL5C+o0l+AkKJtjHL03FEOBTC+h5bCUqXcSUAeiadUbVXhXnd7jku4GGP2tcWEME2xjMplkRdX8oxmblrZMn5aUuTaveQU9wgAq1PzYmZEPPlTjNnVNTLE2kzvp88UWGph3DDyyTZpjA4O5HHxHoSFLZ6wfZG9mcQCW7Hy25fN+RAAnBC2Uka6DtC5uz6xRsyzS/2OR+drfxVRgi3etcUHtaa6ZL3kDKAAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/manif-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/manif-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "manif-2": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de flores moradas y lilas frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAADQBQCdASoYABgAPu1urlKppiQiqAgBMB2JbACpFNo6gAIXBEJ3fk2bAb1mNL/8xutBelkiYAUAAP4iY+qiteAZ4tdk5FvEeFJjOGLr8FsRuu+HYb/mvl9vbeNcIzPLVCj108F36OPhvYVRdbvHpJonxUAUgGoDo4lL92oMlwpDwYIB2h6K8SfExR1gjVr9pGz5nZsAbPmh/VAy8mev6rUvcaWwHZ+qP1pE/ySCYn8SF4PQqdOZizcMP6xImrfagigSMTvnB0QWQpxXIUS4byKEo1g46AEapirrGsoDk7HvukS2vPqgDOnVYCIg8EvpWrHgfJ7fJp4AAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/manif-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/manif-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "manif-3": {
+  "w": 1350,
+  "h": 1800,
+  "alt": "Ramo de tulipanes rojos y fucsia en papel kraft",
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASoSABgAPu1srlIppaQiqAgBMB2JZAC1F0iA8zfkcASiPMdw7FI9IXm9b9dvzQAA/ulBvf0Q4ftIT4AKth/bAKTMg/YkFzJiAoFPP3Ku69Otk4pJGw9qfPwgvSg0HnGfcx4oA8L2F0q/XAScGFZLKg4GSWQ5uhMmZIQVGex9jg1wUPXNAiElqMY9NYWqvJQHTD6L8Lpg5G9UllCxJ7GY6iCCKP7WJTvmqDqo5XuSjjY9dhvOqlFsZMZrOPW1frKUZ5rHByc3sTDIYdGB4AA=",
+  "src": {
+   "800": {
+    "path": "assets/img/manif-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/manif-3-1800.webp",
+    "w": 1350
+   }
+  }
+ },
+ "manif-4": {
+  "w": 1440,
+  "h": 1501,
+  "alt": "Ramo de rosas fucsia y girasol",
+  "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAwBQCdASoXABgAPu1mqk8ppaOiKA1RMB2JbAC7MuiBiIxaRv5CJG6SB8tuVKVBQl/tAAD+d0YCPa7SbCNZ6ca6Ug1xUMeFtM5/fqZ7mR+y6husW1y1rBPucaod1gS0+dTMwsUWAq0EghbZkzGVwngqdB4OV2BvQvb1JzHAUI1junWb3jemY8+KwB1U3SvMUgMiaUKf6Hxxy6booFYn25okApDJ+SSMy0dU6/1HAIvS8k2FmCms9pMBj2/lG03f3kM4LMOYJJMBWJQ6mz0S4htUj9mdiRCU10VRxOfqTiwllInGCfj8fpbM2et2W04AAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/manif-4-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/manif-4-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "oc-ramos": {
+  "w": 1439,
+  "h": 1380,
+  "alt": "Ramo de gerberas, lirios y alstroemerias",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADQBQCdASoYABcAPu1oqVAppiOiqA1RMB2JbACxHy/Bp9xJxCeoSga0dOWmgnoVAmD1bgUuPhAAAP65D7mTnUBtM+BCsrkRT9VZxUTydxwfbpqBTP7sFmxZNu/m828gz0ac4GliCKPw+xF2/oEHjOCIazTQ4Ji1PTuHLEUtY/+SsQclv0xFF2lrHv5GXt4QTj9W+OA2i38xUwHz6rxy1usS4Jku3l8Wmg6vo3zLwL3owP70niO7bqNkdju5NOfI+gAzd4mlQcP7GZLjsikfxfQ3VpEIQw53ggA=",
+  "src": {
+   "800": {
+    "path": "assets/img/oc-ramos-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/oc-ramos-1800.webp",
+    "w": 1439
+   }
+  }
+ },
+ "oc-arreglos": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Arreglos florales en cajas sobre el mesón de la florería",
+  "lqip": "data:image/webp;base64,UklGRgIBAABXRUJQVlA4IPYAAADQBQCdASoYABgAPu1ur1KppiQiqAgBMB2JbAC7FRGGe1aOBp6/lWjx28DgkNrGBJqjnow8XZiAAP4mJlNNILSnnxLgUwV5NBm5Ki70YtODJZfZ7XYMD6gBKrfZN2U1bF0lsuF2V2SczZGQ90QnC+TgkndffIePW2U6R5VvDpRCAUp9/4FPrjRkNsSleIHV4HZKDK/dQxwwe4oYckaN5Faw3LLEqVFNfxqW3OPoLdlNyewltKzcw1a2e3F8IbubVhNoiGUmmOT6/jw98W3V9H7BfLrkCxnim4nnmK06lJfsxleuvErZPuVNmSAmdpduti3vs5FfAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/oc-arreglos-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/oc-arreglos-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "oc-regalos": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de flores amarillas y blancas",
+  "lqip": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAAAQBgCdASoYABgAPu1mqk+ppaOiKA1RMB2JbACxG4CMaGe1aQCbCkOl0cxeqmgdDykLqmJv3e/ilMAA/qZPtX7D8wuRUy/774eaJ4B9edFtg6pNGUF6P1h10+Ozeg8/HVDfhRehQgV82ApwSvnYhuliK6YLnkbx/eubkpF0twLbNamSTq1OTPkiwZBMdxzwWJ4VQF+QCEoAfcls95Jc17JnoRwyC/OSYyIReTKoTiFESR7DcGmaDLNU8K3pmZwnwOKiUvLM+oAJ14m83wHa7gJ/ODkP87ae7hKGMf/ih7o3jJHqDaZ/rIAA",
+  "src": {
+   "800": {
+    "path": "assets/img/oc-regalos-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/oc-regalos-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "oc-despachos": {
+  "w": 1440,
+  "h": 1501,
+  "alt": "Natalia en la puerta de la florería con un ramo de tulipanes",
+  "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAAAQBQCdASoXABgAPu1ur1IppiQiqAgBMB2JQBadAS15oGPlih9V1t39WL8QlTs7sg4AAP7cguayuD4fN1Hs6dv+/TVtNIQda6gE0O/YFRaVWYCrixntyCHcbanFraCEchOX8DwgQKP0QbNYtKmBAd5sr3S7MVe3n2TzMIJyHmzMKTFvPe6JrYT0bqSSaCnAY2qBD9OPtAObfUL5EJa92c/GzPyehKDoitWi5uqSeo6oEXXqwgNrCK9vJixfduTQ65LYlrpXx2guYB26UWCwAAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/oc-despachos-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/oc-despachos-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "natalia": {
+  "w": 1440,
+  "h": 1728,
+  "alt": "Natalia Torres Manzo sonriendo con un ramo de lirios, rosas y flores amarillas",
+  "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBQCdASoUABgAPu1sq1EppaOiqAqpMB2JbACdMtvvVAHEMN1YG4kYEuu0KnWrzjV6zn+8lhQAAP6+ERFAH2/malJptwg4Y5LB5joLLJnf63Xw3RUjvis+vh3i4/pevxzYRYiH/rF/sluZlKT2iCyFx6f5OOmDlJEKfaA1Xk7sSbh2m5ST+WZzSdPGeEJ1QMcs10ypfgQ/wugqAbGJ/rie+fguG/aYVIhYi93iRhl5oU+I869ODwIVO/phLEvExGdehRYtXFNekdMdNK+O215kP2C/VJBgnbeol8SXlGCwwAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/natalia-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/natalia-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "natalia-2": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Natalia en la florería con un ramo grande en las manos",
+  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAADQBQCdASoYABgAPu1kq0+ppSOiMBgIATAdiWoAwqEgKkD32ieY+UIxOBoqEXkkd11F5B+vXZPAAP6en9100GU45kF0HI5elk2Ojiagf/oIhVUdDdCXLKYwCNE/TuNWtN1JtnLrFJIMfFIY+7g+AlYCHZNSDCqrvGw+V77DMUxqhQ6LW0D9Jv6u3SuueYHrdrWA1DuW6RJdoSnsLr/P2cJ/b/QWaczbPsdOVG1M42DDF+TCGU135eavREPu0HDMgm9WDpSqepPwBGAoNJ8bKjcRCggAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/natalia-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/natalia-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "natalia-3": {
+  "w": 1080,
+  "h": 1341,
+  "alt": "Natalia con un ramo de girasoles y rosas",
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAADwBQCdASoTABgAPu1sqlEppiOiqAqpMB2JbAC32NoJtjekcQJOMlVtQSG3ybA+OhBmiq37GiBQAAD+vmRTEdqLz9MUv6fduWEDQCDsRa6GuExJKvHyJqTq+D/kp36GanlkCXUsbFAI8nBd+oRCsrQboIWWaoDrmsw0y2Zt+icncjaTdllLmkBOQDFlqaoBSADe2qBwrF8gT9nuxd8kkMx06xCitz7BFvqRg0utQRErzcyKeg3hqdsplJEo49nAWL546iycnca87UeFMm3RZIx+QAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/natalia-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/natalia-3-1800.webp",
+    "w": 1080
+   }
+  }
+ },
+ "invierno": {
+  "w": 1440,
+  "h": 1494,
+  "alt": "Ramo de girasoles envuelto en papel kraft frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADwBQCdASoXABgAPu1oqU+ppiOiKA1RMB2JbAAjzPeVV+BpPmjgsh/2UWs1B+4AMJjPle/VyfVQAAD+FjdJJsP7BUbVrsOFh0byzvHVlYNURmrx3NRw2ESbGP4vYqGnu6llkHLjCxSF2/OXM4RNX/96ZamfMAffKSPuJJAVLbs2UIZpTYl852MRWM+BGC9eCYjAUt2i+ArNQOBEDWiEwwIeCghGSCni7lM4KPyZJ5Kx9QLjdq5Vr3bcRWtlLREkk9PcdtAVcZfszxQ2DQknVD+maSp1Oz8zjtXju3XBR9VCBXmPRXir+FERT56a+Bc4UrUAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/invierno-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/invierno-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "visita": {
+  "w": 1350,
+  "h": 1800,
+  "alt": "Fachada verde de Floresta con su letrero redondo y un ramo rosado",
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoSABgAPu1irVAppSQisBgIATAdiUAXZBU4ILegq8xSYOrmEHyj92mZwAD+6UM312Ewar+XkHCmff1hMjPxz5UhedZ7P2OlleQ9MDLOnW/VX6IcZhD9e2Ts7Nx8rfOtY3zursfAZ4G4KkIWH6fEJiz1ryihFEHVfr+zE/+xBbdMO7kMgMeheo8z8x8ZRTCx6jKXkypGYCZnHyFw0CFwkTW8DcFaRHD+ozU0wAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/visita-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/visita-1800.webp",
+    "w": 1350
+   }
+  }
+ },
+ "orquideas": {
+  "w": 1440,
+  "h": 1801,
+  "alt": "Natalia con orquídeas en el invernadero del vivero Almácigos Chiloé",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADQBQCdASoTABgAPu1ur1IppiQiqAgBMB2JYgCxH5Bv/l2/EQPvT7r1KVxwpUIM3ZZtsDno0EnoAPZ1TFJ7tLj+AGqAzYw5tG5fQEvBnr2nJHdTLoLXwkKL5XB3r+qZ1dgKo2IkkS4EC3EGihR1UHuZaZK15rkqLK6CgvAokjKLI2VJDyhRaDXFtvR+4XcF5jPFosjvaA5iqe8uHLzlkmR3ZU8Q2WZXm573VSARepRCyFaqvmpwgWrN060IJtnZ/CDDMbrPj1rpSeR8bC63PswCPcfTyvaAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/orquideas-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/orquideas-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-1": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Planta de interior sostenida frente al letrero de Floresta",
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBQCdASoSABgAPu1irFAppSQisBgIATAdiWYAtRriNtAmICJdpSPibCVDv2+6dq0/E7NAAP4iY9jL7JFhknUDrzR4kvh1j4LGGH0x+FyzKt3pAxRjpiDAaMvjA/XEooQPi2VP7BGbFiri2uSpZh9FEwGPsZpg7ZcyXaEhNtOK74Lia1XshmMnI97ZugWujWSX9D5lxak3tE8qVnjeJ+Th3PzB6ZQTYYdBm0d2WqebAkmKCcn+9nWXFZGmk+87KjwtxoAA",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-2": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Maranta de hojas rojas en macetero frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAQBgCdASoSABgAPu1osFAppaUiqAqpMB2JQBdmXqUhxMQidC8yWK2pFyjS13UBDNuverJEGxbnsAAA/hYrMOSy9kvEWbpiK76TX0JuWLED/IR92rxlJTnoYtf7l8WDAjgJikbmYPaSpyMEFcEvawQUkkH0YYR+/WKxmcfoYRRQmhR3ELBAn/T/y0a/CZHDCibfGSTgi+5ndzWaxh+dbyyC2EFK5z/4nRm2Bialq/diSTPs6fC54Ka8pqkzxe6AHQ2isiRM0hrRZI2/7gAAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-3": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Planta de hojas verdes en macetero frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBQCdASoSABgAPu1qr1CppaQiqAqpMB2JYgCzkfqgGxK+JWXrIp5Ho1p7j6+O7TkgaE+QAP4i5snTKMgxwAKy6yJBaZurloHteemHsfaPLDMFZx4wjnnw56lkKVYt8dKP4ieTTRFkqiq+GjM6G6qSVehW8mnepQB+DS0SfhTQk753NK26r6Lk3oSdfIpq37887WT9XsLUp3GZWBPUwBjHmq7haKwRAUQi6iHYJBMAKM0hU2G7Ok+f5VZUQAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-3-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-4": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Begonia de hojas manchadas frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAABwBQCdASoSABgAPu1sq1EppiOiqAqpMB2JaACuPKnqQAcNs69wtty/3kp/TKR+OtUBpCwAAP1GYSY9xjhEmP4NFFaUOVhGOotojeHW5nDOEGIUuW//PxUi+u4TcyagbDrbc6Zam84UMy46RHkfRC63JeDqWNrqqiCDOfaG7vQA34cjMJGT7svIlzv8K6o8FDwWf2WpduMO/WoNYVhx1G5KupV2UOS/4UTtzkBpxRoq/OgdkSmDVrS3Rk6+krznURm8XYTvXR9QVUfDQBVx2Wx9f9QAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-4-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-4-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-5": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Pilea de hojas redondas frente al letrero de Floresta",
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoSABgAPu1irVAppSQisBgIATAdiWYAtsgLeku8rDRSBlQAfwW52wCpTR2vAAD54zkwRjSxTqLMXpKYoL4dqY9LFdEl8LJGXvaGp3wm0Jl9pHGxQeDkFCLtUGifjvbpAaneRt/vDd2AJwB4AST8sXdVr/Qr5ryOK4CnY3W+GWIMTAEPIlLK5AL4h8Ignx34W4cxrvfvlK+yjsPmCX4S5vVBeOhro81usAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-5-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-5-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "planta-6": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Potus en macetero frente al letrero de Floresta",
+  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABQBQCdASoSABgAPu1krU+ppSQiMBgIATAdiWQAnTLogO3U0ckOrCqZ3M4ifqMA9qss4AAA3YtE2l77I8tcsv0L9YicXlfc6pGLTLf3OzTvmbNJ34xzQvYB3Qst8tDnq5v8/xC+qHRxyFOuEBGzNXJvepqqinSuZdycVS7dQS6ftNn8gFHCEMY4C/mvmti9rBahFYX+4uDCoKk/JuhxVl2RdnINgikBWzp6LW1O/6os7nQK0wOrXxDoqpojaAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/planta-6-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/planta-6-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "ramo-silvestres": {
+  "w": 860,
+  "h": 790,
+  "alt": "Ramo silvestre de flores fucsia, rojas y amarillas sostenido en alto",
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADQBACdASoYABYAPu1mqk8ppaOiKA1RMB2JbACdMoABiTNpJO9v1rfVvG8IqIoQYAD+jHBcM+fntMKXD1IdWjxMSUuoHdU95hfySZ+xM+crWwSb2MUGDDNYU8ce2HBjv8f5GlKtfK0YrlHo23CTm0NdfgOOGJwcBxwm6WUL294KHqu2NSKDRj6291DvcH9vGiSLuZagIvCC57k3U0cAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/ramo-silvestres-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/ramo-silvestres-1800.webp",
+    "w": 860
+   }
+  }
+ },
+ "ramo-rosas-rojas": {
+  "w": 860,
+  "h": 790,
+  "alt": "Ramo de rosas rojas en papel rosado sostenido en alto",
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwBACdASoYABYAPu1srVIppaQiqAgBMB2JbACsABBIyqEUGg+cuDTbodfjRblUEAAA/oz2aYpEBC2RgjI2YWrlWmuB/G6Ctu8PwE0duXt6/dPUfeYPKP44j5xz4pOml1fSfQGdpbKROBaw877/A1cT+Owgv7VQXdkfvLEXh055dplgg5h2Dj9eZLbjAbL6WaVleKgHLhqgAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/ramo-rosas-rojas-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/ramo-rosas-rojas-1800.webp",
+    "w": 860
+   }
+  }
+ },
+ "ramo-girasoles": {
+  "w": 860,
+  "h": 790,
+  "alt": "Ramo de girasoles en papel kraft sostenido en alto",
+  "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACwBQCdASoYABYAPu1ur1IppiQiqAgBMB2JbACdMoR1cKlBMW9XDjMHhAUb0mK/8LtlLjiZKwAA/ouWtWdOJbtuU88titYrB+Z2anLJaMpbroTKw2QppemCGnBPiHrPpLO5s2hqO81mXQojgAXNm9mGjimhSVq4SnGi7sWqG+ODaXp7jkiv1VXrs24hZ9NtKWQmJm4bfhN6NAheHYJBqd9RwE8d+lnUjODgq0BGKBQ8jdOpfHdf7HHy/i5Qp3P0G9uVbj5AgAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/ramo-girasoles-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/ramo-girasoles-1800.webp",
+    "w": 860
+   }
+  }
+ },
+ "ramo-rosas-y-girasoles": {
+  "w": 860,
+  "h": 790,
+  "alt": "Ramo de rosas rojas y girasoles sostenido en alto",
+  "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAACwBQCdASoYABYAPu1qq1EppaOiqAqpMB2JbACxAQAFP6EJz/cJsQCZT+yCHe3L01Sc4FkCfgAA/ozukKnAirfErWaHrY6/bI1CpLRxiPogGBmscFSGBb3y9qBamXHvy4aPGYBEhlr4kH7qEIh8goA8NgjuU//ZP66vmVYmf4mS+42SprSj7Q1UUL09980/Jp2z+fQ6PJprN52W4eWAXChGDTNvSic4tUqXYLgohT8IgDEVIp5hCB3WArULDDKgi0/djc6wihMx2uYbgVYAvm7wC9GALGTSFsGR8vAA",
+  "src": {
+   "800": {
+    "path": "assets/img/ramo-rosas-y-girasoles-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/ramo-rosas-y-girasoles-1800.webp",
+    "w": 860
+   }
+  }
+ },
+ "fachada-01": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 1 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBQCdASoRABgAPu1oqk8ppiOiMBgIATAdiWQAvnqAAR9VkcbePmtfETnd+tcrB+gEAAD+u7pN6wd5eDJAkyXtmHiWNieCYCwS1jzb4L8cyElCc9CbNFI3aVZsxi39lZCaHPqTMAcZCUPFSDfHiX0BrvJ1HhEUBjsbgCZZLxnPkgomnUwh/OijHM14b9iNOXGEQxsmjj1luozI7EyLEJazfxkXsi97qiUwZYPlpyAAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-01-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-01-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-02": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 2 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBQCdASoRABgAPu1kq0+ppSOiMBgIATAdiWYAuyCrSbY3gApQ9qAsvown3nZF4bt7336olSHAAP7N5Tbg2+AmXMjnAdqJkcZjPMmna7bDvb52MltDXDNAuSasJ2/tEsvP9TNDHWx3+xcm6XCor3haRq/nldN3W69zkvlTkYC/2rAV/BIMHbkQ7/GQSaInDnQpxHFSFtzkOIcI1D14twMnzHfjSZqsGtaoHzTjitXQAAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-02-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-02-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-03": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 3 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBgCdASoRABgAPu1irVAppSQisBgIATAdiWgAuzKBr/4BuIbLkFGyIDcyq417kWY+9YVcdX8nWQAA/ulCj0Agbdu7Zzf/PLaf9Lc36X+suGiUf7YlyfF0iRAQ4os1hk8/Y828Pfi6+nhSXdk8iYGIDSVjYyzjnTBTW8//lIngX9//qkRJbJ8ymxJFtYZeEzZyxkMBfh0oT/vfYlkI+ZuSykOGERBG06La/fhgRkKtrubgmBjJrH8Xf8DISBbxpwAAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-03-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-03-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-04": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 4 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAQBQCdASoRABgAPu1iqE2ppaOiMAgBMB2JbACdMuutQERW2P8hHHpcWdlLjiy+NVDAAP7ZU9PQ3l+8d9AmfO8A819hmdWdpXzOGqJn4AGRVCpfZAXtOtXd6FY90bK6rcdfni0GRRG7DJAH3kVw+MCKMM2FQ3b/dicTMX2JWFzhTycUzqT1LUZiNuzQOjZIL7dcfnHMLk5/MAsvI/DadiWEmxtO0Sy/HCOV4AAA",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-04-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-04-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-05": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 5 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAAAwBQCdASoRABgAPu1qsFAppiUiqAqpMB2JbACpJzQ6SBY/yDG2ptiqYXOczNd2MpltAAD+5FkRH7aPYK25i3G7Oruweh0QomNDVrihvJNYOMIGpg/LHip312N+wZfH2W9qQ+cOFPxPEW/mZe7DwyVzUJ7D3giAZ9PlQDq7//k5JFmOv/ycj2P99b1kZXTHnUO4IvDZukMvaydDrWs6H1QEFPLsuuxKN66eNnvddPYpEKyflaT8g+E+tqto0/q5ZQD9uMVzBGl7H7yKkIJtFSEaJ1AAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-05-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-05-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-06": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 6 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABQBQCdASoRABgAPu1krFAppSQisBgIATAdiWYAuzL1NtAY7pcC0R1i7q+4Av6DVLLYKAAA/s13JrO0TiARM+tsOaOArU79E5EQmACUg/XFRdfC1Vv+8I2F2X0p5MEAnFUoaM8k8Kl0xUOXuId9yVPkJ1sU+8Qf3ac3DJviq39BqLG1zug4UE2/vrccf+n6LjDCfemg4/k8zp70xKSBo6WVs8hxCBa/owZrxERg/lve6ofhfz7x4AAA",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-06-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-06-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-07": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 7 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACwBQCdASoRABgAPu1srFEppaQiqAqpMB2JaAC1GzL1Xn/FsgDNCX0fev0EL6rza5+G63Q2wAAA/tpusP83R8uXQ44g33NWtlSVQnGfOJRIdv0gPY4j7/uhCebW5x2dsE0tJUtMxvYzbsE+rq6SOQ+JCXBnWMNOHd2xkdDRPYXFKMFN4nhJcq03eL/OWBkDJh95GZDJk7QhhxC75P7Ib6U9v6N2j+RQ5mEpHOSy9T+eBBO/WaarvPvHyVZetUs0S/UG1EPPIA1wK9EyMNw/q6cfggXZPVAeQVnIAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-07-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-07-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-08": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 8 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAACwBACdASoRABgAPu1osFAppaUiqAqpMB2JYgCxH2ckfCC5TW9Iusah43gVYrIAAP674yCYWQkHqYduHj9SYHyhI3FcfwIyRbQCkp2iS72g97nS/EcXoNvlDkmv+KQUjRdYLFw6wld9j6SNMbdOvp+2btPB6llhOxKsbGtOuITEtA3tAc78qPHMOfhnXSSWNt/RdZH/KCAFvmbAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-08-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-08-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-09": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 9 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAADQBQCdASoRABgAPu1irVAppSQisBgIATAdiWwAnTKEdm34AthMl4Ug8bH5FqxV/4Qd8+fwXb/4AP7aY3zCPRlF6+fqcaFFT/dIuq1+JZ3v/EqZAtRxB1G/qpSyFduT8fBABxfs+pr+VaPRVHlGiPr9zyljV1xg0hg7PIQe/PDu/RRF7JLNm+s73mUvjVAEgTixur7v7im27fuJzSYtcDyeQTWo2ed6eZMN430etgIguU3GhK9XU/80f0iiy/KjIpwN14E38ec5B4dqVRVHyZ/PSWcBoN2uIIIYBBig/ovR6UYAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-09-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-09-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-10": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 10 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoRABgAPu1krE+ppSQiMBgIATAdiWYAtRror0AMM4kw7CaWsySbIIeqMFUVwAAA/tpjfLDTJ8JIr/q7tpi55CgLyL/wGHKfUHfyTEKBgHVFNTJQlpURjXiTExOpWYBrp1R6jctAAi84yJ6lGpMMtZF8gKBzdhX6Khxg90Wi7yKrWS3VOkSrINAomDOjn0jkg2KXvUWlpvVzP8wrRh9FCjfvjOEmAAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-10-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-10-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "fachada-11": {
+  "w": 800,
+  "h": 1120,
+  "alt": "Ramo 11 de 11 frente al letrero de Floresta, Esmeralda 198",
+  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAAAwBQCdASoRABgAPu1iq1AppSOisBgIATAdiWgAv2r2fH7QFIGCBEN8luioUtkfMVwQAAD+u87shcn1jOAz7iBg0Gnplno02LCDvIbsr9nx9TvywhYi3r8THtFxh4e+1iBDBwnJf/4geQmKbinjC0dyGGVFGiBNOMSrFPiy0l2b1FHrcfd8PVOVpRdk0UxneZZEXGQaYrzEcwvK4hmjio+1o9XFMOG4wKgBQuXAID59EERg+oo5b36ZO8I5XAAMAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/fachada-11-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/fachada-11-1800.webp",
+    "w": 800
+   }
+  }
+ },
+ "poster-portada": {
+  "w": 720,
+  "h": 1280,
+  "alt": "Mesón cubierto de flores: crisantemos, margaritas y girasoles",
+  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoNABgAPu1iqU2ppaQiMAgBMB2JbACdMoR8eBmOHgRkzA2b9gAA9h6wv8nBh/TO4s0P2RCixMKEm8tAaadsl9x/un5l5RgSm6yXY8ZOKvS235rwDqAZu1Ex2wjWYOyVFNiLaGyZ6zWBAXFgODtv1Ph1fkD72RujfOQZOzRxu+LnFjlbCKAFk4YTIPexTgAA",
+  "src": {
+   "800": {
+    "path": "assets/img/poster-portada-800.webp",
+    "w": 720
+   },
+   "1800": {
+    "path": "assets/img/poster-portada-1800.webp",
+    "w": 720
+   }
+  },
+  "video": {
+   "mp4": "assets/video/portada.mp4",
+   "webm": "assets/video/portada.webm"
+  }
+ },
+ "poster-oficio": {
+  "w": 720,
+  "h": 1280,
+  "alt": "Natalia arma un arreglo de flores blancas sobre el mesón",
+  "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoNABgAPu1iqk4ppaQiMAgBMB2JbAC+gUAA0lyOYJS5AT+VZ2AA/qK3DhAdopemE+FIfNbjme0V2Mt1L8T2b3L3cr42Jj1Tyy2LaFgXh2f33T056NFBNRO2ckEt0KEvl7YQ1NFvYPwnfNGZU3fv2GVAGsUcbn5m0VFT5T+9fHOGUrNLskbKRIoAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/poster-oficio-800.webp",
+    "w": 720
+   },
+   "1800": {
+    "path": "assets/img/poster-oficio-1800.webp",
+    "w": 720
+   }
+  },
+  "video": {
+   "mp4": "assets/video/oficio.mp4",
+   "webm": "assets/video/oficio.webm"
+  }
+ },
+ "poster-jardin": {
+  "w": 720,
+  "h": 1280,
+  "alt": "Helleborus del jardín del vivero, frente al letrero de Floresta",
+  "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAwBACdASoNABgAPu1iqU2ppaQiMAgBMB2JYgCsAB9C+IMaw7IKK0Zln4AA/p7ttOpzo+Tn/gLDS8Iu8ql4PUSEm2LSVIWHMlrXK8Hst/FchEy11+Ne+/ZM1aEPIMl3PTP2euzem6mlswrppKRnoiehNdwOUPa3ZW07LqJ+f5ZN34VKMaLYN2RR6pactrEaRYO0MqPW1zS5YIM3z4AZwAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/poster-jardin-800.webp",
+    "w": 720
+   },
+   "1800": {
+    "path": "assets/img/poster-jardin-1800.webp",
+    "w": 720
+   }
+  },
+  "video": {
+   "mp4": "assets/video/jardin.mp4",
+   "webm": "assets/video/jardin.webm"
+  }
+ },
+ "poster-corona": {
+  "w": 720,
+  "h": 1280,
+  "alt": "Corona de flores en pedestal frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQBACdASoNABgAPu1iqU2ppaOiMAgBMB2JZgCdMoMrZDvhcToX19yeEiLTz7AA8kV2b0gqmTyesWDOHOdVSHsMUILxWHpo3T+EZSpTur22ZXahQxJ65tQO5iR7UgFm2XFZloDDUrgoi1TWP2EAT/qUfEQFEl4lffdqJQBwrPaSBk0AAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/poster-corona-800.webp",
+    "w": 720
+   },
+   "1800": {
+    "path": "assets/img/poster-corona-1800.webp",
+    "w": 720
+   }
+  },
+  "video": {
+   "mp4": "assets/video/corona.mp4",
+   "webm": "assets/video/corona.webm"
+  }
+ }
+}
