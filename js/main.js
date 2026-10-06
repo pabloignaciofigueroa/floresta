@@ -836,7 +836,7 @@
   gsap.fromTo('.reel', { opacity: 0, y: 90, rotate: (i) => [-3, 2, -2, 3][i % 4] }, { opacity: 1, y: 0, rotate: 0, stagger: .1, duration: 1, scrollTrigger: { trigger: '.reels', start: 'top 85%', once: true } });
   gsap.fromTo('.resenas__stars i', { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, stagger: .08, duration: .6, ease: 'back.inOut(2)', scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
   gsap.fromTo('.resena', { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
-  gsap.fromTo('.plant', { opacity: 0, x: 60 }, { opacity: 1, x: 0, stagger: .06, duration: .8, scrollTrigger: { trigger: '.jardin__strip', start: 'top 90%', once: true } });
+  gsap.fromTo('.alm', { opacity: 0, x: 60 }, { opacity: 1, x: 0, stagger: .06, duration: .8, scrollTrigger: { trigger: '.jardin__strip', start: 'top 90%', once: true } });
 
   /* ---------- conservar la posición al cruzar el quiebre móvil/escritorio ---------- */
   desktop.addEventListener('change', () => {

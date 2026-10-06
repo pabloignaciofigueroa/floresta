@@ -491,3 +491,20 @@ html:not(.js) .loader { display: none; }
 .plant__cta { translate: 0 0; background: rgba(47, 34, 56, .82); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background var(--d-fast) var(--ease), transform var(--d-med) var(--ease); }
 .plant:hover .plant__cta { background: var(--ink); transform: scale(1.03); }
 .plant--vivero .plant__cta, .plant--vivero:hover .plant__cta { background: var(--frambuesa); }
+
+/* ---------- v5.2: Almácigos Chiloé, con su propio material ---------- */
+.alm-wrap { grid-column: 1 / -1; display: grid; gap: clamp(26px, 4vh, 40px); min-width: 0; }
+.alm-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px 40px; padding-right: var(--gut); }
+.alm-head .kicker { flex-basis: 100%; color: var(--euca); }
+.alm-head__t { font-size: clamp(1.7rem, 2.8vw, 2.8rem); max-width: 26ch; }
+.alm-head__t em { color: var(--euca); }
+.alm { width: clamp(220px, 19vw, 300px) !important; display: grid; gap: 10px; align-content: start; }
+.alm__media { aspect-ratio: 3 / 4; overflow: clip; border-radius: var(--r-md); background: var(--rosa); }
+.alm--video .alm__media { aspect-ratio: 9 / 16; }
+.alm__media img, .alm__media video { width: 100%; height: 100%; object-fit: cover; transition: transform var(--d-slow) var(--ease); }
+.alm:hover .alm__media img, .alm:hover .alm__media video { transform: scale(1.04); }
+.alm__cap { font-weight: 600; font-size: .95rem; line-height: 1.35; }
+.alm__btn { justify-self: start; padding: 7px 13px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: .74rem; transition: background var(--d-fast) var(--ease); }
+.alm__btn:hover { background: var(--frambuesa); }
+.jardin__strip .swiper-wrapper { align-items: flex-start; }
+@media (max-width: 899px) { .alm-head { padding: 0 var(--gut); } .alm { width: min(60vw, 260px) !important; } }

@@ -846,5 +846,53 @@
     "w": 1440
    }
   }
+ },
+ "alm-1": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Dalia roja sostenida en la mano en el vivero Almácigos Chiloé",
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAQBQCdASoSABgAPu1orlCppaQiqAqpMB2JbACsAA9rh2pLTVDVOBHiXhqgLH6nPSAAAP7uoKGYHRpfIJ/R2HEKMmaKMBY/FBsgwkQ7RnKwCz4DNv1wAlKclkOjjou0Ca3iuvYuYaeAKnlRZfTcMwwSeIQPFIZT/4dF4rlco7u753t9uX8wli0cQaQey+vfwMij+yCBXor8Oi5a59fWS/qZph7LsP7HcAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/alm-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/alm-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "alm-2": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Rododendro morado en flor en el vivero Almácigos Chiloé",
+  "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAADwBQCdASoYABgAPu1urlKppiQiqAgBMB2JbACdMuu6LIAAOG0xvzs2sZ1ez+eEbTjeL4p1NHJzAAD+qLaKNahMmUKRZ2QcT+CE7tDJ6vBjstd38oFQfzOGcfKj746YeWmTAJ+KkhqsnAH1MG+S5bJl+rxFuDQlRYuHexbnOyjJzG550Au3BsnSftfEPm+/NUyMHqkORaSFyX9x9+ZRx/6yhzCv5qBv3SgI3X/RzAgEo0Hujj51xdR0lYCQk4gwjJQ9huL2qeCh3+jY6up9oTiYyi+N6nkR0p4ITr1XIrxeV2wOpMBS9xQzMtwUcAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/alm-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/alm-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "alm-3": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Rododendro fucsia en flor en el vivero Almácigos Chiloé",
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBQCdASoSABgAPu1qrVCppaQiqAqpMB2JbACdMoSCv8WAuDK9POaVhJMn5gt6qJgIiZQ3gAD9HMP+b7+Cgd30/wZrG/3sdw4wGWlOryBQxxHo7Hs46NgBX9phV/IQuGoXi++uDa7BUfMCfBi69JefeT7VD0YvilFe2UstyDs1waWwzxMFsqikfWeVFtBD0MfHAd1bt9VHxonFeUDHJA0F68TbKyyd6SqEgUPdVF/sjEdAd85wAoYAa4AAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/alm-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/alm-3-1800.webp",
+    "w": 1440
+   }
+  }
  }
 }

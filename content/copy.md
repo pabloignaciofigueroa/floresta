@@ -175,3 +175,13 @@ Barra: Ramos · Esmeralda 198 · Del jardín · Ocasiones · Visítanos. Menú: 
 | Pedido · retiro | Los retiros en tienda pueden coordinarse en horarios específicos. | [PIEZA Debes saber…] |
 
 Videos v5: ratito (Dal1L2VhFpw), vitrina (DWgtaCRAPFB), letrero (DQ0IaMAgDQO), medida (DXVVyQqhF3D), matrimonios (DTonzAXgLkC), carterita (DN1tVVeQADZ). Sin IA: solo material original.
+
+## v5.2 · Almácigos Chiloé (material de @almacigoschiloe, bajado desde el Chrome de Pablo)
+| Uso | Texto | Fuente |
+|---|---|---|
+| Titular | Hay lugares que invitan a detenerse, respirar y reconectar… este es uno de ellos. | [IG-alm DXK7qcBERv1] |
+| Pie | DALIAS que se roban la mirada (video) | [IG-alm DS2YdOqkcb6] |
+| Pie | ¡DALIAS, DALIAS y más DALIAS! | [IG-alm DTiL9X9ETwm] |
+| Pie | ¡Los rododendros están en su mejor momento! | [IG-alm DQobKvtkX2k] |
+| Pie | Gracias por acompañarnos una semana más. (video) | [IG-alm DaG14tbxq6y] |
+| Pie | ¡Así de soñados están nuestros rododendros! | [IG-alm DQFsU65jVtf] |
