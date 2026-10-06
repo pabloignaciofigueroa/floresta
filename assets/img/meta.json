@@ -638,5 +638,181 @@
    "mp4": "assets/video/corona.mp4",
    "webm": "assets/video/corona.webm"
   }
+ },
+ "hero": {
+  "w": 1440,
+  "h": 1631,
+  "alt": "Ramo de rosas rojas con gypsophila sostenido frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBgCdASoVABgAPu1srlKppaQiqAgBMB2JaACsMzFvqi2dzX+265lZ6rQ9eP432uQ4cKI5SgiSIAXoAP7sJPqnDgy/IVbJve6hPRrm1iQ5KEvAvNRIlXPJel0ioLh7nG4irVOlxM7EB6D/0Uy/MeatrjrItKFx3/MJ48TPyIf5ZCVpLa0qcL3LaREotekYrq9wpteV+sLYj0DNaovDKHIPVD6F0Rj2JvkplEOsJuWOk7OOSGJ+zc9XiUGSj1k25623XmVjh4bLMTL6uEQK7CxWUhQ68EaJrVk+FhBD2X901Bg4AAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/hero-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/hero-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cont-1": {
+  "w": 1440,
+  "h": 1794,
+  "alt": "Ramo de crisantemos fucsia, alstroemerias y rosa frente al letrero de Floresta",
+  "lqip": "data:image/webp;base64,UklGRgABAABXRUJQVlA4IPQAAABQBgCdASoTABgAPu1srVCppiQiqAqpMB2JbACdMt1uunHsmor1Uwu+KyCusNY4DHeg9w80KvzuvyUNAAD+owZD5Zu04uj4hY7ytzzRVgwLjuF0eJjnuBNrzRxVTeCHnSVzApH77fh1W9EcGcczNArwNxHJk2DEwvzFztS3Q0549SvWTc4sdhsfj5PhesdcNHcuR62UwrszoBByNHjACIY5PKGgp4zORJ+SRFFgQ8519UXz+sVKSIR3a4FdR68aORqbEwRnAEyPotFWtaAxF9uQKm0Qy9LSpY8GYl9xiQOL9ZcEGJqNALZ1snyMtYMqAxpVoAAA",
+  "src": {
+   "800": {
+    "path": "assets/img/cont-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cont-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cont-2": {
+  "w": 1440,
+  "h": 1889,
+  "alt": "Ramo de rosas bicolor, margaritas y dalias frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAADwBQCdASoSABgAPu1qrlCppaQiqAqpMB2JZgC1GuI29n/AQP+pieteDkWP6b9TO0TEpEacjJhVIAD+2rbHe295C43ccmBVPJ/A7I9It7YglokNMrhzuMVL9xkfLkQPOAU19d4LCcOJpHq/+AF4y0xd6AfQVA8v3MxQMphD+2MkNKZmx6oWnDjRQBgxFxsCoJrD3AAmQUKEk5jiPi9G4Bz6jQeqFRRi7o6d+tfd0ckt+/5Z4EoUYegyDvpZAhWo9XYAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/cont-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cont-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-1": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de girasoles, iris morados y flores blancas",
+  "lqip": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4ICYBAADQBwCdASoYABgAPu1mqk8ppaOiKA1RMB2JbACpI7DEwEB9oLsl3nxG55FNbmRvAxUXCbDhyDrS9aZuE+y+1LgryM5EEW0YgAD+0PhqmnY909nSh+qlUA0Voz3OD/qBwRlBVFbuANL8Y9JLyQMw/dgawnRblQA1Eu0IcwPL5C+o0l+AkKJtjHL03FEOBTC+h5bCUqXcSUAeiadUbVXhXnd7jku4GGP2tcWEME2xjMplkRdX8oxmblrZMn5aUuTaveQU9wgAq1PzYmZEPPlTjNnVNTLE2kzvp88UWGph3DDyyTZpjA4O5HHxHoSFLZ6wfZG9mcQCW7Hy25fN+RAAnBC2Uka6DtC5uz6xRsyzS/2OR+drfxVRgi3etcUHtaa6ZL3kDKAAAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-2": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de flores moradas y lilas frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAADQBQCdASoYABgAPu1urlKppiQiqAgBMB2JbACpFNo6gAIXBEJ3fk2bAb1mNL/8xutBelkiYAUAAP4iY+qiteAZ4tdk5FvEeFJjOGLr8FsRuu+HYb/mvl9vbeNcIzPLVCj108F36OPhvYVRdbvHpJonxUAUgGoDo4lL92oMlwpDwYIB2h6K8SfExR1gjVr9pGz5nZsAbPmh/VAy8mev6rUvcaWwHZ+qP1pE/ySCYn8SF4PQqdOZizcMP6xImrfagigSMTvnB0QWQpxXIUS4byKEo1g46AEapirrGsoDk7HvukS2vPqgDOnVYCIg8EvpWrHgfJ7fJp4AAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-3": {
+  "w": 1440,
+  "h": 1501,
+  "alt": "Ramo de rosas fucsia y girasol",
+  "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAwBQCdASoXABgAPu1mqk8ppaOiKA1RMB2JbAC7MuiBiIxaRv5CJG6SB8tuVKVBQl/tAAD+d0YCPa7SbCNZ6ca6Ug1xUMeFtM5/fqZ7mR+y6husW1y1rBPucaod1gS0+dTMwsUWAq0EghbZkzGVwngqdB4OV2BvQvb1JzHAUI1junWb3jemY8+KwB1U3SvMUgMiaUKf6Hxxy6booFYn25okApDJ+SSMy0dU6/1HAIvS8k2FmCms9pMBj2/lG03f3kM4LMOYJJMBWJQ6mz0S4htUj9mdiRCU10VRxOfqTiwllInGCfj8fpbM2et2W04AAAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-3-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-4": {
+  "w": 1350,
+  "h": 1800,
+  "alt": "Ramo de tulipanes rojos y fucsia en papel kraft",
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASoSABgAPu1srlIppaQiqAgBMB2JZAC1F0iA8zfkcASiPMdw7FI9IXm9b9dvzQAA/ulBvf0Q4ftIT4AKth/bAKTMg/YkFzJiAoFPP3Ku69Otk4pJGw9qfPwgvSg0HnGfcx4oA8L2F0q/XAScGFZLKg4GSWQ5uhMmZIQVGex9jg1wUPXNAiElqMY9NYWqvJQHTD6L8Lpg5G9UllCxJ7GY6iCCKP7WJTvmqDqo5XuSjjY9dhvOqlFsZMZrOPW1frKUZ5rHByc3sTDIYdGB4AA=",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-4-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-4-1800.webp",
+    "w": 1350
+   }
+  }
+ },
+ "cinta-5": {
+  "w": 1440,
+  "h": 1440,
+  "alt": "Ramo de flores amarillas y blancas",
+  "lqip": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAAAQBgCdASoYABgAPu1mqk+ppaOiKA1RMB2JbACxG4CMaGe1aQCbCkOl0cxeqmgdDykLqmJv3e/ilMAA/qZPtX7D8wuRUy/774eaJ4B9edFtg6pNGUF6P1h10+Ozeg8/HVDfhRehQgV82ApwSvnYhuliK6YLnkbx/eubkpF0twLbNamSTq1OTPkiwZBMdxzwWJ4VQF+QCEoAfcls95Jc17JnoRwyC/OSYyIReTKoTiFESR7DcGmaDLNU8K3pmZwnwOKiUvLM+oAJ14m83wHa7gJ/ODkP87ae7hKGMf/ih7o3jJHqDaZ/rIAA",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-5-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-5-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-6": {
+  "w": 1439,
+  "h": 1380,
+  "alt": "Ramo de gerberas, lirios y alstroemerias",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADQBQCdASoYABcAPu1oqVAppiOiqA1RMB2JbACxHy/Bp9xJxCeoSga0dOWmgnoVAmD1bgUuPhAAAP65D7mTnUBtM+BCsrkRT9VZxUTydxwfbpqBTP7sFmxZNu/m828gz0ac4GliCKPw+xF2/oEHjOCIazTQ4Ji1PTuHLEUtY/+SsQclv0xFF2lrHv5GXt4QTj9W+OA2i38xUwHz6rxy1usS4Jku3l8Wmg6vo3zLwL3owP70niO7bqNkdju5NOfI+gAzd4mlQcP7GZLjsikfxfQ3VpEIQw53ggA=",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-6-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-6-1800.webp",
+    "w": 1439
+   }
+  }
+ },
+ "cinta-7": {
+  "w": 1440,
+  "h": 1848,
+  "alt": "Ramo de tulipanes blancos y amarillos en arpillera",
+  "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAwBQCdASoTABgAPu1kqU2ppaOiMAgBMB2JZgCdMzLpAElMf1cCt4JKYP6XYgc+iXzDAAD+yzXXUdO6iKfsxhreNRrciSL4IR5AjSeHtYbxD4Q2ZXyjaWTJ/bs9L7Ffcdfry4Oidxp/uU/jMVgdc0xA+XJARBUDBjHksNG2u40PD7uvo/J2INC2wWg+iwRhV5XSU7Qd/vsKrtCTOVNs7fxN1fZZoNm+kl0bsS51N8hN1NgaQKidXOuocXMa+QrD9qGGE4Duq2tE4AAA",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-7-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-7-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "cinta-8": {
+  "w": 1440,
+  "h": 1441,
+  "alt": "Natalia con un ramo gigante de flores de colores",
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADQBQCdASoYABgAPu1oqk8ppiOiKA1RMB2JbACdMoHhGAOSHIab7JNpHqnHoe9q9BpWJOXel3QAAP6ZV9kjmsvYFlONZt9VijQVjq0uF/lvmovajcAvgqtenSNBT0o+TDfeuAVZoH8uYi9rCXXOV3n4Iegw+9jChk2c9WHPViUjs/XNGGAxFkULHztS/zX1wuUMEIKbmSJ8xXPPLkNr+nVGN0qtcpjfVXn7hMQQkO12tbyVQ0o4ctgooinwrw9j2iU89Amlo0mcHUDRtrtXYe8UJX/U/G9n8LVOgocw4g95pyaKwqXgAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/cinta-8-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/cinta-8-1800.webp",
+    "w": 1440
+   }
+  }
  }
 }

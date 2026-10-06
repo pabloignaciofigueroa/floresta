@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Floresta · Florería en Castro, Chiloé</title>
 <meta name="description" content="Silvestre. Elegante. Es Floresta. Flores lindas, para momentos que importan. Ramos personalizados, arreglos florales para toda ocasión, condolencias y coronas. Esmeralda 198, Castro, Chiloé." data-meta-en="Silvestre. Elegante. Es Floresta. Flower shop at Esmeralda 198, Castro, Chiloé: bouquets, arrangements for every occasion, sympathy flowers and wreaths, delivery in Castro and nearby.">
-<meta name="theme-color" content="#406345">
+<meta name="theme-color" content="#fffbfa">
 <meta property="og:title" content="Floresta · by Almácigos Chiloé">
 <meta property="og:description" content="Silvestre. Elegante. Es Floresta.">
 <meta property="og:image" content="https://lafloresta.vercel.app/assets/og.jpg">
@@ -88,18 +88,18 @@
 </script>
 
 <!-- ============ NAVEGACIÓN ============ -->
-<header class="nav" data-nav>
+<header class="nav on-hero" data-nav>
   <a class="nav__brand" href="#top" aria-label="Floresta, inicio" data-aria-en="Floresta, home"><span class="logo-mask" aria-hidden="true"></span></a>
-  <nav class="nav__links" aria-label="Secciones" data-aria-en="Sections">
-    <a class="t-label u-link" href="#ramos"><span data-l="es">Ramos</span><span data-l="en">Bouquets</span></a>
-    <a class="t-label u-link" href="#esmeralda">Esmeralda 198</a>
-    <a class="t-label u-link" href="#jardin"><span data-l="es">Del jardín</span><span data-l="en">From the garden</span></a>
-    <a class="t-label u-link" href="#ocasiones"><span data-l="es">Ocasiones</span><span data-l="en">Occasions</span></a>
-    <a class="t-label u-link" href="#visitanos"><span data-l="es">Visítanos</span><span data-l="en">Visit us</span></a>
+  <nav class="nav__pill" aria-label="Secciones" data-aria-en="Sections">
+    <a href="#ramos"><span data-l="es">Ramos</span><span data-l="en">Bouquets</span></a>
+    <a href="#esmeralda">Esmeralda 198</a>
+    <a href="#jardin"><span data-l="es">Del jardín</span><span data-l="en">From the garden</span></a>
+    <a href="#ocasiones"><span data-l="es">Ocasiones</span><span data-l="en">Occasions</span></a>
+    <a href="#visitanos"><span data-l="es">Visítanos</span><span data-l="en">Visit us</span></a>
   </nav>
   <div class="nav__end">
-    <button class="lang t-label" type="button" data-lang-toggle aria-label="ES / EN: cambiar idioma, change language"><span class="lang__es">ES</span><span class="lang__sep">/</span><span class="lang__en">EN</span></button>
-    <button class="bag t-label" type="button" data-cart-open aria-controls="cart" aria-expanded="false">
+    <button class="lang" type="button" data-lang-toggle aria-label="ES / EN: cambiar idioma, change language"><span class="lang__es">ES</span><span class="lang__sep">/</span><span class="lang__en">EN</span></button>
+    <button class="bag" type="button" data-cart-open aria-controls="cart" aria-expanded="false">
       <span data-l="es">Pedido</span><span data-l="en">Order</span>
       <span class="bag__n" data-cart-count>0</span>
     </button>
@@ -108,15 +108,7 @@
 </header>
 
 <div class="menu" id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menú" data-aria-en="Menu" hidden>
-  <button class="menu__close t-label" type="button" data-menu-close><span data-l="es">Cerrar</span><span data-l="en">Close</span></button>
-  <div class="menu__media" aria-hidden="true">
-    <x-img id="ramo-silvestres" class="is-on" sizes="40vw" alt="" data='data-menu-img="ramos"'>
-    <x-img id="fachada-05" sizes="40vw" alt="" data='data-menu-img="esmeralda"'>
-    <x-img id="orquideas" sizes="40vw" alt="" data='data-menu-img="jardin"'>
-    <x-img id="oc-arreglos" sizes="40vw" alt="" data='data-menu-img="ocasiones"'>
-    <x-img id="natalia" sizes="40vw" alt="" data='data-menu-img="natalia"'>
-    <x-img id="visita" sizes="40vw" alt="" data='data-menu-img="visitanos"'>
-  </div>
+  <button class="menu__close" type="button" data-menu-close><span data-l="es">Cerrar</span><span data-l="en">Close</span></button>
   <nav class="menu__list" aria-label="Menú" data-aria-en="Menu">
     <a href="#ramos" data-menu-key="ramos"><span class="menu__w"><span data-l="es">Ramos</span><span data-l="en">Bouquets</span></span></a>
     <a href="#esmeralda" data-menu-key="esmeralda"><span class="menu__w">Esmeralda 198</span></a>
@@ -125,355 +117,330 @@
     <a href="#natalia" data-menu-key="natalia"><span class="menu__w">Natalia</span></a>
     <a href="#visitanos" data-menu-key="visitanos"><span class="menu__w"><span data-l="es">Visítanos</span><span data-l="en">Visit us</span></span></a>
   </nav>
-  <p class="menu__foot t-label">Esmeralda 198 · Castro · +56 9 6483 8490</p>
+  <p class="menu__foot">Esmeralda 198, Castro · +56 9 6483 8490</p>
 </div>
 
 <main id="top" lang="es">
 
-<!-- ============ 01 · PORTADA ============ -->
-<section class="hero field field--bosque" aria-label="Floresta">
-  <img class="engrave engrave--hero" src="assets/img/grabado-claro.webp" alt="" aria-hidden="true" width="760" height="961">
-  <div class="hero__text">
-    <p class="t-label hero__kicker" data-hero-fade><span data-l="es">Florería · Castro, Chiloé</span><span data-l="en">Flower shop · Castro, Chiloé</span></p>
+<!-- ============ 1 · PORTADA (A): un ramo a sangre ============ -->
+<section class="hero" data-hero aria-label="Floresta">
+  <div class="hero__media" data-hero-media><x-img id="hero" eager sizes="100vw" alt="Ramo de rosas rojas con gypsophila sostenido frente a la florería"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__content">
     <h1 class="hero__brand">
       <span class="sr">Floresta by Almácigos Chiloé</span>
-      <span class="hero__logo" aria-hidden="true"><img src="brand/logo/logotipo-claro.svg" alt="" width="4084" height="580"></span>
-      <span class="hero__by t-label" aria-hidden="true" data-hero-fade>by Almácigos Chiloé</span>
+      <span class="hero__logo" aria-hidden="true"><span class="logo-mask"></span></span>
     </h1>
-    <p class="hero__motto script" data-hero-motto><span>Silvestre.</span> <span>Elegante.</span> <span>Es Floresta.</span></p>
-    <div class="hero__cta" data-hero-fade>
-      <a class="btn" href="#ramos" data-magnetic><span data-l="es">Ver los ramos</span><span data-l="en">See the bouquets</span></a>
-      <a class="u-link t-label" href="https://wa.me/56964838490" target="_blank" rel="noopener"><span data-l="es">Pedir por WhatsApp</span><span data-l="en">Order on WhatsApp</span></a>
-    </div>
-  </div>
-  <div class="hero__sign" data-hero-sign>
-    <div class="hero__disk">
-      <video class="hero__video" data-hero-video muted playsinline loop preload="auto" poster="assets/img/poster-portada-800.webp" aria-label="Mesón cubierto de flores: crisantemos, margaritas y girasoles" data-aria-en="A counter covered in flowers: chrysanthemums, daisies and sunflowers">
-        <source src="assets/video/portada.webm" type="video/webm">
-        <source src="assets/video/portada.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-  <a class="hero__scroll t-label" href="#manifiesto" data-hero-fade><span data-l="es">Desliza</span><span data-l="en">Scroll</span><i aria-hidden="true"></i></a>
-</section>
-
-<!-- ============ 02 · MANIFIESTO ============ -->
-<section class="manif field field--crema" id="manifiesto" data-theme="light" tabindex="-1">
-  <div class="manif__masas" aria-hidden="false">
-    <figure class="masa masa--1" data-speed="-14"><x-img id="manif-1" sizes="(min-width: 900px) 22vw, 44vw" alt="Ramo de girasoles, iris morados y flores blancas"></figure>
-    <figure class="masa masa--2" data-speed="10"><x-img id="manif-2" sizes="(min-width: 900px) 17vw, 34vw" alt="Ramo de flores moradas y lilas frente a la florería"></figure>
-    <figure class="masa masa--3" data-speed="-6"><x-img id="manif-3" sizes="(min-width: 900px) 15vw, 30vw" alt="Ramo de tulipanes rojos y fucsia en papel kraft"></figure>
-    <figure class="masa masa--4" data-speed="18"><x-img id="manif-4" sizes="(min-width: 900px) 19vw, 38vw" alt="Ramo de rosas fucsia y girasol"></figure>
-  </div>
-  <div class="manif__text">
-    <p class="t-label">Diseño floral silvestre</p>
-    <h2 class="manif__title serif" data-lines>En Floresta no hacemos “arreglos”, hacemos <em class="script">ramos con alma.</em></h2>
-    <div class="manif__body">
-      <p data-lines>Nuestros diseños tienen un estilo único: más natural, más libre, más sureño. Nada producido en serie, nada que parezca de catálogo.</p>
-      <p data-lines>Aquí todo florece con carácter, con texturas del campo, con belleza verdadera.</p>
-    </div>
-    <p class="manif__close script" data-lines>Mientras más silvestre… ¡mejor!</p>
-  </div>
-</section>
-
-<!-- ============ 03 · ESMERALDA 198 (momento memorable) ============ -->
-<section class="esm field field--bosque" id="esmeralda" data-esm aria-labelledby="esm-t">
-  <div class="esm__stage">
-    <div class="esm__intro">
-      <p class="t-label">Esmeralda 198 · Castro</p>
-      <h2 class="script esm__title" id="esm-t">Nunca son idénticas</h2>
-    </div>
-    <div class="esm__frame" data-esm-frame>
-      <x-img id="fachada-01" class="is-on" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de lirios rosados, rosas y crisantemos frente al letrero de Floresta">
-      <x-img id="fachada-02" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de gerberas fucsia y rosas frente al letrero de Floresta">
-      <x-img id="fachada-03" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de girasoles, lisianthus morados y crisantemos verdes frente al letrero de Floresta">
-      <x-img id="fachada-04" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de crisantemos naranjos, girasoles y gerberas rojas frente al letrero de Floresta">
-      <x-img id="fachada-05" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de rosas bicolor, margaritas y dalias frente al letrero de Floresta">
-      <x-img id="fachada-06" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de rosas rojas, girasol y lirios blancos frente al letrero de Floresta">
-      <x-img id="fachada-07" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de rosas rojas y rosas verde limón frente al letrero de Floresta">
-      <x-img id="fachada-08" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de alstroemerias y crisantemos verdes en papel rojo frente al letrero de Floresta">
-      <x-img id="fachada-09" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de crisantemos fucsia, alstroemerias y rosa frente al letrero de Floresta">
-      <x-img id="fachada-10" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de rosas, lisianthus y alstroemerias rosadas frente al letrero de Floresta">
-      <x-img id="fachada-11" sizes="(min-width: 900px) 34vw, 80vw" alt="Ramo de dalias moradas y lirios blancos frente al letrero de Floresta">
-    </div>
-    <div class="esm__aside">
-      <blockquote class="esm__quote">
-        <p>“…las flores son como la naturaleza: nunca son idénticas. Podemos inspirarnos en un diseño, mantener su esencia y estilo, pero cada ramo será siempre único y especial.”</p>
-      </blockquote>
-      <p class="esm__count t-label" aria-hidden="true"><span data-l="es">Ramo</span><span data-l="en">Bouquet</span> <b data-esm-cur>01</b> / <span data-esm-tot>11</span></p>
+    <div class="hero__row">
+      <p class="hero__motto script" data-hero-motto><span>Silvestre.</span> <span>Elegante.</span> <span>Es Floresta.</span></p>
+      <div class="hero__cta" data-hero-fade>
+        <a class="btn" href="#ramos" data-magnetic><span><span data-l="es">Ver los ramos</span><span data-l="en">See the bouquets</span></span><i aria-hidden="true"></i></a>
+        <a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener"><span data-l="es">Pedir por WhatsApp</span><span data-l="en">Order on WhatsApp</span></a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 04 · EL OFICIO ============ -->
-<section class="oficio field field--bosque" aria-labelledby="oficio-t">
-  <div class="oficio__media">
-    <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-oficio-800.webp" aria-label="Natalia arma un arreglo de flores blancas sobre el mesón" data-aria-en="Natalia builds an arrangement of white flowers on the counter">
-      <source data-src="assets/video/oficio.mp4" type="video/mp4">
-      <source data-src="assets/video/oficio.webm" type="video/webm">
-    </video>
+<!-- ============ 2 · CONTINUACIÓN (B): manifiesto ============ -->
+<section class="cont" id="manifiesto" data-theme="light" tabindex="-1" aria-labelledby="cont-t">
+  <div class="cont__text">
+    <p class="cont__by">by Almácigos Chiloé</p>
+    <h2 class="cont__title" id="cont-t" data-lines>En Floresta no hacemos “arreglos”, hacemos ramos con alma.</h2>
+    <p class="cont__p" data-lines>Nuestros diseños tienen un estilo único: más natural, más libre, más sureño. Nada producido en serie, nada que parezca de catálogo.</p>
+    <p class="cont__p" data-lines>Aquí todo florece con carácter, con texturas del campo, con belleza verdadera.</p>
+    <p class="cont__close script" data-lines>Mientras más silvestre… ¡mejor!</p>
   </div>
-  <div class="oficio__text">
-    <p class="t-label">Un ratito en la florería hoy…</p>
-    <h2 class="script oficio__title" id="oficio-t" data-lines>Comienza con una idea</h2>
-    <p class="lead" data-lines>Cada ramo que sale de nuestra florería comienza mucho antes de elegir las flores. Comienza con una idea, con una historia y con la intención de emocionar a quien lo recibe.</p>
-    <p data-lines>Entre flores, cintas y muchos detalles… así transcurren nuestros días en Floresta.</p>
-  </div>
+  <figure class="cont__a" data-reveal data-speed="-6"><x-img id="cont-1" sizes="(min-width: 900px) 42vw, 92vw" alt="Ramo de crisantemos fucsia, alstroemerias y rosa frente al letrero de Floresta"></figure>
+  <figure class="cont__b" data-reveal data-speed="9"><x-img id="cont-2" sizes="(min-width: 900px) 18vw, 46vw" alt="Ramo de rosas bicolor, margaritas y dalias frente a la florería"></figure>
+  <p class="cont__tag">Esmeralda 198, Castro</p>
 </section>
 
-<!-- ============ 05 · DEL JARDÍN A LA FLORERÍA ============ -->
-<section class="jardin field field--salvia" id="jardin" data-theme="light" aria-labelledby="jardin-t">
-  <img class="engrave engrave--jardin" src="assets/img/grabado-oscuro.webp" alt="" aria-hidden="true" width="760" height="961">
-  <div class="jardin__oval">
-    <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-jardin-800.webp" aria-label="Helleborus del jardín del vivero, frente al letrero de Floresta" data-aria-en="Hellebores from the nursery garden, in front of the Floresta sign">
-      <source data-src="assets/video/jardin.webm" type="video/webm">
-      <source data-src="assets/video/jardin.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="jardin__text">
-    <p class="t-label">Almácigos Chiloé · Pidpid</p>
-    <h2 class="script jardin__title" id="jardin-t" data-lines>Del jardín a la florería</h2>
-    <p class="lead" data-lines>Almácigos Chiloé ya no es solo un vivero de plantas… ¡ahora también somos flores, diseño y emociones!</p>
-    <p data-lines>Hoy cosechamos estos maravillosos Helleborus desde el jardín de nuestro vivero.</p>
-    <p data-lines>La florería ahora también es un punto de venta y entrega de plantitas de nuestro amado vivero.</p>
-    <p class="jardin__where t-label">En el corazón del campo, en Pidpid · <a class="u-link" href="https://www.instagram.com/almacigoschiloe/" target="_blank" rel="noopener">@almacigoschiloe</a></p>
-  </div>
-  <div class="jardin__strip swiper" data-plants data-drag-label>
-    <div class="swiper-wrapper">
-      <figure class="swiper-slide plant plant--wide"><x-img id="orquideas" sizes="(min-width: 900px) 18vw, 50vw" alt="Natalia con orquídeas en el invernadero del vivero Almácigos Chiloé"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-1" sizes="(min-width: 900px) 12vw, 36vw" alt="Pilea de hojas redondas sostenida frente al letrero de Floresta"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-2" sizes="(min-width: 900px) 12vw, 36vw" alt="Maranta de hojas con nervaduras rojas frente a la florería"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-3" sizes="(min-width: 900px) 12vw, 36vw" alt="Planta de interior en macetero frente a la florería"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-4" sizes="(min-width: 900px) 12vw, 36vw" alt="Planta de interior de hojas grandes frente a la florería"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-5" sizes="(min-width: 900px) 12vw, 36vw" alt="Planta de hojas acorazonadas frente al letrero de Floresta"></figure>
-      <figure class="swiper-slide plant"><x-img id="planta-6" sizes="(min-width: 900px) 12vw, 36vw" alt="Planta colgante de hojas acorazonadas frente al letrero de Floresta"></figure>
+<!-- ============ 3 · CINTA DE RAMOS ============ -->
+<section class="cinta" aria-label="Ramos de Floresta" data-aria-en="Floresta bouquets">
+  <div class="cinta__track" data-cinta>
+    <div class="cinta__set">
+      <x-img id="cinta-1" class="c c--1" sizes="260px" alt="Ramo de girasoles, iris morados y flores blancas">
+      <x-img id="cinta-2" class="c c--2" sizes="260px" alt="Ramo de flores moradas y lilas frente a la florería">
+      <x-img id="cinta-3" class="c c--3" sizes="260px" alt="Ramo de rosas fucsia y girasol">
+      <x-img id="cinta-4" class="c c--4" sizes="260px" alt="Ramo de tulipanes rojos y fucsia en papel kraft">
+      <x-img id="cinta-5" class="c c--5" sizes="260px" alt="Ramo de flores amarillas y blancas">
+      <x-img id="cinta-6" class="c c--6" sizes="260px" alt="Ramo de gerberas, lirios y alstroemerias">
+      <x-img id="cinta-7" class="c c--7" sizes="260px" alt="Ramo de tulipanes blancos y amarillos en arpillera">
+      <x-img id="cinta-8" class="c c--8" sizes="260px" alt="Natalia con un ramo gigante de flores de colores">
     </div>
   </div>
+  <p class="cinta__line script" data-lines>Flores lindas, para momentos que importan.</p>
 </section>
 
-<!-- ============ 06 · RAMOS (catálogo) ============ -->
-<section class="ramos field field--salvia" id="ramos" data-theme="light" aria-labelledby="ramos-t">
+<!-- ============ 4 · RAMOS ============ -->
+<section class="ramos" id="ramos" data-theme="light" aria-labelledby="ramos-t">
   <header class="ramos__head">
-    <p class="t-label"><span data-l="es">Ramos</span><span data-l="en">Bouquets</span></p>
-    <h2 class="script ramos__title" id="ramos-t" data-lines>Regala flores. Flores de verdad.</h2>
+    <h2 class="ramos__title script" id="ramos-t" data-lines>Regala flores. Flores de verdad.</h2>
     <p class="ramos__sub" data-lines>De esas que tienen aroma, textura, movimiento y vida.</p>
+    <div class="ramos__ctrl">
+      <button class="arrow" type="button" data-ramos-prev aria-label="Anterior" data-aria-en="Previous"><i aria-hidden="true"></i></button>
+      <p class="ramos__count" aria-hidden="true"><b data-count-cur>01</b> / <span data-count-tot>05</span></p>
+      <button class="arrow arrow--next" type="button" data-ramos-next aria-label="Siguiente" data-aria-en="Next"><i aria-hidden="true"></i></button>
+    </div>
   </header>
 
   <div class="ramos__slider swiper" data-ramos data-drag-label>
     <div class="swiper-wrapper">
 
       <article class="swiper-slide ramo" data-product="Ramos Silvestres" aria-labelledby="p-silv">
-        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
-        <h3 class="script ramo__name" id="p-silv">Ramos Silvestres</h3>
-        <p class="ramo__sub">Diseños naturales, delicados y llenos de encanto…</p>
-        <fieldset class="ramo__opts">
-          <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
-          <label><input type="radio" name="silv" value="Ramo Pequeño" data-price="15000" checked><span>Ramo Pequeño · $15.000</span></label>
-          <label><input type="radio" name="silv" value="Ramo Mediano" data-price="33000"><span>Ramo Mediano · $33.000</span></label>
-          <label><input type="radio" name="silv" value="Ramo Grande" data-price="49000"><span>Ramo Grande · $49.000</span></label>
-        </fieldset>
-        <p class="ramo__note">Cada ramo es único y se arma según la disponibilidad de flores, manteniendo siempre una composición armónica y especial.</p>
-        <button class="btn btn--dark ramo__add" type="button" data-add><span data-l="es">Agregar</span><span data-l="en">Add</span></button>
-        <figure class="ramo__img"><x-img id="ramo-silvestres" sizes="(min-width: 900px) 28vw, 80vw" alt="Ramo silvestre de flores fucsia, rojas y amarillas sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <figure class="ramo__img"><x-img id="ramo-silvestres" sizes="(min-width: 900px) 30vw, 84vw" alt="Ramo silvestre de flores fucsia, rojas y amarillas sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <div class="ramo__body">
+          <h3 class="ramo__name script" id="p-silv">Ramos Silvestres</h3>
+          <p class="ramo__sub">Diseños naturales, delicados y llenos de encanto…</p>
+          <fieldset class="ramo__opts">
+            <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
+            <label><input type="radio" name="silv" value="Ramo Pequeño" data-price="15000" checked><span>Pequeño</span></label>
+            <label><input type="radio" name="silv" value="Ramo Mediano" data-price="33000"><span>Mediano</span></label>
+            <label><input type="radio" name="silv" value="Ramo Grande" data-price="49000"><span>Grande</span></label>
+          </fieldset>
+          <p class="ramo__note">Cada ramo es único y se arma según la disponibilidad de flores, manteniendo siempre una composición armónica y especial.</p>
+          <div class="ramo__buy"><p class="ramo__price" data-price-out aria-live="polite">$15.000</p><button class="btn btn--small" type="button" data-add><span><span data-l="es">Agregar</span><span data-l="en">Add</span></span><i aria-hidden="true"></i></button></div>
+        </div>
       </article>
 
       <article class="swiper-slide ramo" data-product="Rosas Rojas" aria-labelledby="p-rosas">
-        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
-        <h3 class="script ramo__name" id="p-rosas">Rosas Rojas</h3>
-        <p class="ramo__sub">Un clásico lleno de significado…</p>
-        <fieldset class="ramo__opts">
-          <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
-          <label><input type="radio" name="rosas" value="5 Rosas" data-price="21000" checked><span>5 Rosas · $21.000</span></label>
-          <label><input type="radio" name="rosas" value="10 Rosas" data-price="39000"><span>10 Rosas · $39.000</span></label>
-          <label><input type="radio" name="rosas" value="20 Rosas" data-price="79000"><span>20 Rosas · $79.000</span></label>
-        </fieldset>
-        <p class="ramo__note">Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño elegante, delicado y lleno de intención.</p>
-        <button class="btn btn--dark ramo__add" type="button" data-add><span data-l="es">Agregar</span><span data-l="en">Add</span></button>
-        <figure class="ramo__img"><x-img id="ramo-rosas-rojas" sizes="(min-width: 900px) 28vw, 80vw" alt="Ramo de rosas rojas en papel rosado sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <figure class="ramo__img"><x-img id="ramo-rosas-rojas" sizes="(min-width: 900px) 30vw, 84vw" alt="Ramo de rosas rojas en papel rosado sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <div class="ramo__body">
+          <h3 class="ramo__name script" id="p-rosas">Rosas Rojas</h3>
+          <p class="ramo__sub">Un clásico lleno de significado…</p>
+          <fieldset class="ramo__opts">
+            <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
+            <label><input type="radio" name="rosas" value="5 Rosas" data-price="21000" checked><span>5 Rosas</span></label>
+            <label><input type="radio" name="rosas" value="10 Rosas" data-price="39000"><span>10 Rosas</span></label>
+            <label><input type="radio" name="rosas" value="20 Rosas" data-price="79000"><span>20 Rosas</span></label>
+          </fieldset>
+          <p class="ramo__note">Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño elegante, delicado y lleno de intención.</p>
+          <div class="ramo__buy"><p class="ramo__price" data-price-out aria-live="polite">$21.000</p><button class="btn btn--small" type="button" data-add><span><span data-l="es">Agregar</span><span data-l="en">Add</span></span><i aria-hidden="true"></i></button></div>
+        </div>
       </article>
 
       <article class="swiper-slide ramo" data-product="Ramos de Girasoles" aria-labelledby="p-gira">
-        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
-        <h3 class="script ramo__name" id="p-gira">Ramos de Girasoles</h3>
-        <p class="ramo__sub">Un clásico luminoso…</p>
-        <fieldset class="ramo__opts">
-          <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
-          <label><input type="radio" name="gira" value="3 Girasoles" data-price="14000" checked><span>3 Girasoles · $14.000</span></label>
-          <label><input type="radio" name="gira" value="5 Girasoles" data-price="22000"><span>5 Girasoles · $22.000</span></label>
-          <label><input type="radio" name="gira" value="10 Girasoles" data-price="40000"><span>10 Girasoles · $40.000</span></label>
-        </fieldset>
-        <p class="ramo__note">Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño armonioso, cálido y lleno de vida.</p>
-        <button class="btn btn--dark ramo__add" type="button" data-add><span data-l="es">Agregar</span><span data-l="en">Add</span></button>
-        <figure class="ramo__img"><x-img id="ramo-girasoles" sizes="(min-width: 900px) 28vw, 80vw" alt="Ramo de girasoles en papel kraft sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <figure class="ramo__img"><x-img id="ramo-girasoles" sizes="(min-width: 900px) 30vw, 84vw" alt="Ramo de girasoles en papel kraft sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <div class="ramo__body">
+          <h3 class="ramo__name script" id="p-gira">Ramos de Girasoles</h3>
+          <p class="ramo__sub">Un clásico luminoso…</p>
+          <fieldset class="ramo__opts">
+            <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
+            <label><input type="radio" name="gira" value="3 Girasoles" data-price="14000" checked><span>3 Girasoles</span></label>
+            <label><input type="radio" name="gira" value="5 Girasoles" data-price="22000"><span>5 Girasoles</span></label>
+            <label><input type="radio" name="gira" value="10 Girasoles" data-price="40000"><span>10 Girasoles</span></label>
+          </fieldset>
+          <p class="ramo__note">Cada ramo es preparado a mano, cuidando cada detalle para lograr un diseño armonioso, cálido y lleno de vida.</p>
+          <div class="ramo__buy"><p class="ramo__price" data-price-out aria-live="polite">$14.000</p><button class="btn btn--small" type="button" data-add><span><span data-l="es">Agregar</span><span data-l="en">Add</span></span><i aria-hidden="true"></i></button></div>
+        </div>
       </article>
 
       <article class="swiper-slide ramo" data-product="Rosas y Girasoles" aria-labelledby="p-ryg">
-        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
-        <h3 class="script ramo__name" id="p-ryg">Rosas y Girasoles</h3>
-        <p class="ramo__sub">Una combinación luminosa y especial…</p>
-        <fieldset class="ramo__opts">
-          <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
-          <label><input type="radio" name="ryg" value="5 Flores" data-price="21000" checked><span>5 Flores · $21.000</span></label>
-          <label><input type="radio" name="ryg" value="10 Flores" data-price="39000"><span>10 Flores · $39.000</span></label>
-          <label><input type="radio" name="ryg" value="20 Flores" data-price="79000"><span>20 Flores · $79.000</span></label>
-        </fieldset>
-        <p class="ramo__note">Cada ramo es preparado a mano, combinando colores y texturas para crear un arreglo armonioso, cálido y lleno de vida.</p>
-        <button class="btn btn--dark ramo__add" type="button" data-add><span data-l="es">Agregar</span><span data-l="en">Add</span></button>
-        <figure class="ramo__img"><x-img id="ramo-rosas-y-girasoles" sizes="(min-width: 900px) 28vw, 80vw" alt="Ramo de rosas rojas y girasoles sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <figure class="ramo__img"><x-img id="ramo-rosas-y-girasoles" sizes="(min-width: 900px) 30vw, 84vw" alt="Ramo de rosas rojas y girasoles sostenido en alto"><figcaption><span data-l="es">* Ramo de referencia</span><span data-l="en">* Reference bouquet</span></figcaption></figure>
+        <div class="ramo__body">
+          <h3 class="ramo__name script" id="p-ryg">Rosas y Girasoles</h3>
+          <p class="ramo__sub">Una combinación luminosa y especial…</p>
+          <fieldset class="ramo__opts">
+            <legend class="sr"><span data-l="es">Tamaño</span><span data-l="en">Size</span></legend>
+            <label><input type="radio" name="ryg" value="5 Flores" data-price="21000" checked><span>5 Flores</span></label>
+            <label><input type="radio" name="ryg" value="10 Flores" data-price="39000"><span>10 Flores</span></label>
+            <label><input type="radio" name="ryg" value="20 Flores" data-price="79000"><span>20 Flores</span></label>
+          </fieldset>
+          <p class="ramo__note">Cada ramo es preparado a mano, combinando colores y texturas para crear un arreglo armonioso, cálido y lleno de vida.</p>
+          <div class="ramo__buy"><p class="ramo__price" data-price-out aria-live="polite">$21.000</p><button class="btn btn--small" type="button" data-add><span><span data-l="es">Agregar</span><span data-l="en">Add</span></span><i aria-hidden="true"></i></button></div>
+        </div>
       </article>
 
       <article class="swiper-slide ramo ramo--tienda" aria-labelledby="p-tienda">
-        <h3 class="script ramo__name" id="p-tienda">También puedes venir directamente</h3>
-        <p class="ramo__big serif">desde $5.000</p>
-        <p class="ramo__note">Podrás encontrar opciones desde $5.000 en adelante, con flores frescas y diseños pensados para emocionar, acompañar…</p>
-        <p class="ramo__note">Esmeralda 198, Castro</p>
-        <a class="btn ramo__add" href="#visitanos"><span data-l="es">Cómo llegar</span><span data-l="en">Directions</span></a>
-        <img class="ramo__isobig" src="assets/img/isotipo-474.webp" alt="" aria-hidden="true" width="316" height="400" loading="lazy">
+        <figure class="ramo__img"><x-img id="cinta-7" sizes="(min-width: 900px) 30vw, 84vw" alt="Ramo de tulipanes blancos y amarillos en arpillera"></figure>
+        <div class="ramo__body">
+          <h3 class="ramo__name script" id="p-tienda">También puedes venir directamente</h3>
+          <p class="ramo__big">desde $5.000</p>
+          <p class="ramo__note">Podrás encontrar opciones desde $5.000 en adelante, con flores frescas y diseños pensados para emocionar, acompañar…</p>
+          <div class="ramo__buy"><p class="ramo__price">Esmeralda 198</p><a class="btn btn--small btn--light" href="#visitanos"><span><span data-l="es">Cómo llegar</span><span data-l="en">Directions</span></span><i aria-hidden="true"></i></a></div>
+        </div>
       </article>
 
     </div>
-    <div class="ramos__ctrl">
-      <button class="arrow" type="button" data-ramos-prev aria-label="Anterior" data-aria-en="Previous"><i aria-hidden="true"></i></button>
-      <p class="t-label ramos__count" aria-hidden="true"><b data-count-cur>01</b> / <span data-count-tot>05</span></p>
-      <button class="arrow arrow--next" type="button" data-ramos-next aria-label="Siguiente" data-aria-en="Next"><i aria-hidden="true"></i></button>
+  </div>
+  <p class="ramos__fine"><span data-l="es">Precios referenciales del catálogo 2026 · confírmalos por WhatsApp</span><span data-l="en">Reference prices from the 2026 catalogue · confirm them on WhatsApp</span></p>
+</section>
+
+<!-- ============ 5 · ESMERALDA 198 (momento memorable) ============ -->
+<section class="esm" id="esmeralda" data-esm aria-labelledby="esm-t">
+  <div class="esm__stage">
+    <div class="esm__text">
+      <p class="esm__label">Esmeralda 198, Castro</p>
+      <h2 class="esm__title script" id="esm-t" data-lines>Nunca son idénticas</h2>
+      <blockquote class="esm__quote"><p>“…las flores son como la naturaleza: nunca son idénticas. Podemos inspirarnos en un diseño, mantener su esencia y estilo, pero cada ramo será siempre único y especial.”</p></blockquote>
+      <p class="esm__count" aria-hidden="true"><span data-l="es">Ramo</span><span data-l="en">Bouquet</span> <b data-esm-cur>01</b> / <span data-esm-tot>11</span></p>
+      <div class="esm__bar" aria-hidden="true"><i data-esm-bar></i></div>
+    </div>
+    <div class="esm__frame" data-esm-frame>
+      <x-img id="fachada-01" class="is-on" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de lirios rosados, rosas y crisantemos frente al letrero de Floresta">
+      <x-img id="fachada-02" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de gerberas fucsia y rosas frente al letrero de Floresta">
+      <x-img id="fachada-03" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de girasoles, lisianthus morados y crisantemos verdes frente al letrero de Floresta">
+      <x-img id="fachada-04" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de crisantemos naranjos, girasoles y gerberas rojas frente al letrero de Floresta">
+      <x-img id="fachada-05" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de rosas bicolor, margaritas y dalias frente al letrero de Floresta">
+      <x-img id="fachada-06" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de rosas rojas, girasol y lirios blancos frente al letrero de Floresta">
+      <x-img id="fachada-07" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de rosas rojas y rosas verde limón frente al letrero de Floresta">
+      <x-img id="fachada-08" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de alstroemerias y crisantemos verdes en papel rojo frente al letrero de Floresta">
+      <x-img id="fachada-09" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de crisantemos fucsia, alstroemerias y rosa frente al letrero de Floresta">
+      <x-img id="fachada-10" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de rosas, lisianthus y alstroemerias rosadas frente al letrero de Floresta">
+      <x-img id="fachada-11" sizes="(min-width: 900px) 46vw, 100vw" alt="Ramo de dalias moradas y lirios blancos frente al letrero de Floresta">
     </div>
   </div>
-  <p class="ramos__fine t-label"><span data-l="es">Precios referenciales del catálogo 2026 · confírmalos por WhatsApp</span><span data-l="en">Reference prices from the 2026 catalogue · confirm them on WhatsApp</span></p>
 </section>
 
-<!-- ============ 07 · DEBES SABER… ============ -->
-<section class="saber field field--bosque" id="debes-saber" aria-labelledby="saber-t">
-  <img class="engrave engrave--saber" src="assets/img/grabado-claro.webp" alt="" aria-hidden="true" width="760" height="961">
-  <div class="saber__head">
-    <h2 class="script saber__title" id="saber-t" data-lines>Debes saber…</h2>
-    <div class="blob"><img src="assets/img/isotipo-474.webp" alt="" aria-hidden="true" width="316" height="400" loading="lazy"></div>
+<!-- ============ 6 · EL OFICIO ============ -->
+<section class="oficio" aria-labelledby="oficio-t">
+  <div class="oficio__media" data-reveal="left">
+    <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-oficio-800.webp" aria-label="Natalia arma un arreglo de flores blancas sobre el mesón" data-aria-en="Natalia builds an arrangement of white flowers on the counter">
+      <source data-src="assets/video/oficio.mp4" type="video/mp4">
+      <source data-src="assets/video/oficio.webm" type="video/webm">
+    </video>
   </div>
-  <dl class="saber__list">
-    <div><dt class="t-label">Ramos silvestres</dt><dd>La composición de los ramos silvestres puede variar según disponibilidad de flores. Cada ramo es único, y todos tienen un encanto especial.</dd></div>
-    <div><dt class="t-label">Reservas</dt><dd>Te recomendamos agendar con anticipación, ya que el stock será limitado. Los pedidos se confirman con el pago total mediante transferencia o pago presencial en tienda.</dd></div>
-    <div><dt class="t-label">Despacho</dt><dd>Contamos con servicio de despacho con costo adicional, el cual dependerá de la distancia del lugar de entrega.</dd></div>
-    <div><dt class="t-label">Horario de despacho</dt><dd>No trabajamos con horarios exactos de entrega. Los despachos se realizan en jornada AM (10:00 a 13:00) y PM (14:00 a 20:00). Los retiros en tienda pueden coordinarse en horarios específicos.</dd></div>
-    <div><dt class="t-label">Cada ramo incluye</dt><dd>Cada ramo incluye tarjeta de regalo y su soporte, además de preservante floral. También puedes agregar un mensaje personalizado escrito a mano.</dd></div>
-  </dl>
+  <div class="oficio__text">
+    <p class="kicker">Un ratito en la florería hoy…</p>
+    <h2 class="oficio__title script" id="oficio-t" data-lines>Comienza con una idea</h2>
+    <p class="lead" data-lines>Cada ramo que sale de nuestra florería comienza mucho antes de elegir las flores. Comienza con una idea, con una historia y con la intención de emocionar a quien lo recibe.</p>
+    <p data-lines>Entre flores, cintas y muchos detalles… así transcurren nuestros días en Floresta.</p>
+  </div>
 </section>
 
-<!-- ============ 08 · OCASIONES ============ -->
-<section class="ocas field field--crema" id="ocasiones" data-theme="light" aria-labelledby="ocas-t">
-  <h2 class="script ocas__title" id="ocas-t" data-lines>Para celebrar, agradecer, acompañar o despedir</h2>
-  <ol class="ocas__list" data-ocas>
-    <li class="ocas__row" data-ocas-key="ramos">
-      <span class="ocas__n t-label">01</span><span class="ocas__name serif">Ramos personalizados</span>
-      <figure class="ocas__thumb"><x-img id="oc-ramos" sizes="(min-width: 900px) 24vw, 30vw" alt="Ramo de gerberas, lirios y alstroemerias"></figure>
-    </li>
-    <li class="ocas__row" data-ocas-key="arreglos">
-      <span class="ocas__n t-label">02</span><span class="ocas__name serif">Arreglos florales para toda ocasión</span>
-      <figure class="ocas__thumb"><x-img id="oc-arreglos" sizes="(min-width: 900px) 24vw, 30vw" alt="Arreglos florales en cajas sobre el mesón de la florería"></figure>
-    </li>
-    <li class="ocas__row" data-ocas-key="regalos">
-      <span class="ocas__n t-label">03</span><span class="ocas__name serif">Regalos y detalles</span>
-      <figure class="ocas__thumb"><x-img id="oc-regalos" sizes="(min-width: 900px) 24vw, 30vw" alt="Ramo de flores amarillas y blancas"></figure>
-    </li>
-    <li class="ocas__row" data-ocas-key="coronas">
-      <span class="ocas__n t-label">04</span><span class="ocas__name serif">Condolencias y coronas</span>
-      <span class="ocas__detail">Realizamos coronas, canastos, cubreurnas, pedestales y arreglos florales de condolencias.</span>
-      <figure class="ocas__thumb ocas__thumb--video">
-        <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-corona-800.webp" aria-label="Corona de flores en pedestal frente a la florería" data-aria-en="A flower wreath on a stand in front of the shop">
-          <source data-src="assets/video/corona.webm" type="video/webm">
-          <source data-src="assets/video/corona.mp4" type="video/mp4">
-        </video>
-      </figure>
-    </li>
-    <li class="ocas__row" data-ocas-key="despachos">
-      <span class="ocas__n t-label">05</span><span class="ocas__name serif">Despachos en Castro y alrededores</span>
-      <figure class="ocas__thumb"><x-img id="oc-despachos" sizes="(min-width: 900px) 24vw, 30vw" alt="Natalia en la puerta de la florería con un ramo de tulipanes"></figure>
-    </li>
-  </ol>
+<!-- ============ 7 · DEL JARDÍN A LA FLORERÍA ============ -->
+<section class="jardin" id="jardin" data-theme="light" aria-labelledby="jardin-t">
+  <div class="jardin__text">
+    <p class="kicker">Almácigos Chiloé, en Pidpid</p>
+    <h2 class="jardin__title script" id="jardin-t" data-lines>Del jardín a la florería</h2>
+    <p class="lead" data-lines>Almácigos Chiloé ya no es solo un vivero de plantas… ¡ahora también somos flores, diseño y emociones!</p>
+    <p data-lines>Hoy cosechamos estos maravillosos Helleborus desde el jardín de nuestro vivero.</p>
+    <p data-lines>La florería ahora también es un punto de venta y entrega de plantitas de nuestro amado vivero.</p>
+    <p class="jardin__where">En el corazón del campo, en Pidpid · <a class="u-link" href="https://www.instagram.com/almacigoschiloe/" target="_blank" rel="noopener">@almacigoschiloe</a></p>
+  </div>
+  <div class="jardin__media" data-reveal="right">
+    <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-jardin-800.webp" aria-label="Helleborus del jardín del vivero, frente al letrero de Floresta" data-aria-en="Hellebores from the nursery garden, in front of the Floresta sign">
+      <source data-src="assets/video/jardin.webm" type="video/webm">
+      <source data-src="assets/video/jardin.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="jardin__strip swiper" data-plants data-drag-label>
+    <div class="swiper-wrapper">
+      <figure class="swiper-slide plant plant--wide"><x-img id="orquideas" sizes="(min-width: 900px) 22vw, 60vw" alt="Natalia con orquídeas en el invernadero del vivero Almácigos Chiloé"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-1" sizes="(min-width: 900px) 16vw, 44vw" alt="Pilea de hojas redondas sostenida frente al letrero de Floresta"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-2" sizes="(min-width: 900px) 16vw, 44vw" alt="Maranta de hojas con nervaduras rojas frente a la florería"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-3" sizes="(min-width: 900px) 16vw, 44vw" alt="Planta de interior en macetero frente a la florería"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-4" sizes="(min-width: 900px) 16vw, 44vw" alt="Planta de interior de hojas grandes frente a la florería"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-5" sizes="(min-width: 900px) 16vw, 44vw" alt="Planta de hojas acorazonadas frente al letrero de Floresta"></figure>
+      <figure class="swiper-slide plant"><x-img id="planta-6" sizes="(min-width: 900px) 16vw, 44vw" alt="Planta colgante de hojas acorazonadas frente al letrero de Floresta"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 · DEBES SABER… ============ -->
+<section class="saber" id="debes-saber" data-theme="light" aria-labelledby="saber-t">
+  <h2 class="saber__title script" id="saber-t" data-lines>Debes saber…</h2>
+  <div class="saber__list" data-acc>
+    <details open><summary>Ramos silvestres<i aria-hidden="true"></i></summary><div class="acc"><p>La composición de los ramos silvestres puede variar según disponibilidad de flores. Cada ramo es único, y todos tienen un encanto especial.</p></div></details>
+    <details><summary>Reservas<i aria-hidden="true"></i></summary><div class="acc"><p>Te recomendamos agendar con anticipación, ya que el stock será limitado. Los pedidos se confirman con el pago total mediante transferencia o pago presencial en tienda.</p></div></details>
+    <details><summary>Despacho<i aria-hidden="true"></i></summary><div class="acc"><p>Contamos con servicio de despacho con costo adicional, el cual dependerá de la distancia del lugar de entrega.</p></div></details>
+    <details><summary>Horario de despacho<i aria-hidden="true"></i></summary><div class="acc"><p>No trabajamos con horarios exactos de entrega. Los despachos se realizan en jornada AM (10:00 a 13:00) y PM (14:00 a 20:00). Los retiros en tienda pueden coordinarse en horarios específicos.</p></div></details>
+    <details><summary>Cada ramo incluye<i aria-hidden="true"></i></summary><div class="acc"><p>Cada ramo incluye tarjeta de regalo y su soporte, además de preservante floral. También puedes agregar un mensaje personalizado escrito a mano.</p></div></details>
+  </div>
+  <figure class="saber__img" data-reveal data-speed="-5"><x-img id="natalia-2" sizes="(min-width: 900px) 26vw, 70vw" alt="Natalia en la florería con un ramo grande en las manos"></figure>
+</section>
+
+<!-- ============ 9 · OCASIONES ============ -->
+<section class="ocas" id="ocasiones" data-theme="light" aria-labelledby="ocas-t">
+  <h2 class="ocas__title script" id="ocas-t" data-lines>Para celebrar, agradecer, acompañar o despedir</h2>
+  <ul class="ocas__list" data-ocas>
+    <li class="ocas__row" data-ocas-key="ramos"><span class="ocas__name serif">Ramos personalizados</span><figure class="ocas__thumb"><x-img id="oc-ramos" sizes="(min-width: 900px) 22vw, 64px" alt="Ramo de gerberas, lirios y alstroemerias"></figure></li>
+    <li class="ocas__row" data-ocas-key="arreglos"><span class="ocas__name serif">Arreglos florales para toda ocasión</span><figure class="ocas__thumb"><x-img id="oc-arreglos" sizes="(min-width: 900px) 22vw, 64px" alt="Arreglos florales en cajas sobre el mesón de la florería"></figure></li>
+    <li class="ocas__row" data-ocas-key="regalos"><span class="ocas__name serif">Regalos y detalles</span><figure class="ocas__thumb"><x-img id="oc-regalos" sizes="(min-width: 900px) 22vw, 64px" alt="Ramo de flores amarillas y blancas"></figure></li>
+    <li class="ocas__row" data-ocas-key="coronas"><span class="ocas__name serif">Condolencias y coronas</span><span class="ocas__detail">Realizamos coronas, canastos, cubreurnas, pedestales y arreglos florales de condolencias.</span>
+      <figure class="ocas__thumb"><video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-corona-800.webp" aria-label="Corona de flores en pedestal frente a la florería" data-aria-en="A flower wreath on a stand in front of the shop"><source data-src="assets/video/corona.webm" type="video/webm"><source data-src="assets/video/corona.mp4" type="video/mp4"></video></figure></li>
+    <li class="ocas__row" data-ocas-key="despachos"><span class="ocas__name serif">Despachos en Castro y alrededores</span><figure class="ocas__thumb"><x-img id="oc-despachos" sizes="(min-width: 900px) 22vw, 64px" alt="Natalia en la puerta de la florería con un ramo de tulipanes"></figure></li>
+  </ul>
   <div class="ocas__foot">
     <blockquote class="ocas__quote"><p data-lines>“Una corona floral no es solo un gesto; es una forma de acompañar, honrar y expresar lo que muchas veces las palabras no alcanzan a decir.”</p></blockquote>
     <p class="ocas__budget">…con diseños únicos y alternativas pensadas para cada necesidad y presupuesto.</p>
   </div>
 </section>
 
-<!-- ============ 09 · NATALIA ============ -->
-<section class="nati field field--bosque" id="natalia" aria-labelledby="nati-t">
-  <figure class="nati__photo" data-clip><x-img id="natalia" sizes="(min-width: 900px) 50vw, 100vw" alt="Natalia Torres Manzo sonriendo con un ramo de lirios, rosas y flores amarillas" data='data-parallax-in'></figure>
+<!-- ============ 10 · NATALIA ============ -->
+<section class="nati" id="natalia" data-theme="light" aria-labelledby="nati-t">
+  <figure class="nati__photo" data-reveal="left"><x-img id="natalia" sizes="(min-width: 900px) 48vw, 100vw" alt="Natalia Torres Manzo sonriendo con un ramo de lirios, rosas y flores amarillas" data='data-parallax-in'></figure>
   <div class="nati__text">
-    <h2 class="t-label" id="nati-t">Natalia Torres Manzo · <a class="u-link" href="https://www.instagram.com/natiiitm/" target="_blank" rel="noopener">@natiiitm</a></h2>
+    <h2 class="kicker" id="nati-t">Natalia Torres Manzo · <a class="u-link" href="https://www.instagram.com/natiiitm/" target="_blank" rel="noopener">@natiiitm</a></h2>
     <blockquote class="nati__big"><p class="script" data-lines>“Mi destino siempre fueron las plantas y las flores!”</p></blockquote>
     <blockquote class="nati__q">
       <p class="serif" data-lines>“Ha sido, lejos, una de las decisiones más lindas y valientes que he tomado.”</p>
       <p data-lines>“Porque la vida pasa rápido… demasiado rápido como para no atreverse a hacer lo que uno ama, lo que te mueve, lo que de verdad llena el alma.”</p>
     </blockquote>
-    <figure class="nati__small" data-clip><x-img id="natalia-3" sizes="(min-width: 900px) 14vw, 40vw" alt="Natalia con un ramo de girasoles y rosas"></figure>
-    <p class="script nati__sign">Cariños para todos!</p>
+    <p class="nati__sign script">Cariños para todos!</p>
+  </div>
+  <figure class="nati__small" data-reveal data-speed="10"><x-img id="natalia-3" sizes="(min-width: 900px) 15vw, 40vw" alt="Natalia con un ramo de girasoles y rosas"></figure>
+</section>
+
+<!-- ============ 11 · INVIERNO ============ -->
+<section class="invierno" data-invierno aria-labelledby="inv-t">
+  <div class="invierno__card" data-invierno-card>
+    <div class="invierno__media"><x-img id="invierno" sizes="100vw" alt="Ramo de girasoles envuelto en papel kraft frente a la florería"></div>
+    <div class="invierno__veil" aria-hidden="true"></div>
+    <div class="invierno__text">
+      <h2 class="invierno__quote script" id="inv-t" data-lines>Aunque estemos en pleno invierno en Chiloé, para nosotros todos los días son primavera.</h2>
+      <p class="lead" data-lines>Nosotros seguiremos poniendo un poquito de primavera en cada ramo que preparamos.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 10 · INVIERNO ============ -->
-<section class="invierno" aria-labelledby="inv-t">
-  <div class="invierno__media" data-parallax-bg><x-img id="invierno" sizes="100vw" alt="Ramo de girasoles envuelto en papel kraft frente a la florería"></div>
-  <div class="invierno__veil" aria-hidden="true"></div>
-  <div class="invierno__text">
-    <h2 class="script invierno__quote" id="inv-t" data-lines>Aunque estemos en pleno invierno en Chiloé, para nosotros todos los días son primavera.</h2>
-    <p class="lead" data-lines>Nosotros seguiremos poniendo un poquito de primavera en cada ramo que preparamos.</p>
-  </div>
-</section>
-
-<!-- ============ 11 · RESEÑAS ============ -->
-<section class="resenas field field--crema" data-theme="light" aria-labelledby="res-t">
+<!-- ============ 12 · RESEÑAS ============ -->
+<section class="resenas" data-theme="light" aria-labelledby="res-t">
   <h2 class="sr" id="res-t"><span data-l="es">Reseñas en Google</span><span data-l="en">Reviews on Google</span></h2>
   <div class="resenas__score">
-    <p class="serif resenas__num"><span data-l="es">5,0</span><span data-l="en">5.0</span></p>
-    <p class="resenas__stars" aria-hidden="true">★★★★★</p>
-    <p class="t-label"><span data-l="es">En Google · 6 reseñas</span><span data-l="en">On Google · 6 reviews</span></p>
+    <p class="resenas__num serif"><span data-l="es">5,0</span><span data-l="en">5.0</span></p>
+    <p class="resenas__stars" aria-hidden="true" data-stars><i></i><i></i><i></i><i></i><i></i></p>
+    <p class="resenas__src"><span data-l="es">En Google · 6 reseñas</span><span data-l="en">On Google · 6 reviews</span></p>
   </div>
-  <div class="resenas__list">
-    <blockquote class="resena" lang="es">
-      <p class="serif" data-lines>“Fantásticas, empáticas y amorosas !!! Y las flores bellas !!!”</p>
-      <footer class="t-label">Tamara D. · <span data-l="es">vía Google</span><span data-l="en">via Google</span></footer>
-    </blockquote>
-    <blockquote class="resena" lang="es">
-      <p class="serif" data-lines>“Me encantó el lugar. Hermoso y bien decorado. Los mejores ramos de la ciudad de castro y además en un lugar cómodo y céntrico”</p>
-      <footer class="t-label">Ignacio M. · <span data-l="es">vía Google</span><span data-l="en">via Google</span></footer>
-    </blockquote>
-  </div>
+  <blockquote class="resena" lang="es"><p class="serif" data-lines>“Fantásticas, empáticas y amorosas !!! Y las flores bellas !!!”</p><footer>Tamara D. · <span data-l="es">vía Google</span><span data-l="en">via Google</span></footer></blockquote>
+  <blockquote class="resena" lang="es"><p class="serif" data-lines>“Me encantó el lugar. Hermoso y bien decorado. Los mejores ramos de la ciudad de castro y además en un lugar cómodo y céntrico”</p><footer>Ignacio M. · <span data-l="es">vía Google</span><span data-l="en">via Google</span></footer></blockquote>
 </section>
 
-<!-- ============ 12 · VISÍTANOS ============ -->
-<section class="visita field field--bosque" id="visitanos" aria-labelledby="vis-t">
+<!-- ============ 13 · VISÍTANOS ============ -->
+<section class="visita" id="visitanos" data-theme="light" aria-labelledby="vis-t">
   <div class="visita__text">
-    <h2 class="script visita__title" id="vis-t" data-lines>¿Buscas flores en Castro? Las encontraste.</h2>
+    <h2 class="visita__title script" id="vis-t" data-lines>¿Buscas flores en Castro? Las encontraste.</h2>
     <dl class="visita__data">
-      <div><dt class="t-label"><span data-l="es">Dirección</span><span data-l="en">Address</span></dt><dd>Esmeralda 198, Castro, Chiloé</dd></div>
-      <div><dt class="t-label"><span data-l="es">Horario</span><span data-l="en">Opening hours</span></dt><dd><span data-l="es">Lunes a sábado · 10:00 a 19:30 hrs</span><span data-l="en">Monday to Saturday · 10:00 to 19:30</span></dd></div>
-      <div><dt class="t-label">WhatsApp</dt><dd><a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener">+56 9 6483 8490</a></dd></div>
+      <div><dt><span data-l="es">Dirección</span><span data-l="en">Address</span></dt><dd>Esmeralda 198, Castro, Chiloé</dd></div>
+      <div><dt><span data-l="es">Horario</span><span data-l="en">Opening hours</span></dt><dd><span data-l="es">Lunes a sábado · 10:00 a 19:30 hrs</span><span data-l="en">Monday to Saturday · 10:00 to 19:30</span></dd></div>
+      <div><dt>WhatsApp</dt><dd><a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener">+56 9 6483 8490</a></dd></div>
     </dl>
     <p class="visita__line">Pide o cotiza tu ramo por WhatsApp</p>
     <div class="visita__cta">
-      <a class="btn" href="https://wa.me/56964838490" target="_blank" rel="noopener" data-magnetic><span data-l="es">Escribir por WhatsApp</span><span data-l="en">Message on WhatsApp</span></a>
-      <a class="u-link t-label" href="https://maps.app.goo.gl/VrV2dyRCbsa9qnkP8" target="_blank" rel="noopener"><span data-l="es">Cómo llegar</span><span data-l="en">Directions</span></a>
+      <a class="btn" href="https://wa.me/56964838490" target="_blank" rel="noopener" data-magnetic><span><span data-l="es">Escribir por WhatsApp</span><span data-l="en">Message on WhatsApp</span></span><i aria-hidden="true"></i></a>
+      <a class="u-link" href="https://maps.app.goo.gl/VrV2dyRCbsa9qnkP8" target="_blank" rel="noopener"><span data-l="es">Cómo llegar</span><span data-l="en">Directions</span></a>
     </div>
   </div>
-  <div class="visita__map">
+  <div class="visita__map" data-reveal>
     <div class="map" data-map data-lat="-42.4841263" data-lng="-73.7634332" data-zoom="16" aria-label="Mapa: Floresta, Esmeralda 198, Castro" data-aria-en="Map: Floresta, Esmeralda 198, Castro" role="region"></div>
-    <p class="map__hint t-label" data-map-hint aria-hidden="true"><span data-hint="wheel"><span data-l="es">Usa + y − para acercar</span><span data-l="en">Use + and − to zoom</span></span><span data-hint="touch"><span data-l="es">Usa dos dedos para mover el mapa</span><span data-l="en">Use two fingers to move the map</span></span></p>
-    <figure class="visita__photo"><x-img id="visita" sizes="(min-width: 900px) 18vw, 40vw" alt="Fachada verde de Floresta con su letrero redondo y un ramo rosado"></figure>
+    <p class="map__hint" data-map-hint aria-hidden="true"><span data-hint="wheel"><span data-l="es">Usa + y − para acercar</span><span data-l="en">Use + and − to zoom</span></span><span data-hint="touch"><span data-l="es">Usa dos dedos para mover el mapa</span><span data-l="en">Use two fingers to move the map</span></span></p>
   </div>
+  <figure class="visita__photo" data-reveal data-speed="8"><x-img id="visita" sizes="(min-width: 900px) 16vw, 40vw" alt="Fachada verde de Floresta con su letrero redondo y un ramo rosado"></figure>
 </section>
 
 </main>
 
-<!-- ============ 13 · PIE ============ -->
-<footer class="foot field field--hondo" lang="es">
-  <p class="script foot__motto" data-lines>Flores lindas, para momentos que importan.</p>
+<!-- ============ PIE ============ -->
+<footer class="foot" lang="es">
+  <p class="foot__motto script" data-lines>Flores lindas, para momentos que importan.</p>
   <img class="foot__firma" src="brand/logo/firma-claro.svg" alt="Floresta by Almácigos Chiloé" width="4084" height="900">
   <div class="foot__cols">
-    <p class="t-label">Esmeralda 198 · Castro · Chiloé</p>
-    <p class="t-label"><a class="u-link" href="https://www.instagram.com/florestaenchiloe/" target="_blank" rel="noopener">Instagram @florestaenchiloe</a></p>
-    <p class="t-label"><a class="u-link" href="https://www.instagram.com/almacigoschiloe/" target="_blank" rel="noopener"><span data-l="es">Vivero</span><span data-l="en">Nursery</span> @almacigoschiloe</a></p>
-    <p class="t-label"><a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener">WhatsApp +56 9 6483 8490</a></p>
+    <p>Esmeralda 198 · Castro · Chiloé</p>
+    <p><a class="u-link" href="https://www.instagram.com/florestaenchiloe/" target="_blank" rel="noopener">Instagram @florestaenchiloe</a></p>
+    <p><a class="u-link" href="https://www.instagram.com/almacigoschiloe/" target="_blank" rel="noopener"><span data-l="es">Vivero</span><span data-l="en">Nursery</span> @almacigoschiloe</a></p>
+    <p><a class="u-link" href="https://wa.me/56964838490" target="_blank" rel="noopener">WhatsApp +56 9 6483 8490</a></p>
   </div>
-  <p class="foot__credit t-label"><span data-l="es">Fotos y videos: @florestaenchiloe</span><span data-l="en">Photos and videos: @florestaenchiloe</span></p>
+  <p class="foot__credit"><span data-l="es">Fotos y videos: @florestaenchiloe</span><span data-l="en">Photos and videos: @florestaenchiloe</span></p>
 </footer>
 
 <!-- ============ PEDIDO (carrito → WhatsApp) ============ -->

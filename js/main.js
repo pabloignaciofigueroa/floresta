@@ -109,7 +109,7 @@
       lenis && lenis.stop();
       if (window.gsap && !reduced) {
         gsap.fromTo(menu, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: .8, ease: 'power3.inOut' });
-        gsap.fromTo($$('.menu__w', menu), { yPercent: 110 }, { yPercent: 0, duration: .8, stagger: .05, ease: 'expo.out', delay: .3 });
+        gsap.fromTo($$('.menu__w', menu), { yPercent: 110 }, { yPercent: 0, duration: .8, stagger: .05, ease: 'power3.inOut', delay: .3 });
       } else menu.style.clipPath = 'none';
       $('[data-menu-close]').focus();
     } else {
@@ -192,9 +192,35 @@
       if (same) same.qty++; else items.push(it);
       saveCart(); renderCart();
       navHoldUntil = Date.now() + 3500; $('[data-nav]').classList.remove('is-hidden');
+      flyToBag(card);
       cartBtn.classList.remove('is-bump'); void cartBtn.offsetWidth; cartBtn.classList.add('is-bump');
       toast((root.dataset.lang === 'en' ? 'Added: ' : 'Agregado: ') + `${it.name} (${it.option})`);
     });
+  });
+  /* el ramo, en miniatura, viaja hasta "Pedido" */
+  const flyToBag = (card) => {
+    const img = $('.ramo__img img', card);
+    if (!img || !window.gsap || reduced) return;
+    const a = img.getBoundingClientRect(), z = cartBtn.getBoundingClientRect();
+    const f = img.cloneNode(); f.removeAttribute('srcset'); f.src = img.currentSrc || img.src;
+    Object.assign(f.style, { position: 'fixed', left: a.left + 'px', top: a.top + 'px', width: a.width + 'px', height: a.height + 'px', objectFit: 'cover', borderRadius: '24px', zIndex: 140, pointerEvents: 'none' });
+    document.body.appendChild(f);
+    const s = 56 / a.width;
+    gsap.to(f, { x: z.left + z.width / 2 - (a.left + a.width / 2), y: z.top + z.height / 2 - (a.top + a.height / 2), scale: s, borderRadius: '50%', opacity: .2, duration: .9, ease: 'power3.inOut', onComplete: () => f.remove() });
+  };
+  /* el precio rueda al cambiar de tamaño */
+  $$('[data-product]').forEach(card => {
+    const out = $('[data-price-out]', card);
+    if (!out) return;
+    $$('input[type="radio"]', card).forEach(r => r.addEventListener('change', () => {
+      const v = clp(parseInt(r.dataset.price, 10));
+      if (!window.gsap || reduced) { out.textContent = v; return; }
+      gsap.killTweensOf(out);
+      gsap.timeline()
+        .to(out, { yPercent: -60, opacity: 0, duration: .22, ease: 'power2.in' })
+        .call(() => { out.textContent = v; })
+        .fromTo(out, { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .38, ease: 'power3.out' });
+    }));
   });
   const toggleCart = (open) => {
     if (open === cartOpen) return;
@@ -208,7 +234,7 @@
       cart.hidden = false;
       lenis && lenis.stop();
       if (window.gsap && !reduced) {
-        gsap.fromTo(panel, { xPercent: 100 }, { xPercent: 0, duration: .7, ease: 'expo.out' });
+        gsap.fromTo(panel, { xPercent: 100 }, { xPercent: 0, duration: .7, ease: 'power3.inOut' });
         gsap.fromTo($('.cart__scrim', cart), { opacity: 0 }, { opacity: 1, duration: .4 });
       }
       $('.cart__close', cart).focus();
@@ -363,7 +389,7 @@
             slideChange(s) {
               if (!cur) return;
               const n = pad(s.realIndex + 1);
-              if (window.gsap && !reduced) gsap.fromTo(cur, { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .5, ease: 'expo.out', onStart: () => { cur.textContent = n; } });
+              if (window.gsap && !reduced) gsap.fromTo(cur, { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .5, ease: 'power3.inOut', onStart: () => { cur.textContent = n; } });
               else cur.textContent = n;
             }
           }
@@ -384,14 +410,24 @@
   /* ---------- ocasiones: la foto de cada fila aparece al pasar ---------- */
   $$('[data-ocas-key]').forEach(row => {
     const v = $('video', row);
-    const on = (yes) => {
-      if (!desktop.matches) return;
+    const thumb = $('.ocas__thumb', row);
+    let qx = null, qy = null;
+    const place = (e) => {
+      if (!window.gsap) { thumb.style.translate = `${e.clientX + 24}px ${e.clientY - 120}px`; return; }
+      if (!qx) { qx = gsap.quickTo(thumb, 'x', { duration: .55, ease: 'power3.out' }); qy = gsap.quickTo(thumb, 'y', { duration: .55, ease: 'power3.out' }); gsap.set(thumb, { x: e.clientX + 30, y: e.clientY - 140 }); }
+      qx(e.clientX + 30); qy(e.clientY - 140);
+    };
+    const on = (yes, e) => {
+      if (!desktop.matches || !fine.matches) return;
+      if (yes && e) place(e);
       row.classList.toggle('is-on', yes);
       if (v) { if (yes && !reduced) { lazyVideo(v); v.play().catch(() => {}); } else v.pause(); }
     };
-    row.addEventListener('pointerenter', () => on(true));
+    row.addEventListener('pointerenter', (e) => on(true, e));
+    row.addEventListener('pointermove', (e) => { if (row.classList.contains('is-on')) place(e); });
     row.addEventListener('pointerleave', () => on(false));
   });
+  desktop.addEventListener('change', () => $$('.ocas__thumb').forEach(t => { t.style.transform = ''; t.style.translate = ''; }));
 
   /* ---------- etiqueta "Arrastrar" (el cursor nativo sigue visible) ---------- */
   const drag = $('[data-drag]');
@@ -399,14 +435,14 @@
     let dx = 0, dy = 0, tx = 0, ty = 0, raf = 0, shown = false;
     const loop = () => { dx += (tx - dx) * .2; dy += (ty - dy) * .2; drag.style.translate = `${dx}px ${dy}px`; raf = requestAnimationFrame(loop); };
     $$('[data-drag-label]').forEach(zone => {
-      zone.addEventListener('pointerenter', (e) => { gsap.killTweensOf(drag); tx = dx = e.clientX; ty = dy = e.clientY; shown = true; cancelAnimationFrame(raf); loop(); gsap.to(drag, { scale: 1, opacity: 1, duration: .5, ease: 'expo.out' }); });
+      zone.addEventListener('pointerenter', (e) => { gsap.killTweensOf(drag); tx = dx = e.clientX; ty = dy = e.clientY; shown = true; cancelAnimationFrame(raf); loop(); gsap.to(drag, { scale: 1, opacity: 1, duration: .5, ease: 'power3.inOut' }); });
       zone.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; });
-      zone.addEventListener('pointerdown', () => shown && gsap.to(drag, { scale: .82, duration: .3, ease: 'expo.out' }));
-      zone.addEventListener('pointerup', () => shown && gsap.to(drag, { scale: 1, duration: .4, ease: 'expo.out' }));
-      zone.addEventListener('pointerleave', () => { shown = false; gsap.to(drag, { scale: 0, opacity: 0, duration: .4, ease: 'expo.out', onComplete: () => { if (!shown) cancelAnimationFrame(raf); } }); });
+      zone.addEventListener('pointerdown', () => shown && gsap.to(drag, { scale: .82, duration: .3, ease: 'power3.inOut' }));
+      zone.addEventListener('pointerup', () => shown && gsap.to(drag, { scale: 1, duration: .4, ease: 'power3.inOut' }));
+      zone.addEventListener('pointerleave', () => { shown = false; gsap.to(drag, { scale: 0, opacity: 0, duration: .4, ease: 'power3.inOut', onComplete: () => { if (!shown) cancelAnimationFrame(raf); } }); });
       $$('button, a, label, input', zone).forEach(b => {
         b.addEventListener('pointerenter', () => gsap.to(drag, { scale: 0, opacity: 0, duration: .25 }));
-        b.addEventListener('pointerleave', () => shown && gsap.to(drag, { scale: 1, opacity: 1, duration: .4, ease: 'expo.out' }));
+        b.addEventListener('pointerleave', () => shown && gsap.to(drag, { scale: 1, opacity: 1, duration: .4, ease: 'power3.inOut' }));
       });
     });
   }
@@ -416,11 +452,33 @@
     $$('[data-magnetic]').forEach(btn => {
       btn.addEventListener('pointermove', (e) => {
         const r = btn.getBoundingClientRect();
-        gsap.to(btn, { x: ((e.clientX - r.left) / r.width - .5) * 12, y: ((e.clientY - r.top) / r.height - .5) * 12, duration: .45, ease: 'expo.out' });
+        gsap.to(btn, { x: ((e.clientX - r.left) / r.width - .5) * 12, y: ((e.clientY - r.top) / r.height - .5) * 12, duration: .45, ease: 'power3.inOut' });
       });
-      btn.addEventListener('pointerleave', () => gsap.to(btn, { x: 0, y: 0, duration: .7, ease: 'expo.out' }));
+      btn.addEventListener('pointerleave', () => gsap.to(btn, { x: 0, y: 0, duration: .7, ease: 'power3.inOut' }));
     });
   }
+
+  /* ---------- barra blanca mientras se ve la portada ---------- */
+  const heroEl = $('[data-hero]');
+  if (heroEl && 'IntersectionObserver' in window) {
+    new IntersectionObserver((en) => $('[data-nav]').classList.toggle('on-hero', en[0].isIntersecting), { rootMargin: '-40px 0px -100% 0px' }).observe(heroEl);
+  }
+
+  /* ---------- Debes saber: notas que se abren y se cierran ---------- */
+  $$('[data-acc] details').forEach(d => {
+    const sum = $('summary', d), body = $('.acc', d);
+    sum.addEventListener('click', (e) => {
+      if (!window.gsap || reduced) return;
+      e.preventDefault();
+      gsap.killTweensOf(body);
+      if (d.open) {
+        gsap.to(body, { height: 0, opacity: 0, duration: .45, ease: 'power3.inOut', onComplete: () => { d.open = false; gsap.set(body, { clearProps: 'height,opacity' }); ScrollTrigger.refresh(); } });
+      } else {
+        d.open = true;
+        gsap.fromTo(body, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: .55, ease: 'power3.inOut', onComplete: () => { gsap.set(body, { clearProps: 'height' }); ScrollTrigger.refresh(); } });
+      }
+    });
+  });
 
   /* ---------- Esmeralda 198: once ramos, un solo letrero ---------- */
   const esm = $('[data-esm]');
@@ -436,6 +494,7 @@
     esmIdx = i;
     if (curEl) curEl.textContent = pad(i + 1);
   };
+  const esmBar = $('[data-esm-bar]');
 
   /* ---------- sin movimiento: todo visible, sin Lenis ---------- */
   if (reduced || !window.gsap || !window.ScrollTrigger) {
@@ -448,7 +507,7 @@
   }
 
   gsap.registerPlugin(ScrollTrigger);
-  gsap.defaults({ ease: 'expo.out', duration: .9 });
+  gsap.defaults({ ease: 'power3.inOut', duration: .8 });
 
   if (window.Lenis) {
     lenis = new Lenis({ lerp: .1, smoothWheel: true });
@@ -492,7 +551,7 @@
       const inner = $$('.line > span', el).filter(s => s.offsetParent);
       if (!inner.length) return;
       if (rebuild && el.getBoundingClientRect().top < window.innerHeight * .9) return;
-      revealTweens.push(gsap.fromTo(inner, { yPercent: 108 }, { yPercent: 0, duration: 1, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
+      revealTweens.push(gsap.fromTo(inner, { yPercent: 108 }, { yPercent: 0, duration: 1, stagger: .07, ease: 'power3.inOut', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
     });
   };
 
@@ -502,10 +561,11 @@
     ? Promise.race([Promise.allSettled(['400 1em Allura', '400 1em Catamaran', '600 1em Catamaran', '700 1em Catamaran', '400 1em "Playfair Display"', 'italic 400 1em "Playfair Display"'].map(f => document.fonts.load(f))), new Promise(r => setTimeout(r, 2500))]).catch(() => {})
     : Promise.resolve();
   if (loader) outside().forEach(el => { el.inert = true; });
-  gsap.set('[data-hero-fade]', { opacity: 0, y: 14 });
-  gsap.set('.hero__logo img', { yPercent: 104 });
-  gsap.set('[data-hero-motto] span', { opacity: 0, y: 24, filter: 'blur(6px)' });
-  gsap.set('[data-hero-sign]', { clipPath: 'circle(0% at 50% 50%)' });
+  gsap.set('[data-hero-fade]', { opacity: 0, y: 18 });
+  gsap.set('.hero__logo .logo-mask', { yPercent: 102 });
+  gsap.set('[data-hero-motto] span', { opacity: 0, y: 26 });
+  gsap.set('[data-hero-media]', { clipPath: 'inset(8% 6% 8% 6% round 40px)' });
+  gsap.set('[data-hero-media] img', { scale: 1.22 });
 
   const prefetchRest = () => {
     const conn = navigator.connection || {};
@@ -522,40 +582,80 @@
     (window.requestIdleCallback || ((fn) => setTimeout(fn, 300)))(() => { next(); next(); });
   };
 
+  /* portada: la precarga sube, el ramo se abre a pantalla completa, el logo emerge */
   finishIntro = () => {
     if (introDone) return;
     introDone = true;
     clearTimeout(loaderSafety);
     buildReveals();
-    const tl = gsap.timeline({ onComplete: () => { loader && loader.remove(); prefetchRest(); } });
-    tl.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'power3.inOut' })
-      .call(() => { if (loader) loader.style.pointerEvents = 'none'; outside().forEach(el => { el.inert = menuOpen || cartOpen; }); lenis && !menuOpen && !cartOpen && lenis.start(); introPlayed = true; $('[data-hero-video]')?.play().catch(() => {}); }, null, .9)
-      .to('[data-hero-sign]', { clipPath: 'circle(50% at 50% 50%)', duration: 1.6, ease: 'expo.out' }, '-=.45')
-      .fromTo('.hero__video', { scale: 1.3 }, { scale: 1.04, duration: 2.2, ease: 'expo.out' }, '<')
-      .to('.hero__logo img', { yPercent: 0, duration: 1.2, ease: 'expo.out' }, '<.1')
-      .to('[data-hero-motto] span', { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, stagger: .16, ease: 'expo.out' }, '<.25')
-      .to('[data-hero-fade]', { opacity: 1, y: 0, duration: .9, stagger: .08, ease: 'expo.out' }, '<.2');
+    const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' }, onComplete: () => { loader && loader.remove(); prefetchRest(); gsap.set('[data-hero-media]', { clearProps: 'clipPath' }); } });
+    tl.to(loader, { yPercent: -100, duration: .9, ease: 'power4.inOut' })
+      .call(() => { if (loader) loader.style.pointerEvents = 'none'; outside().forEach(el => { el.inert = menuOpen || cartOpen; }); lenis && !menuOpen && !cartOpen && lenis.start(); }, null, .7)
+      .to('[data-hero-media]', { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 1.25 }, .35)
+      .to('[data-hero-media] img', { scale: 1.06, duration: 1.6 }, .35)
+      .to('.hero__logo .logo-mask', { yPercent: 0, duration: 1.1 }, .85)
+      .to('[data-hero-motto] span', { opacity: 1, y: 0, duration: .8, stagger: .12 }, 1.1)
+      .to('[data-hero-fade]', { opacity: 1, y: 0, duration: .7 }, 1.35);
     ScrollTrigger.refresh();
   };
-  const minShow = new Promise(r => setTimeout(r, Math.max(0, 1300 - performance.now())));
+  const minShow = new Promise(r => setTimeout(r, Math.max(0, 1200 - performance.now())));
   Promise.all([critical.reached, fontsReady, minShow]).then(() => {
     gsap.timeline({ onComplete: () => finishIntro() })
-      .to('.loader__pct', { opacity: 0, y: -8, duration: .35, ease: 'power2.in' })
-      .to('.loader__full', { opacity: 1, duration: .6, ease: 'power2.out' }, '-=.1')
-      .to({}, { duration: .3 });
+      .to('.loader__pct', { opacity: 0, y: -8, duration: .3, ease: 'power2.in' })
+      .to('.loader__full', { opacity: 1, duration: .5, ease: 'power2.inOut' }, '-=.1')
+      .to({}, { duration: .25 });
   }, () => finishIntro());
 
-  /* portada: al salir, el letrero se hunde y el texto se va */
-  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
-    .to('[data-hero-sign]', { yPercent: 14, scale: .92, ease: 'none' }, 0)
-    .to('.hero__text', { yPercent: -16, opacity: .2, ease: 'none' }, 0);
+  /* al bajar: el ramo se queda atrás y el texto se adelanta */
+  gsap.timeline({ scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: .4 } })
+    .to('[data-hero-media]', { yPercent: 22, ease: 'none' }, 0)
+    .to('.hero__content', { yPercent: -40, opacity: 0, ease: 'none' }, 0);
 
-  /* ---------- manifiesto: masas a distinta velocidad ---------- */
-  $$('.masa').forEach((m, i) => {
-    const s = parseFloat(m.dataset.speed || 0);
-    gsap.fromTo(m, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.2, ease: 'expo.out', delay: i * .08, scrollTrigger: { trigger: '.manif', start: 'top 70%', once: true } });
-    gsap.fromTo(m, { yPercent: -s }, { yPercent: s, ease: 'none', scrollTrigger: { trigger: '.manif', start: 'top bottom', end: 'bottom top', scrub: .6 } });
+  /* ---------- fotos que se descubren (cortina) y masas a distinta velocidad ---------- */
+  const fromClip = { left: 'inset(0% 100% 0% 0%)', right: 'inset(0% 0% 0% 100%)', '': 'inset(100% 0% 0% 0%)' };
+  $$('[data-reveal]').forEach(fig => {
+    const img = $('img, video', fig);
+    const dir = fig.dataset.reveal || '';
+    gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 82%', once: true } })
+      .fromTo(fig, { clipPath: fromClip[dir] || fromClip[''] }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.1, ease: 'power4.inOut', clearProps: 'clipPath' })
+      .fromTo(img || {}, { scale: 1.25 }, { scale: 1, duration: 1.4, ease: 'power3.inOut' }, 0);
   });
+  const mmSpeed = gsap.matchMedia();
+  mmSpeed.add('(min-width: 900px)', () => {
+    $$('[data-speed]').forEach(el => {
+      const sp = parseFloat(el.dataset.speed) || 0;
+      gsap.fromTo(el, { yPercent: -sp }, { yPercent: sp, ease: 'none', scrollTrigger: { trigger: el.closest('section'), start: 'top bottom', end: 'bottom top', scrub: .6 } });
+    });
+  });
+  $$('[data-parallax-in]').forEach(img => {
+    gsap.fromTo(img, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: img.closest('section'), start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  /* ---------- cinta de ramos: corre sola, acelera con el scroll, se calma con el cursor ---------- */
+  const track = $('[data-cinta]');
+  if (track) {
+    const set = $('.cinta__set', track);
+    const clone = set.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    $$('img', clone).forEach(i => { i.alt = ''; i.removeAttribute('data-alt-en'); i.loading = 'lazy'; });
+    track.appendChild(clone);
+    let x = 0, speed = 0.6, target = 0.6, boost = 0, w = set.offsetWidth, visible = false;
+    new ResizeObserver(() => { w = set.offsetWidth; }).observe(set);
+    new IntersectionObserver((en) => { visible = en[0].isIntersecting; }).observe(track);
+    track.addEventListener('pointerenter', () => { target = 0.12; });
+    track.addEventListener('pointerleave', () => { target = 0.6; });
+    if (lenis) lenis.on('scroll', (e) => { boost = Math.min(6, Math.abs(e.velocity) * .35); });
+    gsap.ticker.add((t, dt) => {
+      if (!visible) return;
+      speed += (target + boost - speed) * .06; boost *= .92;
+      x -= speed * dt * .06;
+      if (-x >= w) x += w;
+      track.style.transform = `translate3d(${x}px,0,0)`;
+    });
+  }
+
+  /* ---------- ramos: entran como mazo que se reparte ---------- */
+  gsap.fromTo('.ramo', { opacity: 0, y: 60, rotate: (i) => [-3, 2, -1.5, 2.5, -2][i % 5] }, { opacity: 1, y: 0, rotate: 0, stagger: .08, duration: .9, ease: 'power3.inOut', scrollTrigger: { trigger: '.ramos__slider', start: 'top 85%', once: true } });
 
   /* ---------- Esmeralda 198: sticky sin pin; el progreso elige el ramo ---------- */
   if (esm && frames.length) {
@@ -565,31 +665,28 @@
     ScrollTrigger.addEventListener('refreshInit', size);
     ScrollTrigger.create({
       trigger: esm, start: 'top top', end: 'bottom bottom',
-      onUpdate: (self) => showFrame(Math.floor(self.progress * frames.length * .999))
+      onUpdate: (self) => { showFrame(Math.floor(self.progress * frames.length * .999)); if (esmBar) esmBar.style.transform = `scaleX(${self.progress})`; }
     });
-    gsap.fromTo('[data-esm-frame]', { clipPath: 'inset(12% 12% 12% 12%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: { trigger: esm, start: 'top bottom', end: 'top top', scrub: .5 } });
+    gsap.fromTo('[data-esm-frame]', { clipPath: 'inset(14% 10% 14% 10% round 40px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'power2.inOut', scrollTrigger: { trigger: esm, start: 'top bottom', end: 'top top', scrub: .5 } });
   }
 
-  /* ---------- imágenes con cortina y parallax ---------- */
-  $$('[data-clip]').forEach(fig => {
-    const img = $('img', fig);
-    gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 85%', once: true } })
-      .fromTo(fig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.2, ease: 'expo.out' })
-      .fromTo(img, { scale: 1.14 }, { scale: 1, duration: 1.7, ease: 'expo.out' }, 0);
-  });
-  $$('[data-parallax-in]').forEach(img => {
-    gsap.fromTo(img, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: img.closest('section'), start: 'top bottom', end: 'bottom top', scrub: true } });
-  });
-  $$('[data-parallax-bg]').forEach(m => {
-    gsap.fromTo(m, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: m.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
-  });
-  gsap.fromTo('.jardin__oval', { clipPath: 'inset(50% 0 50% 0 round 50%)' }, { clipPath: 'inset(0% 0 0% 0 round 50%)', duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.jardin', start: 'top 70%', once: true } });
-  gsap.fromTo('.blob', { scale: .6, rotate: -20, opacity: 0 }, { scale: 1, rotate: 0, opacity: 1, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.saber', start: 'top 70%', once: true } });
-  gsap.fromTo('.saber__list > div', { opacity: 0, y: 24 }, { opacity: 1, y: 0, stagger: .08, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.saber__list', start: 'top 85%', once: true } });
-  gsap.fromTo('.ocas__row', { opacity: 0, x: -20 }, { opacity: 1, x: 0, stagger: .07, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.ocas__list', start: 'top 85%', once: true } });
-  gsap.fromTo('.ramo', { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: .08, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.ramos__slider', start: 'top 85%', once: true } });
-  gsap.fromTo('.resenas__num', { yPercent: 40, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.resenas', start: 'top 70%', once: true } });
-  $$('.engrave').forEach(e => gsap.fromTo(e, { yPercent: 6 }, { yPercent: -6, ease: 'none', scrollTrigger: { trigger: e.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+  /* ---------- invierno: la tarjeta se abre a pantalla completa ---------- */
+  const inv = $('[data-invierno]');
+  if (inv) {
+    const mmInv = gsap.matchMedia();
+    mmInv.add({ d: '(min-width: 900px)', m: '(max-width: 899px)' }, (ctx) => {
+      gsap.timeline({ scrollTrigger: { trigger: inv, start: 'top top', end: 'bottom bottom', scrub: .5 } })
+        .fromTo('[data-invierno-card]', { clipPath: ctx.conditions.d ? 'inset(9% 7% 9% 7% round 40px)' : 'inset(6% 4% 6% 4% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'power2.inOut' }, 0)
+        .fromTo('.invierno__media img', { scale: 1.16 }, { scale: 1, ease: 'power2.inOut' }, 0);
+    });
+  }
+
+  /* ---------- detalles que acompañan ---------- */
+  gsap.fromTo('.saber details', { opacity: 0, y: 26 }, { opacity: 1, y: 0, stagger: .07, duration: .7, scrollTrigger: { trigger: '.saber__list', start: 'top 85%', once: true } });
+  gsap.fromTo('.ocas__row', { opacity: 0, y: 24 }, { opacity: 1, y: 0, stagger: .07, duration: .7, scrollTrigger: { trigger: '.ocas__list', start: 'top 85%', once: true } });
+  gsap.fromTo('.resenas__stars i', { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, stagger: .08, duration: .6, ease: 'back.inOut(2)', scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
+  gsap.fromTo('.resena', { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
+  gsap.fromTo('.plant', { opacity: 0, x: 60 }, { opacity: 1, x: 0, stagger: .06, duration: .8, scrollTrigger: { trigger: '.jardin__strip', start: 'top 90%', once: true } });
 
   /* ---------- conservar la posición al cruzar el quiebre móvil/escritorio ---------- */
   desktop.addEventListener('change', () => {
@@ -603,17 +700,17 @@
   /* ---------- navegación: se esconde al bajar, cambia de tono sobre fondos claros ---------- */
   navTheme();
   const nav = $('[data-nav]');
+  $$('.nav__pill a').forEach(a => {
+    const sec = $(a.getAttribute('href'));
+    if (!sec) return;
+    ScrollTrigger.create({ trigger: sec, start: 'top 50%', end: 'bottom 50%', onToggle: (s) => a.classList.toggle('is-active', s.isActive) });
+  });
   ScrollTrigger.create({
     start: 'top -120',
     onUpdate: (self) => { nav.classList.toggle('is-hidden', self.direction === 1 && !menuOpen && !cartOpen && Date.now() > navHoldUntil); nav.classList.toggle('is-scrolled', self.scroll() > 120); },
     onLeaveBack: () => nav.classList.remove('is-scrolled')
   });
-  function navTheme() {
-    const nav = $('[data-nav]');
-    $$('[data-theme="light"]').forEach(sec => {
-      ScrollTrigger.create({ trigger: sec, start: 'top 40px', end: 'bottom 40px', onToggle: (s) => nav.classList.toggle('on-light', s.isActive) });
-    });
-  }
+  function navTheme() { /* v4: el tono de la barra lo decide la portada (on-hero) */ }
 
   /* ---------- re-división de líneas al cambiar idioma o ancho ---------- */
   let rz, lastW = window.innerWidth;

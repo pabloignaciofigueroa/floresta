@@ -14,7 +14,7 @@ with sync_playwright() as pw:
     pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
     ok(pg.evaluate("document.documentElement.lang") == 'en', 'cambia a inglés')
     ok('Bouquet' in pg.evaluate("document.querySelector('#fachada-01, [data-esm-frame] img').alt"), 'alt en inglés: ' + pg.evaluate("document.querySelector('[data-esm-frame] img').alt")[:50])
-    ok(pg.evaluate("getComputedStyle(document.querySelector('.nav__links [data-l=en]')).display") != 'none', 'interfaz en inglés visible')
+    ok(pg.evaluate("getComputedStyle(document.querySelector('.nav__pill [data-l=en]')).display") != 'none', 'interfaz en inglés visible')
     pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
     ok(pg.evaluate("document.documentElement.lang") == 'es', 'vuelve a español')
     # menú
@@ -53,6 +53,6 @@ with sync_playwright() as pw:
     p2.goto('http://localhost:8765/index.html'); p2.wait_for_timeout(1500)
     ok(p2.evaluate("!document.querySelector('.loader') && document.documentElement.classList.contains('no-motion')"), 'reducido: sin precarga, modo sin movimiento')
     ok(p2.evaluate("[...document.querySelectorAll('[data-esm-frame] img')].every(i=>getComputedStyle(i).opacity==='1')"), 'reducido: los 11 ramos visibles en grilla')
-    ok(p2.evaluate("getComputedStyle(document.querySelector('.hero__logo img')).transform") in ('none', 'matrix(1, 0, 0, 1, 0, 0)'), 'reducido: portada visible')
+    ok(p2.evaluate("getComputedStyle(document.querySelector('.hero__logo .logo-mask')).transform") in ('none', 'matrix(1, 0, 0, 1, 0, 0)'), 'reducido: portada visible')
     ok(not e2, 'reducido: sin errores ' + str(e2[:2]))
     b.close()

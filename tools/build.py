@@ -50,16 +50,15 @@ def size(rel):
 
 
 # Lo que la precarga espera (con su peso real) antes de abrir la portada.
-CRITICAL_IMGS = [('poster-portada', .5), ('manif-1', .22), ('manif-2', .17), ('manif-4', .19), ('fachada-01', .34)]
+CRITICAL_IMGS = [('hero', 1), ('cont-1', .42), ('cont-2', .18)]
 FONTS = ['allura-latin-400-normal', 'catamaran-latin-400-normal', 'catamaran-latin-600-normal', 'catamaran-latin-700-normal']
 crit = {
     'fonts': [{'url': f'assets/fonts/{f}.woff2', 'bytes': size(f'assets/fonts/{f}.woff2')} for f in FONTS]
-             + [{'url': f'brand/logo/{f}', 'bytes': size(f'brand/logo/{f}')} for f in ('logotipo-claro.svg', 'isotipo.svg')],
+             + [{'url': f'brand/logo/{f}', 'bytes': size(f'brand/logo/{f}')} for f in ('logotipo.svg', 'isotipo.svg')],
     'imgs': [{'frac': fr,
               's': {'url': META[i]['src']['800']['path'], 'bytes': size(META[i]['src']['800']['path'])},
               'l': {'url': META[i]['src']['1800']['path'], 'bytes': size(META[i]['src']['1800']['path'])}} for i, fr in CRITICAL_IMGS],
-    'video': {'webm': {'url': 'assets/video/portada.webm', 'bytes': size('assets/video/portada.webm')},
-              'mp4': {'url': 'assets/video/portada.mp4', 'bytes': size('assets/video/portada.mp4')}},
+    'video': None,
 }
 out = out.replace('<!--CRITICAL-->', '<script type="application/json" id="critical">' + json.dumps(crit, separators=(',', ':')) + '</script>')
 (ROOT / 'index.html').write_text(out)
