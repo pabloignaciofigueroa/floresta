@@ -704,19 +704,28 @@
   gsap.set('[data-hero-media]', { clipPath: 'inset(8% 6% 8% 6% round 40px)' });
   gsap.set('[data-hero-media] img', { scale: 1.22 });
 
+  /* después de abrir: el resto carga solo, en el orden de la página (fotos y videos, de a uno por fila).
+     Si alguien baja rápido, el observador de cercanía de cada video lo adelanta en la fila. */
   const prefetchRest = () => {
     const conn = navigator.connection || {};
     if (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '')) return;
-    const imgs = $$('img[loading="lazy"]').filter(i => !i.closest('[data-menu]'));
-    const next = () => {
-      const img = imgs.shift();
-      if (!img) return;
-      if (img.complete && img.naturalWidth) return next();
-      img.addEventListener('load', next, { once: true });
-      img.addEventListener('error', next, { once: true });
-      img.loading = 'eager';
+    const queue = $$('img[loading="lazy"], video[data-lazy-video]').filter(el => !el.closest('[data-menu]') && !el.closest('[data-panel]:not(.is-open)'));
+    const waitFor = (el, evs, ms) => new Promise(res => { const t = setTimeout(res, ms); evs.forEach(e => el.addEventListener(e, () => { clearTimeout(t); res(); }, { once: true })); });
+    const worker = async () => {
+      for (let el = queue.shift(); el; el = queue.shift()) {
+        if (el.tagName === 'IMG') {
+          if (el.complete && el.naturalWidth) continue;
+          el.loading = 'eager';
+          await waitFor(el, ['load', 'error'], 8000);
+        } else {
+          if (el.readyState >= 3) continue;
+          lazyVideo(el);
+          const srcs = $$('source', el);
+          await Promise.race([waitFor(el, ['canplaythrough', 'error'], 12000), srcs.length ? waitFor(srcs[srcs.length - 1], ['error'], 12000) : new Promise(() => {})]);
+        }
+      }
     };
-    (window.requestIdleCallback || ((fn) => setTimeout(fn, 300)))(() => { next(); next(); });
+    (window.requestIdleCallback || ((fn) => setTimeout(fn, 300)))(() => { worker(); worker(); });
   };
 
   /* portada: la precarga sube, el ramo se abre a pantalla completa, el logo emerge */

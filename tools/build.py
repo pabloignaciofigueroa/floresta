@@ -46,15 +46,18 @@ def size(rel):
 
 
 # Lo que la precarga espera (con su peso real) antes de abrir la portada.
-CRITICAL_IMGS = [('hero-1', 1), ('cont-1', .42), ('cont-2', .18)]
-FONTS = ['fraunces-latin-full-normal', 'figtree-latin-wght-normal']
+# Lo que se ve primero: las 3 fotos de la portada, el manifiesto y la cinta. (id, fracción del ancho en escritorio, en celular)
+CRITICAL_IMGS = [('hero-1', 1, 1), ('hero-2', 1, 1), ('hero-3', 1, 1), ('cont-1', .42, 1), ('cont-2', .18, .4)] + [(f'cinta-{i}', .15, .45) for i in range(1, 9)]
+# Portadas de los videos de "Comienza con una idea" (los videos cargan después, en segundo plano)
+POSTERS = ['oficio', 'ratito', 'vitrina', 'airelibre']
+FONTS = ['fraunces-latin-full-normal', 'fraunces-latin-full-italic', 'figtree-latin-wght-normal']
 crit = {
     'fonts': [{'url': f'assets/fonts/{f}.woff2', 'bytes': size(f'assets/fonts/{f}.woff2')} for f in FONTS]
              + [{'url': f'brand/logo/{f}', 'bytes': size(f'brand/logo/{f}')} for f in ('logotipo.svg', 'isotipo.svg')],
-    'imgs': [{'frac': fr,
+    'imgs': [{'frac': fr, 'mfrac': mf,
               's': {'url': META[i]['src']['800']['path'], 'bytes': size(META[i]['src']['800']['path'])},
-              'l': {'url': META[i]['src']['1800']['path'], 'bytes': size(META[i]['src']['1800']['path'])}} for i, fr in CRITICAL_IMGS],
-    'video': None,
+              'l': {'url': META[i]['src']['1800']['path'], 'bytes': size(META[i]['src']['1800']['path'])}} for i, fr, mf in CRITICAL_IMGS],
+    'extra': [{'url': f'assets/img/poster-{p}-800.webp', 'bytes': size(f'assets/img/poster-{p}-800.webp')} for p in POSTERS],
 }
 out = out.replace('<!--CRITICAL-->', '<script type="application/json" id="critical">' + json.dumps(crit, separators=(',', ':')) + '</script>')
 (ROOT / 'index.html').write_text(out)

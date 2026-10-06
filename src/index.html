@@ -65,8 +65,9 @@
   if (!man || !window.fetch || matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return; }
   var dpr = Math.min(window.devicePixelRatio || 1, 2), mobile = innerWidth < 900, jobs = [];
   man.fonts.forEach(function (f) { jobs.push(f); });
-  man.imgs.forEach(function (i) { jobs.push(innerWidth * (mobile ? 1 : i.frac) * dpr > 800 ? i.l : i.s); });
-  if (!low && man.video) jobs.push(document.createElement('video').canPlayType('video/webm') ? man.video.webm : man.video.mp4);
+  /* con ahorro de datos o 2G: solo letras y la primera foto de la portada */
+  (low ? man.imgs.slice(0, 1) : man.imgs).forEach(function (i) { jobs.push(innerWidth * (mobile ? (i.mfrac || 1) : i.frac) * dpr > 800 ? i.l : i.s); });
+  if (!low && man.extra) man.extra.forEach(function (e) { jobs.push(e); });
   jobs.forEach(function (j) { total += j.bytes; });
   function one(job) {
     var got = 0;

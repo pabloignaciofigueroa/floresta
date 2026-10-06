@@ -510,3 +510,13 @@ html:not(.js) .loader { display: none; }
 @media (max-width: 899px) { .alm-head { padding: 0 var(--gut); } .alm { width: min(60vw, 260px) !important; } }
 /* pies de las publicaciones: livianos */
 .alm__cap, .reel figcaption { font-weight: 300; }
+
+/* ---------- v5.3: aire entre la portada y la foto del manifiesto ---------- */
+.cont { --gap-top: clamp(24px, 2.6vw, 40px); }
+.cont__a { top: var(--gap-top); height: calc(100% - var(--gap-top)); border-radius: var(--r-lg) 0 0 var(--r-lg); }
+@media (max-width: 899px) {
+  .cont { --gap-top: 28px; }
+  .cont__a { top: auto; margin-top: var(--gap-top); height: 70svh; }
+  .cont__b { top: calc(70svh + var(--gap-top) - 110px); }
+  .cont__tag { top: calc(70svh + var(--gap-top) - 60px); }
+}
