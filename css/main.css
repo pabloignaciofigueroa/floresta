@@ -508,3 +508,5 @@ html:not(.js) .loader { display: none; }
 .alm__btn:hover { background: var(--frambuesa); }
 .jardin__strip .swiper-wrapper { align-items: flex-start; }
 @media (max-width: 899px) { .alm-head { padding: 0 var(--gut); } .alm { width: min(60vw, 260px) !important; } }
+/* pies de las publicaciones: livianos */
+.alm__cap, .reel figcaption { font-weight: 300; }
