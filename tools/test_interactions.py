@@ -1,0 +1,58 @@
+"""Pruebas automáticas: menú (dialog, foco, inert), pedido → WhatsApp, idioma, movimiento reducido."""
+from playwright.sync_api import sync_playwright
+import urllib.parse
+ok = lambda c, m: print(('OK   ' if c else 'FALLA'), m)
+with sync_playwright() as pw:
+    b = pw.chromium.launch(executable_path='/opt/pw-browsers/chromium')
+    pg = b.new_page(viewport={'width': 1440, 'height': 900})
+    errs = []
+    pg.on('pageerror', lambda e: errs.append(str(e)))
+    pg.add_init_script("window.open=(u)=>{window.__wa=u;return null}")
+    pg.goto('http://localhost:8765/index.html'); pg.wait_for_timeout(6500)
+    ok(pg.evaluate("!document.querySelector('.loader')"), 'la precarga se retira')
+    # idioma
+    pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
+    ok(pg.evaluate("document.documentElement.lang") == 'en', 'cambia a inglés')
+    ok('Bouquet' in pg.evaluate("document.querySelector('#fachada-01, [data-esm-frame] img').alt"), 'alt en inglés: ' + pg.evaluate("document.querySelector('[data-esm-frame] img').alt")[:50])
+    ok(pg.evaluate("getComputedStyle(document.querySelector('.nav__links [data-l=en]')).display") != 'none', 'interfaz en inglés visible')
+    pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
+    ok(pg.evaluate("document.documentElement.lang") == 'es', 'vuelve a español')
+    # menú
+    pg.set_viewport_size({'width': 1000, 'height': 800}); pg.wait_for_timeout(400)
+    pg.click('[data-menu-open]'); pg.wait_for_timeout(900)
+    ok(pg.evaluate("!document.querySelector('[data-menu]').hidden && document.querySelector('main').inert"), 'menú abierto, resto inert')
+    ok(pg.evaluate("document.activeElement.hasAttribute('data-menu-close')"), 'foco en Cerrar')
+    for _ in range(10): pg.keyboard.press('Tab')
+    ok(pg.evaluate("!!document.activeElement.closest('[data-menu]')"), 'foco atrapado en el menú')
+    pg.keyboard.press('Escape'); pg.wait_for_timeout(900)
+    ok(pg.evaluate("document.querySelector('[data-menu]').hidden && !document.querySelector('main').inert"), 'Escape cierra el menú')
+    pg.set_viewport_size({'width': 1440, 'height': 900}); pg.wait_for_timeout(400)
+    # pedido
+    pg.evaluate("document.querySelector('#ramos').scrollIntoView()"); pg.wait_for_timeout(1500)
+    pg.click('[data-product="Rosas Rojas"] label:nth-of-type(2)')
+    pg.click('[data-product="Rosas Rojas"] [data-add]')
+    pg.click('[data-product="Rosas Rojas"] [data-add]')
+    pg.evaluate("document.querySelector('[data-product=\"Ramos Silvestres\"] [data-add]').click()")
+    ok(pg.evaluate("document.querySelector('[data-cart-count]').textContent") == '3', 'contador = 3')
+    pg.click('[data-cart-open]'); pg.wait_for_timeout(800)
+    ok(pg.evaluate("document.querySelector('[data-cart-total]').textContent") == '$93.000', 'total ' + pg.evaluate("document.querySelector('[data-cart-total]').textContent"))
+    pg.fill('textarea[name=mensaje]', 'Feliz cumpleaños')
+    pg.click('.cart__send')
+    wa = urllib.parse.unquote(pg.evaluate('window.__wa') or '')
+    print('     ', wa.replace('\n', ' | ')[:240])
+    ok(wa.startswith('https://wa.me/56964838490') and '2 × Rosas Rojas (10 Rosas) $78.000' in wa and 'Feliz cumpleaños' in wa, 'mensaje de WhatsApp armado')
+    pg.keyboard.press('Escape'); pg.wait_for_timeout(700)
+    ok(pg.evaluate("document.querySelector('[data-cart]').hidden"), 'Escape cierra el pedido')
+    pg.reload(); pg.wait_for_timeout(5000)
+    ok(pg.evaluate("document.querySelector('[data-cart-count]').textContent") == '3', 'el pedido se recuerda al recargar')
+    ok(not errs, 'sin errores de JS ' + str(errs[:3]))
+    # movimiento reducido
+    ctx = b.new_context(viewport={'width': 1440, 'height': 900}, reduced_motion='reduce')
+    p2 = ctx.new_page(); e2 = []
+    p2.on('pageerror', lambda e: e2.append(str(e)))
+    p2.goto('http://localhost:8765/index.html'); p2.wait_for_timeout(1500)
+    ok(p2.evaluate("!document.querySelector('.loader') && document.documentElement.classList.contains('no-motion')"), 'reducido: sin precarga, modo sin movimiento')
+    ok(p2.evaluate("[...document.querySelectorAll('[data-esm-frame] img')].every(i=>getComputedStyle(i).opacity==='1')"), 'reducido: los 11 ramos visibles en grilla')
+    ok(p2.evaluate("getComputedStyle(document.querySelector('.hero__logo img')).transform") in ('none', 'matrix(1, 0, 0, 1, 0, 0)'), 'reducido: portada visible')
+    ok(not e2, 'reducido: sin errores ' + str(e2[:2]))
+    b.close()

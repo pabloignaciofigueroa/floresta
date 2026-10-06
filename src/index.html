@@ -43,7 +43,7 @@
 <script>
 /* Carga crítica con progreso real (bytes). Tope de 6 s; recorrido mínimo de 1,6 s. */
 (function () {
-  var MAX = 6000, MIN = 1600, T0 = performance.now(), el = document.getElementById('critical'), pctEl = document.querySelector('[data-pct]');
+  var MAX = 6000, MIN = 1600, T0 = performance.now(), el = document.getElementById('critical'), pctEl = document.querySelector('[data-pct]'), lo = document.querySelector('.loader__line');
   var conn = navigator.connection || {}, low = !!conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
   var man = null; try { man = JSON.parse(el.textContent); } catch (e) {}
   var total = 0, loaded = 0, finished = false, shown = 0, rDone, rReach;
@@ -56,7 +56,7 @@
     shown += (target - shown) * (finished ? .2 : .12);
     if (target - shown < .4) shown = target;
     var n = Math.floor(shown); if (pctEl) pctEl.textContent = n < 10 ? '0' + n : String(n);
-    document.documentElement.style.setProperty('--load', (shown / 100).toFixed(3));
+    if (lo) lo.style.setProperty('--load', (shown / 100).toFixed(3));
     if (shown >= 100 && finished) return rReach();
     requestAnimationFrame(tick);
   }
@@ -129,7 +129,7 @@
 
 <!-- ============ 01 · PORTADA ============ -->
 <section class="hero field field--bosque" aria-label="Floresta">
-  <img class="engrave engrave--hero" src="brand/logo/grabado-claro.svg" alt="" aria-hidden="true" width="2342" height="2961">
+  <img class="engrave engrave--hero" src="assets/img/grabado-claro.webp" alt="" aria-hidden="true" width="760" height="961">
   <div class="hero__text">
     <p class="t-label hero__kicker" data-hero-fade><span data-l="es">Florería · Castro, Chiloé</span><span data-l="en">Flower shop · Castro, Chiloé</span></p>
     <h1 class="hero__brand">
@@ -145,7 +145,7 @@
   </div>
   <div class="hero__sign" data-hero-sign>
     <div class="hero__disk">
-      <video class="hero__video" data-hero-video muted playsinline loop autoplay preload="auto" poster="assets/img/poster-portada-800.webp" aria-label="Mesón cubierto de flores: crisantemos, margaritas y girasoles" data-aria-en="A counter covered in flowers: chrysanthemums, daisies and sunflowers">
+      <video class="hero__video" data-hero-video muted playsinline loop preload="auto" poster="assets/img/poster-portada-800.webp" aria-label="Mesón cubierto de flores: crisantemos, margaritas y girasoles" data-aria-en="A counter covered in flowers: chrysanthemums, daisies and sunflowers">
         <source src="assets/video/portada.webm" type="video/webm">
         <source src="assets/video/portada.mp4" type="video/mp4">
       </video>
@@ -220,7 +220,7 @@
 
 <!-- ============ 05 · DEL JARDÍN A LA FLORERÍA ============ -->
 <section class="jardin field field--salvia" id="jardin" data-theme="light" aria-labelledby="jardin-t">
-  <img class="engrave engrave--jardin" src="brand/logo/grabado-oscuro.svg" alt="" aria-hidden="true" width="2342" height="2961">
+  <img class="engrave engrave--jardin" src="assets/img/grabado-oscuro.webp" alt="" aria-hidden="true" width="760" height="961">
   <div class="jardin__oval">
     <video data-lazy-video muted playsinline loop preload="none" data-poster="assets/img/poster-jardin-800.webp" aria-label="Helleborus del jardín del vivero, frente al letrero de Floresta" data-aria-en="Hellebores from the nursery garden, in front of the Floresta sign">
       <source data-src="assets/video/jardin.webm" type="video/webm">
@@ -260,7 +260,7 @@
     <div class="swiper-wrapper">
 
       <article class="swiper-slide ramo" data-product="Ramos Silvestres" aria-labelledby="p-silv">
-        <img class="ramo__iso" src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961">
+        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-silv">Ramos Silvestres</h3>
         <p class="ramo__sub">Diseños naturales, delicados y llenos de encanto</p>
         <fieldset class="ramo__opts">
@@ -275,7 +275,7 @@
       </article>
 
       <article class="swiper-slide ramo" data-product="Rosas Rojas" aria-labelledby="p-rosas">
-        <img class="ramo__iso" src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961">
+        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-rosas">Rosas Rojas</h3>
         <p class="ramo__sub">Un clásico lleno de significado</p>
         <fieldset class="ramo__opts">
@@ -290,7 +290,7 @@
       </article>
 
       <article class="swiper-slide ramo" data-product="Ramos de Girasoles" aria-labelledby="p-gira">
-        <img class="ramo__iso" src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961">
+        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-gira">Ramos de Girasoles</h3>
         <p class="ramo__sub">Un clásico luminoso…</p>
         <fieldset class="ramo__opts">
@@ -305,7 +305,7 @@
       </article>
 
       <article class="swiper-slide ramo" data-product="Rosas y Girasoles" aria-labelledby="p-ryg">
-        <img class="ramo__iso" src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961">
+        <img class="ramo__iso" src="assets/img/isotipo-96.webp" alt="" aria-hidden="true" width="96" height="121" loading="lazy">
         <h3 class="script ramo__name" id="p-ryg">Rosas y Girasoles</h3>
         <p class="ramo__sub">Una combinación luminosa y especial</p>
         <fieldset class="ramo__opts">
@@ -326,7 +326,7 @@
         <p class="ramo__note">Podrás encontrar opciones desde $5.000 en adelante, con flores frescas y diseños pensados para emocionar, acompañar…</p>
         <p class="ramo__note">Esmeralda 198, Castro</p>
         <a class="btn ramo__add" href="#visitanos"><span data-l="es">Cómo llegar</span><span data-l="en">Directions</span></a>
-        <img class="ramo__isobig" src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961">
+        <img class="ramo__isobig" src="assets/img/isotipo-474.webp" alt="" aria-hidden="true" width="316" height="400" loading="lazy">
       </article>
 
     </div>
@@ -341,10 +341,10 @@
 
 <!-- ============ 07 · DEBES SABER… ============ -->
 <section class="saber field field--bosque" id="debes-saber" aria-labelledby="saber-t">
-  <img class="engrave engrave--saber" src="brand/logo/grabado-claro.svg" alt="" aria-hidden="true" width="2342" height="2961">
+  <img class="engrave engrave--saber" src="assets/img/grabado-claro.webp" alt="" aria-hidden="true" width="760" height="961">
   <div class="saber__head">
     <h2 class="script saber__title" id="saber-t" data-lines>Debes saber…</h2>
-    <div class="blob"><img src="brand/logo/isotipo.svg" alt="" aria-hidden="true" width="2342" height="2961"></div>
+    <div class="blob"><img src="assets/img/isotipo-474.webp" alt="" aria-hidden="true" width="316" height="400" loading="lazy"></div>
   </div>
   <dl class="saber__list">
     <div><dt class="t-label">Ramos silvestres</dt><dd>La composición de los ramos silvestres puede variar según disponibilidad de flores. Cada ramo es único, y todos tienen un encanto especial.</dd></div>

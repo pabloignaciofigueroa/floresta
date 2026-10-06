@@ -124,6 +124,7 @@
   let items = [];
   try { items = JSON.parse(store.get('floresta-pedido') || '[]'); if (!Array.isArray(items)) items = []; } catch (e) { items = []; }
   let cartOpen = false;
+  let navHoldUntil = 0; /* tras agregar, la barra con "Pedido" queda a la vista */
   const saveCart = () => store.set('floresta-pedido', JSON.stringify(items));
   const renderCart = () => {
     const n = items.reduce((a, i) => a + i.qty, 0);
@@ -171,6 +172,7 @@
       const same = items.find(i => i.name === it.name && i.option === it.option);
       if (same) same.qty++; else items.push(it);
       saveCart(); renderCart();
+      navHoldUntil = Date.now() + 3500; $('[data-nav]').classList.remove('is-hidden');
       cartBtn.classList.remove('is-bump'); void cartBtn.offsetWidth; cartBtn.classList.add('is-bump');
       toast((root.dataset.lang === 'en' ? 'Added: ' : 'Agregado: ') + `${it.name} (${it.option})`);
     });
@@ -233,12 +235,13 @@
     v.preload = 'auto';
     v.load();
   };
+  let introPlayed = false; /* el video de la portada parte cuando se levanta la precarga */
   const videos = $$('video');
   if ('IntersectionObserver' in window) {
     const near = new IntersectionObserver((en) => en.forEach(e => { if (e.isIntersecting) { lazyVideo(e.target); near.unobserve(e.target); } }), { rootMargin: '900px 0px' });
     const seen = new IntersectionObserver((en) => en.forEach(e => {
       const v = e.target;
-      if (e.isIntersecting && !reduced && !v.closest('.ocas__thumb')) v.play().catch(() => {});
+      if (e.isIntersecting && !reduced && !v.closest('.ocas__thumb') && (introPlayed || !v.hasAttribute('data-hero-video'))) v.play().catch(() => {});
       else if (!e.isIntersecting) v.pause();
     }), { threshold: .15 });
     videos.forEach(v => { if (v.hasAttribute('data-lazy-video')) near.observe(v); seen.observe(v); });
@@ -504,7 +507,7 @@
     buildReveals();
     const tl = gsap.timeline({ onComplete: () => { loader && loader.remove(); prefetchRest(); } });
     tl.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'power3.inOut' })
-      .call(() => { if (loader) loader.style.pointerEvents = 'none'; lenis && lenis.start(); }, null, .9)
+      .call(() => { if (loader) loader.style.pointerEvents = 'none'; lenis && lenis.start(); introPlayed = true; $('[data-hero-video]')?.play().catch(() => {}); }, null, .9)
       .to('[data-hero-sign]', { clipPath: 'circle(50% at 50% 50%)', duration: 1.6, ease: 'expo.out' }, '-=.45')
       .fromTo('.hero__video', { scale: 1.3 }, { scale: 1.04, duration: 2.2, ease: 'expo.out' }, '<')
       .to('.hero__logo img', { yPercent: 0, duration: 1.2, ease: 'expo.out' }, '<.1')
@@ -578,7 +581,7 @@
   const nav = $('[data-nav]');
   ScrollTrigger.create({
     start: 'top -120',
-    onUpdate: (self) => { nav.classList.toggle('is-hidden', self.direction === 1 && !menuOpen && !cartOpen); nav.classList.toggle('is-scrolled', self.scroll() > 120); },
+    onUpdate: (self) => { nav.classList.toggle('is-hidden', self.direction === 1 && !menuOpen && !cartOpen && Date.now() > navHoldUntil); nav.classList.toggle('is-scrolled', self.scroll() > 120); },
     onLeaveBack: () => nav.classList.remove('is-scrolled')
   });
   function navTheme() {
