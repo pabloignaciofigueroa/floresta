@@ -50,7 +50,7 @@ def size(rel):
 
 
 # Lo que la precarga espera (con su peso real) antes de abrir la portada.
-CRITICAL_IMGS = [('hero', 1), ('cont-1', .42), ('cont-2', .18)]
+CRITICAL_IMGS = [('hero-1', 1), ('cont-1', .42), ('cont-2', .18)]
 FONTS = ['allura-latin-400-normal', 'catamaran-latin-400-normal', 'catamaran-latin-600-normal', 'catamaran-latin-700-normal']
 crit = {
     'fonts': [{'url': f'assets/fonts/{f}.woff2', 'bytes': size(f'assets/fonts/{f}.woff2')} for f in FONTS]

@@ -15,7 +15,7 @@ with sync_playwright() as pw:
     ok('Ramos Silvestres' in pg.evaluate("document.activeElement.getAttribute('aria-label')"), 'foco sigue en "Uno más" del mismo ramo: '+pg.evaluate("document.activeElement.getAttribute('aria-label')"))
     pg.keyboard.press('Escape'); pg.wait_for_timeout(600)
     pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
-    ok(pg.evaluate("document.querySelector('main').lang")=='es' and pg.evaluate("document.querySelector('[data-esm-frame] img').lang")=='en','EN: main es, alt traducido marcado en')
+    ok(pg.evaluate("document.querySelector('main').lang")=='es' and pg.evaluate("document.querySelector('[data-deck] img').lang")=='en','EN: main es, alt traducido marcado en')
     ok(pg.evaluate("document.querySelector('#oficio-t').textContent.includes('con una')"),'texto dividido conserva espacios: '+pg.evaluate("document.querySelector('#oficio-t').textContent"))
     pg.click('[data-lang-toggle]')
     # cruce de quiebre
@@ -30,6 +30,7 @@ with sync_playwright() as pw:
     ok(p2.evaluate("!document.querySelector('.loader')"),'sin main.js la precarga se retira')
     # reducido móvil
     c=b.new_context(viewport={'width':390,'height':844},reduced_motion='reduce'); p3=c.new_page(); p3.goto('http://localhost:8765/index.html'); p3.wait_for_timeout(1500)
-    vis=p3.evaluate("(()=>{const f=document.querySelector('[data-esm-frame]');const fr=f.getBoundingClientRect();return [...f.querySelectorAll('img')].filter(i=>{const r=i.getBoundingClientRect();return r.height>50 && r.bottom<=fr.bottom+1}).length})()")
-    ok(vis==11, f'reducido móvil: {vis}/11 ramos visibles')
+    p3.evaluate("document.querySelector('[data-deck-next]').click()")
+    vis=p3.evaluate("[document.querySelector('[data-deck-cur]').textContent, document.querySelectorAll('[data-deck] [data-card]')[1].style.zIndex]")
+    ok(vis==['02','11'], f'reducido móvil: "Otro ramo" pasa al ramo 02 {vis}')
     b.close()

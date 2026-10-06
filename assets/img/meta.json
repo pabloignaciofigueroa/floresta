@@ -639,22 +639,6 @@
    "webm": "assets/video/corona.webm"
   }
  },
- "hero": {
-  "w": 1440,
-  "h": 1631,
-  "alt": "Ramo de rosas rojas con gypsophila sostenido frente a la florería",
-  "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBgCdASoVABgAPu1srlKppaQiqAgBMB2JaACsMzFvqi2dzX+265lZ6rQ9eP432uQ4cKI5SgiSIAXoAP7sJPqnDgy/IVbJve6hPRrm1iQ5KEvAvNRIlXPJel0ioLh7nG4irVOlxM7EB6D/0Uy/MeatrjrItKFx3/MJ48TPyIf5ZCVpLa0qcL3LaREotekYrq9wpteV+sLYj0DNaovDKHIPVD6F0Rj2JvkplEOsJuWOk7OOSGJ+zc9XiUGSj1k25623XmVjh4bLMTL6uEQK7CxWUhQ68EaJrVk+FhBD2X901Bg4AAA=",
-  "src": {
-   "800": {
-    "path": "assets/img/hero-800.webp",
-    "w": 800
-   },
-   "1800": {
-    "path": "assets/img/hero-1800.webp",
-    "w": 1440
-   }
-  }
- },
  "cont-1": {
   "w": 1440,
   "h": 1794,
@@ -811,6 +795,54 @@
    },
    "1800": {
     "path": "assets/img/cinta-8-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "hero-1": {
+  "w": 1440,
+  "h": 1631,
+  "alt": "Ramo de rosas rojas con gypsophila sostenido frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBgCdASoVABgAPu1srlKppaQiqAgBMB2JaACsMzFvqi2dzX+265lZ6rQ9eP432uQ4cKI5SgiSIAXoAP7sJPqnDgy/IVbJve6hPRrm1iQ5KEvAvNRIlXPJel0ioLh7nG4irVOlxM7EB6D/0Uy/MeatrjrItKFx3/MJ48TPyIf5ZCVpLa0qcL3LaREotekYrq9wpteV+sLYj0DNaovDKHIPVD6F0Rj2JvkplEOsJuWOk7OOSGJ+zc9XiUGSj1k25623XmVjh4bLMTL6uEQK7CxWUhQ68EaJrVk+FhBD2X901Bg4AAA=",
+  "src": {
+   "800": {
+    "path": "assets/img/hero-1-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/hero-1-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "hero-2": {
+  "w": 1440,
+  "h": 1441,
+  "alt": "Natalia con un ramo gigante de flores de colores",
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADQBQCdASoYABgAPu1oqk8ppiOiKA1RMB2JbACdMoHhGAOSHIab7JNpHqnHoe9q9BpWJOXel3QAAP6ZV9kjmsvYFlONZt9VijQVjq0uF/lvmovajcAvgqtenSNBT0o+TDfeuAVZoH8uYi9rCXXOV3n4Iegw+9jChk2c9WHPViUjs/XNGGAxFkULHztS/zX1wuUMEIKbmSJ8xXPPLkNr+nVGN0qtcpjfVXn7hMQQkO12tbyVQ0o4ctgooinwrw9j2iU89Amlo0mcHUDRtrtXYe8UJX/U/G9n8LVOgocw4g95pyaKwqXgAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/hero-2-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/hero-2-1800.webp",
+    "w": 1440
+   }
+  }
+ },
+ "hero-3": {
+  "w": 1440,
+  "h": 1920,
+  "alt": "Ramo de rosas, lisianthus y alstroemerias rosadas frente a la florería",
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACQBQCdASoSABgAPu1grFAppSQisBgIATAdiUAWnsQAAr5XQOkYtRnPQ09q7//O+g9yd7NuoAD+2dEBNsfWWmotrUN56qAzclO1OWQKsEcSN5F4EkX6k99ErOv/+ard8C+WYVtH8Joe7ftJIfNQusFPEH+F3QuemJtjQXZTZwSAyXPlaZpAe6si6/Ul9aJlRTXLh38BO6BU3UjGYnZRgevbgMm96XwWASXbbvjww0JcIBbjeuLpKbF/AQHpcwEBmAAAAA==",
+  "src": {
+   "800": {
+    "path": "assets/img/hero-3-800.webp",
+    "w": 800
+   },
+   "1800": {
+    "path": "assets/img/hero-3-1800.webp",
     "w": 1440
    }
   }

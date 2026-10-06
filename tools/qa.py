@@ -20,12 +20,6 @@ with sync_playwright() as pw:
     cls_load = pg.evaluate('window.__cls')
     for i, s in enumerate(SECS[1:], 1):
         y = pg.evaluate(f"(()=>{{const e=document.querySelector('{s}');return e?e.getBoundingClientRect().top+scrollY:0}})()")
-        if s == '#esmeralda':
-            for k, f in enumerate((0.05, 0.5, 0.95)):
-                yy = y + f * (pg.evaluate(f"document.querySelector('{s}').offsetHeight") - H)
-                pg.evaluate(f'window.__lenis ? 0 : window.scrollTo(0,{yy})'); pg.mouse.wheel(0, 1); pg.wait_for_timeout(1400)
-                pg.screenshot(path=f'{OUT}/{i:02d}_{s.strip("#.")}_{k}.jpg', quality=70, type='jpeg')
-            continue
         pg.evaluate(f'window.scrollTo(0,{y})'); pg.mouse.wheel(0, 1); pg.wait_for_timeout(1600)
         pg.screenshot(path=f'{OUT}/{i:02d}_{s.strip("#.")}.jpg', quality=70, type='jpeg')
     total = pg.evaluate('window.__cls')
