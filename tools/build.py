@@ -28,10 +28,6 @@ def repl(m):
     sizes = a.get('sizes', '100vw')
     alt = a.get('alt', '')
     extra = a.get('data', '')
-    if alt:
-        if alt not in ALT_EN:
-            raise SystemExit(f'Falta alt en inglés para "{alt}" ({i}) en tools/alt-en.json')
-        extra += f' data-alt-en="{html.escape(ALT_EN[alt])}"'
     s, l = meta['src']['800'], meta['src']['1800']
     srcset = f'{s["path"]} {s["w"]}w' + (f', {l["path"]} {l["w"]}w' if l['w'] > s['w'] else '')
     return (
@@ -51,7 +47,7 @@ def size(rel):
 
 # Lo que la precarga espera (con su peso real) antes de abrir la portada.
 CRITICAL_IMGS = [('hero-1', 1), ('cont-1', .42), ('cont-2', .18)]
-FONTS = ['allura-latin-400-normal', 'catamaran-latin-400-normal', 'catamaran-latin-600-normal', 'catamaran-latin-700-normal']
+FONTS = ['fraunces-latin-full-normal', 'figtree-latin-wght-normal']
 crit = {
     'fonts': [{'url': f'assets/fonts/{f}.woff2', 'bytes': size(f'assets/fonts/{f}.woff2')} for f in FONTS]
              + [{'url': f'brand/logo/{f}', 'bytes': size(f'brand/logo/{f}')} for f in ('logotipo.svg', 'isotipo.svg')],

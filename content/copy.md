@@ -160,3 +160,18 @@ Barra: Ramos · Esmeralda 198 · Del jardín · Ocasiones · Visítanos. Menú: 
 
 ## Meta description
 "Silvestre. Elegante. Es Floresta. Flores lindas, para momentos que importan. Ramos personalizados, arreglos florales para toda ocasión, condolencias y coronas. Esmeralda 198, Castro, Chiloé." — [IG-534] + [IG-646] + [DATO]. La versión EN es [UI].
+
+## v5 · textos nuevos (todos literales de Instagram o piezas)
+| Uso | Texto | Fuente |
+|---|---|---|
+| Pie de video | Entre flores, cintas y muchos detalles… | [IG Dax1qjLhuXW] |
+| Pie de video | Un ratito en la florería hoy… | [IG Dal1L2VhFpw] |
+| Pie de video | ¿Buscando flores lindas de verdad? | [IG DWgtaCRAPFB] |
+| Pie de video | Hoy instalamos nuestro nuevo letrero luminoso | [IG DQ0IaMAgDQO] |
+| Ocasión · Ramos personalizados | Pedido especial, hecho a medida, con flores realmente hermosas. | [IG DXVVyQqhF3D] |
+| Ocasión · Arreglos | Porque no hay dos matrimonios iguales… y las flores tampoco. | [IG DTonzAXgLkC] |
+| Ocasión · Regalos | Nuestra carterita con flores está lista para robarse todas las miradas. | [IG DN1tVVeQADZ] |
+| Ocasión · Despachos | Contamos con servicio de despacho con costo adicional, el cual dependerá de la distancia del lugar de entrega. | [PIEZA Debes saber…] |
+| Pedido · retiro | Los retiros en tienda pueden coordinarse en horarios específicos. | [PIEZA Debes saber…] |
+
+Videos v5: ratito (Dal1L2VhFpw), vitrina (DWgtaCRAPFB), letrero (DQ0IaMAgDQO), medida (DXVVyQqhF3D), matrimonios (DTonzAXgLkC), carterita (DN1tVVeQADZ). Sin IA: solo material original.

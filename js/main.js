@@ -24,8 +24,9 @@
   let stableY = window.scrollY, resizing = false, resizeT = 0, resizeFromY = null;
   let anchor = null; /* sección visible y cuánto se había avanzado en ella */
   const takeAnchor = () => {
-    const secs = [...document.querySelectorAll('main > section, .foot')];
-    const sec = secs.find(x => { const r = x.getBoundingClientRect(); return r.top <= 1 && r.bottom > 1; });
+    /* bloques internos primero: así se conserva la posición dentro de secciones largas */
+    const secs = [...document.querySelectorAll('.cont__top, .cinta, .esm__grid, .invierno, .hist__head, .reels, .hist__nati, .visita__main, .resenas, .saber, main > section, .foot')];
+    const sec = secs.filter(x => { const r = x.getBoundingClientRect(); return r.top <= 1 && r.bottom > 1; }).pop();
     if (!sec) return null;
     const r = sec.getBoundingClientRect();
     return { sec, ratio: -r.top / Math.max(1, r.height) };
@@ -41,27 +42,9 @@
     resizeT = setTimeout(() => { resizing = false; resizeFromY = null; stableY = window.scrollY; }, 1200);
   });
 
-  /* ---------- idioma: español por defecto, inglés solo si se elige ---------- */
-  const swapAttr = (attr, key) => {
-    $$(`[data-${key}-en]`).forEach(el => {
-      if (el.dataset[key + 'Es'] === undefined) el.dataset[key + 'Es'] = el.getAttribute(attr) || '';
-      el.setAttribute(attr, root.dataset.lang === 'en' ? el.dataset[key + 'En'] : el.dataset[key + 'Es']);
-      /* dentro del contenido en español, lo traducido se marca como inglés */
-      if (el.closest('[lang="es"]') && key !== 'meta') { if (root.dataset.lang === 'en') el.setAttribute('lang', 'en'); else if (el.getAttribute('lang') === 'en') el.removeAttribute('lang'); }
-    });
-  };
-  const setLang = (l) => {
-    root.dataset.lang = l;
-    root.lang = l;
-    store.set('floresta-lang', l);
-    swapAttr('alt', 'alt');
-    swapAttr('aria-label', 'aria');
-    swapAttr('content', 'meta');
-    document.dispatchEvent(new CustomEvent('floresta:lang'));
-  };
-  $$('[data-l="en"]').forEach(el => el.setAttribute('lang', 'en'));
-  setLang(store.get('floresta-lang') === 'en' ? 'en' : 'es');
-  $('[data-lang-toggle]')?.addEventListener('click', () => setLang(root.dataset.lang === 'es' ? 'en' : 'es'));
+  /* ---------- la página está solo en español ---------- */
+  root.dataset.lang = 'es';
+  store.set('floresta-lang', 'es');
 
   /* ---------- scroll suave ---------- */
   let lenis = null;
@@ -143,7 +126,7 @@
   const saveCart = () => store.set('floresta-pedido', JSON.stringify(items));
   const renderCart = () => {
     const n = items.reduce((a, i) => a + i.qty, 0);
-    $('[data-cart-count]').textContent = n;
+    const cc = $('[data-cart-count]'); cc.textContent = n; cc.hidden = !n;
     const list = $('[data-cart-items]');
     list.innerHTML = '';
     items.forEach((it, idx) => {
@@ -280,7 +263,10 @@
   });
   renderCart();
   document.addEventListener('floresta:lang', renderCart);
-  $$('[data-cart-form] input[name="modo"]').forEach(r => r.addEventListener('change', () => { $('[data-addr]').hidden = $('[data-cart-form]').modo.value !== 'Despacho'; }));
+  /* retiro en tienda: sin dirección ni datos de despacho */
+  const syncModo = () => { const m = $('[data-cart-form]').modo.value; $$('[data-mode-show]').forEach(el => { el.hidden = el.dataset.modeShow !== m; }); };
+  $$('[data-cart-form] input[name="modo"]').forEach(r => r.addEventListener('change', syncModo));
+  syncModo();
 
   document.addEventListener('keydown', (e) => {
     const box = menuOpen ? menu : cartOpen ? cart : null;
@@ -304,10 +290,10 @@
     const near = new IntersectionObserver((en) => en.forEach(e => { if (e.isIntersecting) { lazyVideo(e.target); near.unobserve(e.target); } }), { rootMargin: '900px 0px' });
     const seen = new IntersectionObserver((en) => en.forEach(e => {
       const v = e.target;
-      if (e.isIntersecting && !reduced && (introPlayed || !v.hasAttribute('data-hero-video'))) v.play().catch(() => {});
+      if (e.isIntersecting && !reduced && !v.closest('[data-panel]:not(.is-open)') && (introPlayed || !v.hasAttribute('data-hero-video'))) v.play().catch(() => {});
       else if (!e.isIntersecting) v.pause();
     }), { threshold: .15 });
-    videos.forEach(v => { if (v.hasAttribute('data-lazy-video')) near.observe(v); seen.observe(v); });
+    videos.forEach(v => { if (v.hasAttribute('data-lazy-video') && !v.closest('[data-panel]:not(.is-open)')) near.observe(v); seen.observe(v); });
   } else videos.forEach(lazyVideo);
   if (reduced) videos.forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 
@@ -332,7 +318,7 @@
       options: { position: 'bottomright' },
       onAdd() {
         const wrap = L.DomUtil.create('div', 'leaflet-control map-home');
-        wrap.innerHTML = '<button type="button"><span data-l="es">Volver a la florería</span><span data-l="en">Back to the shop</span></button>';
+        wrap.innerHTML = '<button type="button">Volver a la florería</button>';
         L.DomEvent.disableClickPropagation(wrap);
         wrap.querySelector('button').addEventListener('click', () => map.flyTo(home, zoom, { duration: 1 }));
         return wrap;
@@ -421,23 +407,24 @@
   lazySlider(ramosEl, { spaceBetween: 18, navigation: { prevEl: $('[data-ramos-prev]'), nextEl: $('[data-ramos-next]') }, slidesOffsetAfter: 0 });
   lazySlider($('[data-plants]'), { spaceBetween: 12, freeMode: { enabled: true, momentum: true } });
   document.addEventListener('floresta:lang', () => {
-    $$('[data-ramos], [data-plants], [data-ocas]').forEach(el => { if (el.swiper) { Object.assign(el.swiper.params.a11y, a11yMsgs()); el.swiper.update(); } });
+    $$('[data-ramos], [data-plants]').forEach(el => { if (el.swiper) { Object.assign(el.swiper.params.a11y, a11yMsgs()); el.swiper.update(); } });
   });
 
-  lazySlider($('[data-ocas]'), { spaceBetween: 24, freeMode: { enabled: true, momentum: true, momentumRatio: .6 }, slidesOffsetBefore: 0 });
 
-  /* ---------- etiqueta que acompaña al cursor: "Arrastrar" o "Ver ramos" ---------- */
+  /* ---------- etiqueta que acompaña al cursor: "Arrastrar" o "Ver ramos" ----------
+     Se mueve solo con x/y de GSAP (sin la propiedad CSS translate, que GSAP absorbía y dejaba la etiqueta corrida). */
   const drag = $('[data-drag]');
   if (drag && fine.matches && !reduced && window.gsap) {
-    let dx = 0, dy = 0, tx = 0, ty = 0, raf = 0, shown = false;
-    const loop = () => { dx += (tx - dx) * .2; dy += (ty - dy) * .2; drag.style.translate = `${dx}px ${dy}px`; raf = requestAnimationFrame(loop); };
-    const show = (on) => gsap.to(drag, on ? { scale: 1, opacity: 1, duration: .45, ease: 'power3.inOut', overwrite: true } : { scale: 0, opacity: 0, duration: .35, ease: 'power3.inOut', overwrite: true, onComplete: () => { if (!shown) cancelAnimationFrame(raf); } });
+    gsap.set(drag, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
+    const qx = gsap.quickTo(drag, 'x', { duration: .14, ease: 'power3.out' }), qy = gsap.quickTo(drag, 'y', { duration: .14, ease: 'power3.out' });
+    let shown = false;
+    const show = (on) => gsap.to(drag, { scale: on ? 1 : 0, opacity: on ? 1 : 0, duration: on ? .4 : .3, ease: 'power3.inOut', overwrite: 'auto' });
     $$('[data-drag-label], [data-view-label]').forEach(zone => {
       const mode = zone.hasAttribute('data-view-label') ? 'view' : 'drag';
-      zone.addEventListener('pointerenter', (e) => { drag.dataset.mode = mode; tx = dx = e.clientX; ty = dy = e.clientY; shown = true; cancelAnimationFrame(raf); loop(); show(true); });
-      zone.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; });
-      zone.addEventListener('pointerdown', () => shown && gsap.to(drag, { scale: .8, duration: .25, ease: 'power3.inOut' }));
-      zone.addEventListener('pointerup', () => shown && gsap.to(drag, { scale: 1, duration: .35, ease: 'power3.inOut' }));
+      zone.addEventListener('pointerenter', (e) => { drag.dataset.mode = mode; gsap.set(drag, { x: e.clientX, y: e.clientY }); qx(e.clientX); qy(e.clientY); shown = true; show(true); });
+      zone.addEventListener('pointermove', (e) => { qx(e.clientX); qy(e.clientY); });
+      zone.addEventListener('pointerdown', () => shown && gsap.to(drag, { scale: .8, duration: .2, ease: 'power3.inOut', overwrite: 'auto' }));
+      zone.addEventListener('pointerup', () => shown && gsap.to(drag, { scale: 1, duration: .3, ease: 'power3.inOut', overwrite: 'auto' }));
       zone.addEventListener('pointerleave', () => { shown = false; show(false); });
       $$('button, a:not([data-view-label]), label, input', zone).forEach(b => {
         b.addEventListener('pointerenter', () => show(false));
@@ -480,6 +467,23 @@
   });
 
   const anim = () => window.gsap && !reduced;
+
+  /* ---------- ocasiones: cinco franjas; la elegida se abre y su video corre ---------- */
+  const panels = $$('[data-panel]');
+  const openPanel = (p) => {
+    if (p.classList.contains('is-open')) return;
+    panels.forEach(o => {
+      const on = o === p;
+      o.classList.toggle('is-open', on);
+      $('.panel__btn', o).setAttribute('aria-expanded', String(on));
+      const v = $('video', o);
+      if (v) { if (on && !reduced) { lazyVideo(v); v.play().catch(() => {}); } else v.pause(); }
+    });
+  };
+  panels.forEach(p => {
+    $('.panel__btn', p).addEventListener('click', () => openPanel(p));
+    if (fine.matches) p.addEventListener('pointerenter', () => openPanel(p));
+  });
 
   /* ---------- portada: tres ramos que se turnan (cortina suave, arrastre, puntos con progreso) ---------- */
   const hero = (() => {
@@ -691,7 +695,7 @@
   /* ---------- precarga + entrada de la portada ---------- */
   const loader = $('.loader');
   const fontsReady = document.fonts
-    ? Promise.race([Promise.allSettled(['400 1em Allura', '400 1em Catamaran', '600 1em Catamaran', '700 1em Catamaran', '400 1em "Playfair Display"', 'italic 400 1em "Playfair Display"'].map(f => document.fonts.load(f))), new Promise(r => setTimeout(r, 2500))]).catch(() => {})
+    ? Promise.race([Promise.allSettled(['400 1em Fraunces', 'italic 400 1em Fraunces', '400 1em Figtree', '700 1em Figtree'].map(f => document.fonts.load(f))), new Promise(r => setTimeout(r, 2500))]).catch(() => {})
     : Promise.resolve();
   if (loader) outside().forEach(el => { el.inert = true; });
   gsap.set('[data-hero-fade]', { opacity: 0, y: 18 });
@@ -827,8 +831,9 @@
   }
 
   /* ---------- detalles que acompañan ---------- */
-  gsap.fromTo('.saber details', { opacity: 0, y: 26 }, { opacity: 1, y: 0, stagger: .07, duration: .7, scrollTrigger: { trigger: '.saber__list', start: 'top 85%', once: true } });
-  gsap.fromTo('.ocard', { opacity: 0, y: 80, rotate: (i) => [-4, 3, -2, 4, -3][i % 5] }, { opacity: 1, y: 0, rotate: 0, stagger: .09, duration: .95, scrollTrigger: { trigger: '.ocas__slider', start: 'top 85%', once: true } });
+  gsap.fromTo('.saber details', { opacity: 0, y: 26 }, { opacity: 1, y: 0, stagger: .07, duration: .7, scrollTrigger: { trigger: '.saber__list', start: 'top 92%', once: true } });
+  gsap.fromTo('.panel', { opacity: 0, y: 60 }, { opacity: 1, y: 0, stagger: .08, duration: .9, scrollTrigger: { trigger: '.panels', start: 'top 85%', once: true } });
+  gsap.fromTo('.reel', { opacity: 0, y: 90, rotate: (i) => [-3, 2, -2, 3][i % 4] }, { opacity: 1, y: 0, rotate: 0, stagger: .1, duration: 1, scrollTrigger: { trigger: '.reels', start: 'top 85%', once: true } });
   gsap.fromTo('.resenas__stars i', { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, stagger: .08, duration: .6, ease: 'back.inOut(2)', scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
   gsap.fromTo('.resena', { opacity: 0, y: 40 }, { opacity: 1, y: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.resenas', start: 'top 75%', once: true } });
   gsap.fromTo('.plant', { opacity: 0, x: 60 }, { opacity: 1, x: 0, stagger: .06, duration: .8, scrollTrigger: { trigger: '.jardin__strip', start: 'top 90%', once: true } });
@@ -837,7 +842,7 @@
   desktop.addEventListener('change', () => {
     const a = anchor;
     const target = () => a ? a.sec.getBoundingClientRect().top + window.scrollY + a.ratio * a.sec.offsetHeight : (resizeFromY !== null ? resizeFromY : stableY);
-    const go = () => { const y = target(); if (Math.abs(window.scrollY - y) < 40) return; if (lenis) lenis.scrollTo(y, { immediate: true, force: true }); else window.scrollTo(0, y); stableY = y; ScrollTrigger.update(); };
+    const go = () => { const y = target(); if (Math.abs(window.scrollY - y) < 40) return; if (lenis) { lenis.resize(); lenis.scrollTo(y, { immediate: true, force: true }); } else window.scrollTo(0, y); stableY = y; ScrollTrigger.update(); };
     restoring = true;
     requestAnimationFrame(() => requestAnimationFrame(go)); setTimeout(go, 450); setTimeout(() => { go(); restoring = false; }, 1000);
   });
@@ -867,6 +872,8 @@
     pill.addEventListener('pointerleave', () => moveTo(active()));
     document.addEventListener('floresta:lang', () => requestAnimationFrame(() => moveTo(active())));
   }
+  /* sobre las secciones oscuras, el logo de la barra pasa a blanco */
+  $$('[data-dark]').forEach(sec => ScrollTrigger.create({ trigger: sec, start: 'top 60px', end: 'bottom 60px', onToggle: (st) => nav.classList.toggle('on-dark', st.isActive) }));
   ScrollTrigger.create({
     start: 'top -120',
     onUpdate: (self) => { nav.classList.toggle('is-hidden', self.direction === 1 && !menuOpen && !cartOpen && Date.now() > navHoldUntil); nav.classList.toggle('is-scrolled', self.scroll() > 120); },

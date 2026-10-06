@@ -6,7 +6,7 @@ W = int(sys.argv[1]) if len(sys.argv) > 1 else 1536
 H = int(sys.argv[2]) if len(sys.argv) > 2 else 864
 OUT = sys.argv[3] if len(sys.argv) > 3 else f'/tmp/claude-0/qa_{W}'
 os.makedirs(OUT, exist_ok=True)
-SECS = ['.hero', '#manifiesto', '.cinta', '#ramos', '#esmeralda', '.oficio', '#jardin', '#debes-saber', '#ocasiones', '#natalia', '.invierno', '.resenas', '#visitanos', '.foot']
+SECS = ['.hero', '#manifiesto', '.cinta', '#ramos', '#esmeralda', '.invierno', '#historia', '#ocasiones', '#jardin', '#visitanos', '.resenas', '#debes-saber', '.foot']
 with sync_playwright() as pw:
     b = pw.chromium.launch(executable_path='/opt/pw-browsers/chromium')
     pg = b.new_page(viewport={'width': W, 'height': H}, device_scale_factor=1)

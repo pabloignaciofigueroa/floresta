@@ -14,10 +14,7 @@ with sync_playwright() as pw:
     pg.focus('[data-cart-items] .cart__item:nth-child(2) [data-q="1"]'); pg.keyboard.press('Enter')
     ok('Ramos Silvestres' in pg.evaluate("document.activeElement.getAttribute('aria-label')"), 'foco sigue en "Uno más" del mismo ramo: '+pg.evaluate("document.activeElement.getAttribute('aria-label')"))
     pg.keyboard.press('Escape'); pg.wait_for_timeout(600)
-    pg.click('[data-lang-toggle]'); pg.wait_for_timeout(300)
-    ok(pg.evaluate("document.querySelector('main').lang")=='es' and pg.evaluate("document.querySelector('[data-deck] img').lang")=='en','EN: main es, alt traducido marcado en')
-    ok(pg.evaluate("document.querySelector('#oficio-t').textContent.includes('con una')"),'texto dividido conserva espacios: '+pg.evaluate("document.querySelector('#oficio-t').textContent"))
-    pg.click('[data-lang-toggle]')
+    ok(pg.evaluate("document.querySelector('#hist-t').textContent.includes('con una')"),'texto dividido conserva espacios: '+pg.evaluate("document.querySelector('#hist-t').textContent"))
     # cruce de quiebre
     pg.set_viewport_size({'width':1280,'height':800}); pg.wait_for_timeout(500)
     pg.evaluate("window.scrollTo(0, document.querySelector('#debes-saber').offsetTop+100)"); pg.mouse.wheel(0,1); pg.wait_for_timeout(1500)
