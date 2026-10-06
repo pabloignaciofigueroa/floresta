@@ -378,7 +378,8 @@
       if (el.swiper || el.dataset.pending) return;
       el.dataset.pending = '1';
       loadSwiper().then(() => {
-        const cur = $('[data-count-cur]', el), tot = $('[data-count-tot]', el);
+        const scope = el.closest('section') || el;
+        const cur = $('[data-count-cur]', scope), tot = $('[data-count-tot]', scope);
         const total = $$('.swiper-slide', el).length;
         if (tot) tot.textContent = pad(total);
         new Swiper(el, Object.assign({

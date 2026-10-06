@@ -194,7 +194,7 @@ html[data-lang="es"] .lang__en, html[data-lang="en"] .lang__es { opacity: .5; }
 .arrow i { width: 12px; height: 12px; border-left: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: translateX(2px) rotate(45deg); }
 .arrow--next i { transform: translateX(-2px) rotate(-135deg); }
 .arrow.swiper-button-disabled { opacity: .35; pointer-events: none; }
-.ramos__slider { padding: 0 var(--gut); overflow: visible !important; }
+.ramos__slider { padding: 0 var(--gut) !important; overflow: visible !important; min-width: 0; width: 100%; margin: 0 !important; }
 .ramo { width: clamp(300px, 29vw, 440px) !important; display: flex; flex-direction: column; background: var(--base); border-radius: var(--r-lg); overflow: clip; transition: transform var(--d-med) var(--ease); }
 .ramo__img { position: relative; aspect-ratio: 860 / 680; overflow: clip; }
 .ramo__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform var(--d-slow) var(--ease); }
@@ -248,7 +248,7 @@ html[data-lang="es"] .lang__en, html[data-lang="en"] .lang__es { opacity: .5; }
 .jardin__where { font-weight: 600; color: var(--ink-2); }
 .jardin__media { position: relative; height: min(78svh, 820px); border-radius: var(--r-lg) 0 0 var(--r-lg); overflow: clip; background: var(--rosa); }
 .jardin__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.jardin__strip { grid-column: 1 / -1; padding-right: var(--gut); }
+.jardin__strip { grid-column: 1 / -1; padding-right: var(--gut) !important; min-width: 0; width: 100%; margin: 0 !important; }
 .plant { width: clamp(150px, 14vw, 230px) !important; aspect-ratio: 3 / 4; overflow: clip; border-radius: var(--r-md); }
 .plant--wide { width: clamp(220px, 21vw, 340px) !important; }
 .plant img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--d-slow) var(--ease); }
@@ -431,7 +431,7 @@ html[data-lang="es"] .lang__en, html[data-lang="en"] .lang__es { opacity: .5; }
   .jardin { grid-template-columns: minmax(0, 1fr); padding-left: 0; }
   .jardin__text { padding: 0 var(--gut); }
   .jardin__media { height: 62svh; margin-left: 10vw; }
-  .jardin__strip { padding: 0 var(--gut); }
+  .jardin__strip { padding: 0 var(--gut) !important; }
 
   .saber { grid-template-columns: minmax(0, 1fr); }
   .saber__img { grid-column: 1; grid-row: auto; width: 70%; justify-self: end; }
