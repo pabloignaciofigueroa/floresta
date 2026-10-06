@@ -462,3 +462,32 @@ html:not(.js) .loader { display: none; }
 }
 .hero { touch-action: pan-y; }
 .nav__pill:has(a:hover) a.is-active:not(:hover) { color: var(--ink); }
+
+/* ---------- v5.1: portada centrada ---------- */
+.hero__content { justify-items: center; text-align: center; bottom: clamp(36px, 8vh, 80px); }
+.hero__logo { width: min(78vw, 1100px); }
+.hero__row { display: grid; justify-items: center; gap: clamp(18px, 3vh, 28px); }
+.hero__row > .hero__motto { margin: 0; }
+
+/* ---------- v5.1: videos con aire ---------- */
+.hist { gap: clamp(80px, 13vh, 150px); padding-top: clamp(120px, 17vh, 190px); padding-bottom: clamp(120px, 17vh, 190px); }
+.reels { gap: clamp(28px, 4vw, 72px); padding: 0 clamp(0px, 4vw, 70px); }
+.reel { width: min(100%, calc(58svh * 9 / 16)); gap: 16px; }
+.reel--2 { margin-top: 10vh; } .reel--3 { margin-top: 3vh; } .reel--4 { margin-top: 13vh; }
+@media (max-width: 899px) { .reels { padding: 0 var(--gut) 10px; gap: 20px; } .reel { flex-basis: 66vw; } }
+
+/* ---------- v5.1: plantitas que se consultan ---------- */
+.jardin__plants { grid-column: 1 / -1; display: grid; gap: 22px; min-width: 0; }
+.jardin__plants-t { font-weight: 700; font-size: var(--t-lead); padding-right: var(--gut); }
+.jardin__strip { cursor: grab; }
+.jardin__strip:active { cursor: grabbing; }
+.plant, .plant--vivero { position: relative; display: block; width: clamp(200px, 18vw, 290px) !important; aspect-ratio: 3 / 4; overflow: clip; border-radius: var(--r-md); }
+.plant__cta { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 12px 14px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: .88rem; text-align: center; translate: 0 calc(100% + 16px); transition: translate var(--d-med) var(--ease); }
+.plant--vivero .plant__cta { background: var(--frambuesa); }
+.plant:hover .plant__cta, .plant:focus-visible .plant__cta { translate: 0 0; }
+@media (hover: none) { .plant__cta { translate: 0 0; font-size: .8rem; padding: 10px 12px; } }
+@media (max-width: 899px) { .plant, .plant--vivero { width: min(52vw, 240px) !important; } .jardin__plants-t { padding: 0 var(--gut); } }
+.plant img { border-radius: inherit; }
+.plant__cta { translate: 0 0; background: rgba(47, 34, 56, .82); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background var(--d-fast) var(--ease), transform var(--d-med) var(--ease); }
+.plant:hover .plant__cta { background: var(--ink); transform: scale(1.03); }
+.plant--vivero .plant__cta, .plant--vivero:hover .plant__cta { background: var(--frambuesa); }
