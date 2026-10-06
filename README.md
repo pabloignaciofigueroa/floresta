@@ -12,7 +12,7 @@ Sitio de **Floresta**, florería en Esmeralda 198, Castro, Chiloé. Está hecho 
 | `css/main.css`, `js/main.js` | Estilos y movimiento (GSAP + ScrollTrigger, Lenis; Swiper y Leaflet diferidos, en `vendor/`) |
 | `content/` | `brand-voice.md` (voz y datos), `copy.md` (cada texto con su fuente), `inventario.md` |
 | `brand/` | `typography.md`, `palette.md`, `art-direction.md`, `logo/` (SVG, favicons, firma) |
-| `assets/` | `img/` WebP 800/1800, `video/` MP4 + WebM, `fonts/` woff2 (OFL), `icons/`, `og.jpg` |
+| `assets/` | `img/` WebP 800/1800, `video/` MP4 + WebM, `fonts/` woff2 (OFL), `icons/`, `og-floresta.jpg` (imagen al compartir) |
 | `tools/` | Vectorizado del logo, paleta, alineación del momento memorable, medios, QA y pruebas |
 | `assets/raw/` | Material original (fuera de git; vive en el PC en `Desktop\brgrc\LA_FLORESTA`) |
 
