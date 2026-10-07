@@ -186,7 +186,7 @@ PAGES.append(sheet(1, B_, R_, 'C', 'Portada',
       <p class="sub">Decisiones de diseño del sitio web</p>
       <h1>De tu Instagram<br><em>a tu sitio</em></h1>
       <p class="for">Preparado para Natalia</p>
-      <p class="meta">Esmeralda 198 · Castro, Chiloé · octubre 2026<br>{URL}</p></div>'''))
+      <p class="meta">Esmeralda 198 · Castro, Chiloé · octubre 2026<br><a href="https://{URL}">{URL}</a></p></div>'''))
 
 # ============================================================ 02 · Carta
 PAGES.append(sheet(2, F_, W_, 'P', 'K · carta',
@@ -443,8 +443,8 @@ PAGES.append(sheet(19, L_, B_, 'P', 'T · lista y firma',
       <p class="invite">Cuando quieras, lo conversamos.</p>
       <p class="who">Pablo Figueroa</p>
       <p class="role">Director de estudio</p>
-      <p class="contact">pablo@bergerac.cl · +56 9 7589 2096</p>
-      <p class="web">Bergerac.cl</p></div>'''))
+      <p class="contact"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a></p>
+      <p class="web"><a href="https://bergerac.cl">Bergerac.cl</a></p></div>'''))
 
 CSS = f'''
 @font-face{{font-family:"Fraunces";font-weight:100 900;src:url({font("fraunces-latin-full-normal")}) format("woff2")}}
@@ -596,7 +596,8 @@ h1{{font-size:50pt;line-height:1.02;letter-spacing:-.01em}}
 '''
 
 DOC = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
-<title>Floresta · Decisiones de diseño del sitio web</title><style>{CSS}</style></head>
+<title>Floresta · Decisiones de diseño del sitio web</title><style>{CSS}a{{color:inherit;text-decoration:none}}
+</style></head>
 <body>{"".join(PAGES)}</body></html>'''
 html_out = OUT / 'floresta-dossier-diseno.html'
 html_out.write_text(DOC, encoding='utf-8')
