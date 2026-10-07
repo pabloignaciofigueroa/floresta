@@ -480,7 +480,10 @@
       if (v) { if (on && !reduced) { lazyVideo(v); v.play().catch(() => {}); } else v.pause(); }
     });
   };
+  // el título se apoya siempre sobre la frase de abajo, mida lo que mida
+  const ro = 'ResizeObserver' in window ? new ResizeObserver(es => es.forEach(e => e.target.closest('[data-panel]').style.setProperty('--dh', e.target.offsetHeight + 'px'))) : null;
   panels.forEach(p => {
+    const d = $('.panel__detail', p); if (d && ro) ro.observe(d);
     $('.panel__btn', p).addEventListener('click', () => openPanel(p));
     if (fine.matches) p.addEventListener('pointerenter', () => openPanel(p));
   });
