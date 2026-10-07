@@ -520,3 +520,20 @@ html:not(.js) .loader { display: none; }
   .cont__b { top: calc(70svh + var(--gap-top) - 110px); }
   .cont__tag { top: calc(70svh + var(--gap-top) - 60px); }
 }
+
+/* v5.4 · pie: textura de ramos, subrayados finos, lema liviano */
+.foot { position: relative; overflow: hidden; isolation: isolate; }
+.foot > :not(.foot__tex) { position: relative; z-index: 1; }
+.foot__tex { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .2; }
+.foot__tex img { --w: calc(460px * var(--s)); position: absolute; top: var(--y); width: var(--w); height: auto; max-width: none; transform: translateY(-50%) rotate(var(--r)); }
+.foot__tex .l { left: calc(var(--o) * var(--w)); }
+.foot__tex .r { right: calc(var(--o) * var(--w)); }
+@media (max-width: 1099px) { .foot__tex img { --w: calc(360px * var(--s)); } }
+@media (max-width: 699px) {
+  .foot__tex img { --w: calc(240px * var(--s)); }
+  .foot__tex .l { left: calc(var(--om) * var(--w)); }
+  .foot__tex .r { right: calc(var(--om) * var(--w)); }
+}
+.foot__motto { font-weight: 300; }
+.foot .u-link::after { transform: scaleY(.3); transform-origin: right bottom; }
+.foot .u-link:hover::after { transform: scaleX(0) scaleY(.3); }
