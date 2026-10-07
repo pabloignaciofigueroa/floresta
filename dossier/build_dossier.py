@@ -100,7 +100,8 @@ MRIGHT = {'m-hero': 905, 'm-hist': 715}
 
 def m(name, w=600):
     top, bot = MWIN[name]
-    return b64(SH / f'{name}.jpg', w, crop=(0, top, MRIGHT.get(name, 975), bot))
+    src = SH2 / f'{name}.jpg' if (SH2 / f'{name}.jpg').exists() else SH / f'{name}.jpg'
+    return b64(src, w, crop=(0, top, MRIGHT.get(name, 975), bot))
 
 
 def igpath(code, n=1):
@@ -270,14 +271,14 @@ tiles = [(W_, png_tint('dossier/png/isotipo.png', None, 400), 'iso'), (B_, png_t
          (W_, png_tint('dossier/png/logotipo.png', B_, 1000), 'wide'), (R_, png_tint('dossier/png/firma.png', None, 800), 'firma'),
          (W_, png_tint('assets/icons/icon-192.png', None, 192), 'ico')]
 PAGES.append(sheet(7, W_, F_, 'A', 'G · logo y bloques',
-  fig(d('d-foot', top=200, left=345, right=1815), 'El pie de tu sitio: el logotipo y la firma', 'left:0;right:0;bottom:0', capfirst=True, cls='capin line'),
+  fig(d('d-foot', top=290), 'El pie de tu sitio: el logotipo y la firma', 'left:0;right:0;top:50%;transform:translateY(-50%)', capfirst=True, cls='capin line'),
   head('Sistema · logo', 'El ramo del letrero', 'El logotipo FLORESTA y el ramo del letrero de Esmeralda 198 se redibujaron siguiendo sus trazos originales, para que se vean nítidos a cualquier tamaño, desde el pequeño ícono que acompaña el nombre del sitio hasta un letrero.')
   + '<div class="tiles">' + ''.join(f'<div class="tile {k}" style="background:{c}"><img src="{s}" alt=""></div>' for c, s, k in tiles) + '</div>'
   + f'''<div class="cols2">
       {bk('Trazos respetados', P('Las letras del logotipo conservan sus remates y la A con su curva. El ramo mantiene sus flores coral, sus hojas y el lazo.'))}
       {bk('Variantes', P('El ramo en color y en claro, el logotipo en berenjena y en blanco, y la firma “by Almácigos Chiloé” para el pie.'))}
       {bk('En miniatura', P('El ramo solo, sin fondo, con trazos más firmes para que se reconozca aun muy pequeño, junto al nombre del sitio. Sobre fondo oscuro, las hojas pasan a claro.'))}
-      {bk('Dónde aparece', P('El ramo se dibuja en la espera antes de entrar. El logotipo encabeza la portada a gran escala, vive en la barra superior y cierra el pie con la firma completa.'))}
+      {bk('Dónde aparece', P('El ramo se dibuja en la espera antes de entrar. El logotipo encabeza la portada a gran escala, vive en la barra superior y cierra el pie con la firma completa. En el pie, el ramo se repite en blanco rosado, girado y muy tenue, como una textura sobre el frambuesa.'))}
     </div>'''))
 
 # ============================================================ 08 · El recorrido
