@@ -27,7 +27,7 @@ FL = {p['code']: p for p in json.load(open(RAW / 'textos/floresta_textos.json'))
 AL = {p['code']: p for p in json.load(open(RAW / 'almacigos/almacigos_textos.json'))['publicaciones']}
 SITE = (ROOT / 'index.html').read_text(encoding='utf-8')
 E = html.escape
-URL = 'florestachiloe.vercel.app'
+URL = 'florestachiloe.pages.dev'
 
 
 def _norm(s):
@@ -181,7 +181,7 @@ PAGES = []
 
 # ============================================================ 01 · Portada
 PAGES.append(sheet(1, B_, R_, 'C', 'Portada',
-  fig(d('d-hero', right=1975, bottom=1340), 'Portada · florestachiloe.vercel.app', 'left:.55in;right:.55in;top:50%;transform:translateY(-50%)'),
+  fig(d('d-hero', right=1975, bottom=1340), f'Portada · {URL}', 'left:.55in;right:.55in;top:50%;transform:translateY(-50%)'),
   f'''<div class="cover">
       <img class="logo" src="{LOGO_INK}" alt="Floresta">
       <p class="sub">Decisiones de diseño del sitio web</p>

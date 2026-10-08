@@ -29,7 +29,7 @@ Portada · K carta · M mosaico de fuentes y bloques · Q cita grande y bloques 
 
 | # | Lámina | Izq. \| der. | Izq. | Der. | Contenido principal |
 |---|---|---|---|---|---|
-| 01 | Portada | berenjena \| rosa empolvado | C | Portada | Portada del sitio · logotipo, «Decisiones de diseño del sitio web», «De tu Instagram a tu sitio», «Preparado para Natalia», Esmeralda 198 · Castro, Chiloé · octubre 2026, florestachiloe.vercel.app |
+| 01 | Portada | berenjena \| rosa empolvado | C | Portada | Portada del sitio · logotipo, «Decisiones de diseño del sitio web», «De tu Instagram a tu sitio», «Preparado para Natalia», Esmeralda 198 · Castro, Chiloé · octubre 2026, florestachiloe.pages.dev |
 | 02 | Antes de empezar | frambuesa \| blanco rosado | P | K | La carta del v1, firmada «Pablo Figueroa / Director de estudio» |
 | 03 | De dónde viene todo | blanco rosado \| lila | E | M | Mosaico de 10 fotos y 4 piezas · 658 publicaciones, 879 fotos y 110 videos (verificados), piezas gráficas, @almacigoschiloe, Google y «La regla» |
 | 04 | La voz | lila \| rosa empolvado | A | Q | «Mientras más silvestre… ¡mejor!» en grande · firma, oficio, vocabulario, cierres afectuosos y ocasiones |
@@ -56,7 +56,7 @@ Portada · K carta · M mosaico de fuentes y bloques · Q cita grande y bloques 
 - **Disposición derecha**: Portada K M Q E S G N G I Q P Q I N I Q G T.
 
 ## Cambios de texto respecto del v1
-- **Dirección y nombres.** La dirección es siempre florestachiloe.vercel.app. «Precarga» pasa a ser «La espera antes de entrar».
+- **Dirección y nombres.** La dirección es siempre florestachiloe.pages.dev. «Precarga» pasa a ser «La espera antes de entrar».
 - **Sin jerga.** Sin carrusel, cursor ni navegador: «fila de fichas que se arrastra con la mano», «al pasar por encima», «el pequeño ícono que acompaña el nombre del sitio».
 - **Sin proceso.** «Se revisó» se reescribió como descripción, por ejemplo «se lee con holgura» o «se ve igual de bien».
 - **Cursiva del lema.** La cursiva del lema de la portada va en rosa claro, y la frambuesa marca la palabra que importa en los títulos.
